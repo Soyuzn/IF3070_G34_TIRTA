@@ -1,0 +1,4 @@
+[
+  {"id": "kapal_utama", "lebar": 10, "panjang": 16, "kapasitas": 60},
+  {"id": "kapal_kedua", "lebar": 8, "panjang": 14, "kapasitas": 50}
+]
