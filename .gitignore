@@ -7,3 +7,6 @@ venv/
 .idea/
 .vscode/
 .ipynb_checkpoints/
+output/*
+!output/.gitkeep
+!output/ilustrasi_data/
