@@ -1,14 +1,16 @@
 """Visualisasi state dan riwayat eksperimen."""
+# Rujukan Matplotlib: docs/referensi.md.
 import textwrap
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
-from .data import nilai_objektif, ukuran
+from .data import OBJEKTIF, nilai_objektif, ukuran
 from .pencatatan import periksa_riwayat
 
 
-def gambar_state(kapal, kendaraan, state, judul="Keadaan kapal"):
-    objektif = nilai_objektif(kapal, kendaraan, state)
+def gambar_state(kapal, kendaraan, state, judul="Keadaan kapal", objektif="tarif_kirim"):
+    nilai = nilai_objektif(kapal, kendaraan, state, objektif)
+    satuan = OBJEKTIF[objektif][1]
     kendaraan_luar = [k["id"] for k in kendaraan if state[k["id"]] is None]
     catatan = "Di luar kapal: " + (", ".join(kendaraan_luar) or "Tidak ada")
     baris_catatan = textwrap.wrap(catatan, width=100)
@@ -25,8 +27,9 @@ def gambar_state(kapal, kendaraan, state, judul="Keadaan kapal"):
             lebar, panjang = ukuran(data_kendaraan, penempatan["orientasi"])
             x, y = penempatan["x"], penempatan["y"]
             berat += data_kendaraan["berat"]
-            ax.add_patch(Rectangle((x, y), lebar, panjang,
-                                   facecolor=warna[data_kendaraan["id"]], edgecolor="black", alpha=.85))
+            ax.add_patch(Rectangle(
+                (x, y), lebar, panjang, facecolor=warna[data_kendaraan["id"]],
+                edgecolor="black", alpha=.85))
             label = f"{data_kendaraan['id']}\n{penempatan['orientasi']}"
             ax.text(x + lebar / 2, y + panjang / 2, label, ha="center", va="center",
                     fontsize=7, rotation=90 if lebar == 1 else 0)
@@ -37,13 +40,15 @@ def gambar_state(kapal, kendaraan, state, judul="Keadaan kapal"):
         ax.set_yticks(range(dek["panjang"] + 1))
         ax.grid(alpha=.25)
         ax.set_aspect("equal")
-    fig.suptitle(f"{judul}\nObjektif: {objektif:g} juta rupiah")
+    fig.suptitle(f"{judul}\nObjektif: {nilai:g} {satuan}")
     fig.text(.04, .02, "\n".join(baris_catatan), fontsize=9, va="bottom")
     fig.tight_layout(rect=(0, .06 + .026 * len(baris_catatan), 1, .91))
     return fig
 
 
-def gambar_riwayat(riwayat, judul="Perkembangan objektif"):
+def gambar_riwayat(riwayat, judul="Perkembangan objektif", objektif="tarif_kirim"):
+    if objektif not in OBJEKTIF:
+        raise ValueError("objektif harus tarif_kirim atau tarif_eta")
     periksa_riwayat(riwayat)
     fig, ax = plt.subplots(figsize=(8, 4))
     seri = (("objektif", "Objektif state saat ini"),
@@ -53,7 +58,7 @@ def gambar_riwayat(riwayat, judul="Perkembangan objektif"):
         data = [(b["iterasi"], b[kolom]) for b in riwayat if b.get(kolom) is not None]
         if data:
             ax.plot(*zip(*data), label=label, marker="o", markersize=3)
-    ax.set(xlabel="Iterasi", ylabel="Tarif kirim (juta rupiah)", title=judul)
+    ax.set(xlabel="Iterasi", ylabel=f"Objektif ({OBJEKTIF[objektif][1]})", title=judul)
     ax.legend()
     ax.grid(alpha=.25)
     fig.tight_layout()

@@ -14,9 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class UjiIntegrasi(unittest.TestCase):
-    def jalankan_demo(self, nama_kapal, tujuan, grafik=False):
+    def jalankan_demo(self, nama_kapal, tujuan, grafik=False, objektif="tarif_kirim"):
         perintah = [sys.executable, "-m", "src.contoh", "--kapal",
-                    f"data/{nama_kapal}", "--output", str(tujuan)]
+                    f"data/{nama_kapal}", "--output", str(tujuan), "--objektif", objektif]
         if not grafik:
             perintah.append("--tanpa-grafik")
         proses = subprocess.run(perintah, cwd=ROOT, capture_output=True, text=True, timeout=60)
@@ -29,7 +29,8 @@ class UjiIntegrasi(unittest.TestCase):
             with self.subTest(kapal=nama_kapal), tempfile.TemporaryDirectory() as tmp:
                 tujuan = Path(tmp) / "demo"
                 hasil = self.jalankan_demo(nama_kapal, tujuan)
-                kapal, kendaraan = baca_data(ROOT / "data" / nama_kapal, ROOT / "data/kendaraan.json")
+                kapal, kendaraan = baca_data(
+                    ROOT / "data" / nama_kapal, ROOT / "data/kendaraan.json")
                 self.assertEqual((hasil["kapal"], hasil["kendaraan"]), (kapal, kendaraan))
                 for nama_state in ("state_awal", "state_akhir"):
                     periksa_state(kapal, kendaraan, hasil[nama_state])
@@ -52,15 +53,24 @@ class UjiIntegrasi(unittest.TestCase):
 
         nama_gambar = {"state_awal.png", "state_akhir.png", "objektif.png",
                        "penerimaan_sa_ilustrasi.png", "populasi_ga_ilustrasi.png"}
-        for nama_kapal in ("kapal.json", "kapal_bonus.json"):
-            with self.subTest(kapal=nama_kapal), tempfile.TemporaryDirectory() as tmp:
-                tujuan = Path(tmp) / "demo"
-                self.jalankan_demo(nama_kapal, tujuan, grafik=True)
-                self.assertEqual({p.name for p in tujuan.glob("*.png")}, nama_gambar)
-                for nama in nama_gambar:
-                    gambar = imread(tujuan / nama)
-                    self.assertGreater(gambar.size, 0)
-                    self.assertGreater(float(gambar.max() - gambar.min()), 0)
+        skenario = [("kapal.json", "tarif_kirim"), ("kapal_bonus.json", "tarif_kirim"),
+                    ("kapal_bonus.json", "tarif_eta")]
+        for nama_kapal, objektif in skenario:
+            with self.subTest(kapal=nama_kapal, objektif=objektif):
+                with tempfile.TemporaryDirectory() as tmp:
+                    tujuan = Path(tmp) / "demo"
+                    hasil = self.jalankan_demo(nama_kapal, tujuan, True, objektif)
+                    self.assertEqual({p.name for p in tujuan.glob("*.png")}, nama_gambar)
+                    if objektif == "tarif_eta":
+                        self.assertEqual(hasil["satuan_objektif"], "juta rupiah berbobot ETA")
+                        nilai = sum(k["tarif_kirim"] / (1 + k["eta_hari"])
+                                    for k in hasil["kendaraan"]
+                                    if hasil["state_akhir"][k["id"]] is not None)
+                        self.assertAlmostEqual(hasil["objektif_akhir"], nilai)
+                    for nama in nama_gambar:
+                        gambar = imread(tujuan / nama)
+                        self.assertGreater(gambar.size, 0)
+                        self.assertGreater(float(gambar.max() - gambar.min()), 0)
 
     def test_populasi_ga_tetap_utuh_setelah_disimpan(self):
         kapal, kendaraan = baca_data(ROOT / "data/kapal_bonus.json", ROOT / "data/kendaraan.json")

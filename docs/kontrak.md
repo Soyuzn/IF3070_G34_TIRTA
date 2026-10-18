@@ -30,8 +30,10 @@ berat dan kapasitas dalam unit yang sama, ETA dalam sisa hari. `eta_hari`
 tidak menjadi batasan pada objective wajib. `kapal_id` tetap ada meskipun
 skenario wajib hanya memakai satu kapal.
 
-Untuk bonus objective, nilai yang diusulkan adalah jumlah
+Untuk bonus objective `tarif_eta`, nilainya adalah jumlah
 `tarif_kirim / (1 + eta_hari)` dari kendaraan yang dimuat. Kendaraan yang
 lebih cepat tiba mendapat bobot lebih besar. Ini pilihan tim, bukan aturan
 wajib soal; jangan campur angka objective bonus dengan objective wajib dalam
 satu perbandingan.
+
+Kode bersama dan format keluaran algoritma dijelaskan di [integrasi](integrasi.md).

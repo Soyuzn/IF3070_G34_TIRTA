@@ -1,11 +1,21 @@
-# IF3070 G34 — TIRTA
+# IF3070 G34 TIRTA
 
-Penataan kendaraan pada geladak kapal untuk memaksimalkan jumlah `tarif_kirim`.
-Kontrak tim ada di [docs/kontrak.md](docs/kontrak.md).
+## Tech stack
 
-## Menjalankan utilitas Orang 2
+Python 3.10+, JSON, Matplotlib. Selain Matplotlib, modul yang dipakai bawaan
+Python. Sumber belajarnya ada di [referensi](docs/referensi.md).
 
-Python 3.10 atau lebih baru. Jalankan dari direktori utama repo:
+## Struktur
+
+- `data/`: 30 kendaraan, skenario satu kapal dan dua kapal
+- `src/`: baca data, inisialisasi, validasi, pencatatan, visualisasi
+- `tests/`: tes utilitas bersama
+- `output/`: hasil run
+- `docs/`: kontrak, cara integrasi, template analisis, dan laporan
+
+## Jalankan
+
+Jalankan dari direktori utama repo:
 
 ```sh
 python3 -m venv .venv
@@ -15,37 +25,21 @@ python -m src.contoh
 python -m unittest discover -s tests -v
 ```
 
-Tes mencakup validasi data/state, pencatatan, visualisasi, dan integrasi demo
-CLI dengan dataset serta contoh keluaran repo.
-
-Demo membuat `output/ilustrasi/`: JSON, CSV, gambar state awal/akhir, grafik
-objektif, serta contoh grafik SA dan GA. Semuanya **ilustrasi**, bukan hasil
-pencarian. State akhir sama dengan awal dan durasi pencarian nol.
-Folder tujuan harus baru; gunakan `--output output/ilustrasi_2` untuk mengulang.
-
-Tanpa Matplotlib, data dan pencatatan tetap bisa dipakai:
+Contoh membuat JSON, CSV, dan PNG di `output/ilustrasi/`. Ini baru state acak
+dan contoh grafik, belum hasil HC/SA/GA. Pakai folder baru untuk run berikutnya:
 
 ```sh
-python -m src.contoh --tanpa-grafik --output output/ilustrasi_data_baru
-python -m src.contoh --kapal data/kapal_bonus.json --tanpa-grafik --output output/ilustrasi_multi
+python -m src.contoh --kapal data/kapal_bonus.json --objektif tarif_eta \
+  --output output/ilustrasi_eta
 ```
 
-## Struktur dan pembagian
+## Kontrak dan satuan
 
-- `data/`, `docs/kontrak.md`: dataset dan kontrak bersama dari `initial-datasets`.
-- `src/data.py`: baca data, validasi, objective wajib, inisialisasi berseed.
-- `src/pencatatan.py`: timer pencarian dan ekspor JSON/CSV.
-- `src/visualisasi.py`: gambar grid, kurva objektif/populasi, kurva penerimaan SA.
-- `src/contoh.py`: demo tanpa algoritma.
-- `tests/`: pengujian kontrak dan utilitas.
-- `output/`: hasil lokal, diabaikan Git kecuali `.gitkeep` dan contoh di bawah.
+State memuat semua ID kendaraan. `None` berarti di luar kapal; kendaraan yang
+dimuat punya `kapal_id`, `x`, `y`, `orientasi`. Titik asal di kiri atas dek.
+Ukuran dalam sel grid, berat/kapasitas dalam unit yang sama, tarif dalam juta
+rupiah, ETA dalam sisa hari. Semua angka dataset sintetis.
 
-`output/ilustrasi_data/` juga disertakan sebagai contoh JSON/CSV berlabel
-ilustrasi dari dataset tim, seed 42. Hasil ini hanya inisialisasi, bukan optimasi.
-
-Orang 2 menyiapkan utilitas eksperimen dan visualisasi. Pembagian implementasi
-algoritma diisi tim; modul ini tidak berisi pencarian atau fungsi tetangga.
-Petunjuk pemakaian ada di [docs/integrasi_orang2.md](docs/integrasi_orang2.md).
-Gunakan [template analisis](docs/template_analisis.md) setelah percobaan nyata.
-Laporan akhir tetap perlu dibuat sebagai PDF di `docs/`, beserta lampiran
-penggunaan Generative AI sesuai spesifikasi tugas.
+Objective wajib menjumlahkan `tarif_kirim` yang dimuat. Bonus `tarif_eta`
+menjumlahkan `tarif_kirim / (1 + eta_hari)`. Lihat [kontrak](docs/kontrak.md)
+dan [cara menyambungkan algoritma](docs/integrasi.md) sebelum mulai.

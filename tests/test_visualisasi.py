@@ -35,6 +35,22 @@ class UjiVisualisasi(unittest.TestCase):
             fig.canvas.draw()
             plt.close(fig)
 
+    def test_gambar_bonus_mengikuti_objektif_eta(self):
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        from src.visualisasi import gambar_state, gambar_riwayat
+
+        root = Path(__file__).resolve().parents[1]
+        kapal, kendaraan = baca_data(root / "data/kapal.json", root / "data/kendaraan.json")
+        state = inisialisasi_acak(kapal, kendaraan, 42)
+        fig = gambar_state(kapal, kendaraan, state, objektif="tarif_eta")
+        self.assertTrue(any("berbobot ETA" in teks.get_text() for teks in fig.texts))
+        plt.close(fig)
+        fig = gambar_riwayat([dict(iterasi=0, objektif=0)], objektif="tarif_eta")
+        self.assertIn("berbobot ETA", fig.axes[0].get_ylabel())
+        plt.close(fig)
+
 
 if __name__ == "__main__":
     unittest.main()

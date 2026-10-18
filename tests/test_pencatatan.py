@@ -46,6 +46,17 @@ class UjiPencatatan(unittest.TestCase):
                     simpan_percobaan(tujuan, **dict(self.kwargs, **perubahan))
                 self.assertFalse(tujuan.exists())
 
+    def test_bonus_eta_tersimpan_dengan_nilai_dan_satuan_yang_sesuai(self):
+        kendaraan = [dict(self.kendaraan[0], eta_hari=3)]
+        riwayat = [dict(iterasi=0, objektif=0), dict(iterasi=1, objektif=2.5)]
+        argumen = dict(self.kwargs, kendaraan=kendaraan, riwayat=riwayat)
+        with tempfile.TemporaryDirectory() as tmp:
+            tujuan = simpan_percobaan(Path(tmp) / "eta", objektif="tarif_eta", **argumen)
+            hasil = json.loads((tujuan / "hasil.json").read_text())
+            self.assertEqual(hasil["objektif_akhir"], 2.5)
+            self.assertEqual(hasil["satuan_objektif"], "juta rupiah berbobot ETA")
+            self.assertEqual(hasil["objektif"], "tarif_kirim / (1 + eta_hari)")
+
     def test_riwayat_sa_ga_dan_restart(self):
         periksa_riwayat([dict(iterasi=0, maksimum_populasi=10, rata_rata_populasi=5),
                          dict(iterasi=1, maksimum_populasi=12, rata_rata_populasi=9)])

@@ -4,6 +4,11 @@ import math
 import random
 from pathlib import Path
 
+OBJEKTIF = {
+    "tarif_kirim": ("jumlah tarif_kirim", "juta rupiah"),
+    "tarif_eta": ("tarif_kirim / (1 + eta_hari)", "juta rupiah berbobot ETA"),
+}
+
 
 def _tanpa_kunci_ganda(pasangan):
     hasil = dict(pasangan)
@@ -78,7 +83,8 @@ def periksa_state(kapal, kendaraan, state):
         penempatan = state[data_kendaraan["id"]]
         if penempatan is None:
             continue
-        if not isinstance(penempatan, dict) or set(penempatan) != {"kapal_id", "x", "y", "orientasi"}:
+        kolom = {"kapal_id", "x", "y", "orientasi"}
+        if not isinstance(penempatan, dict) or set(penempatan) != kolom:
             raise ValueError(f"Penempatan {data_kendaraan['id']} tidak sesuai kontrak")
         kapal_id = penempatan["kapal_id"]
         if not isinstance(kapal_id, str) or kapal_id not in daftar_kapal:
@@ -100,10 +106,20 @@ def periksa_state(kapal, kendaraan, state):
             raise ValueError(f"Kapasitas {dek['id']} terlampaui")
 
 
-def nilai_objektif(kapal, kendaraan, state):
-    """Jumlah tarif_kirim kendaraan yang dimuat, dalam juta rupiah."""
+def nilai_objektif(kapal, kendaraan, state, objektif="tarif_kirim"):
+    """Tarif kendaraan yang dimuat; tarif_eta memakai bobot 1 / (1 + ETA)."""
+    if objektif not in OBJEKTIF:
+        raise ValueError("objektif harus tarif_kirim atau tarif_eta")
     periksa_state(kapal, kendaraan, state)
-    return sum(k["tarif_kirim"] for k in kendaraan if state[k["id"]] is not None)
+    total = 0
+    for data_kendaraan in kendaraan:
+        if state[data_kendaraan["id"]] is None:
+            continue
+        tarif = data_kendaraan["tarif_kirim"]
+        if objektif == "tarif_eta":
+            tarif /= 1 + data_kendaraan["eta_hari"]
+        total += tarif
+    return total
 
 
 def inisialisasi_acak(kapal, kendaraan, seed):

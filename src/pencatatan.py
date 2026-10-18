@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from time import perf_counter
 
-from .data import angka_valid, nilai_objektif
+from .data import OBJEKTIF, angka_valid, nilai_objektif
 
 KOLOM = ("iterasi", "objektif", "maksimum_populasi", "rata_rata_populasi",
          "eksponen_penerimaan", "restart")
@@ -47,10 +47,11 @@ def periksa_riwayat(riwayat):
 
 def simpan_percobaan(direktori, *, algoritma, seed, parameter, kapal, kendaraan,
                      state_awal, state_akhir, durasi_detik, riwayat, metrik=None,
-                     ilustrasi=False):
+                     ilustrasi=False, objektif="tarif_kirim"):
     """Menyimpan hasil.json dan riwayat.csv tanpa menimpa percobaan lama."""
-    awal = nilai_objektif(kapal, kendaraan, state_awal)
-    akhir = nilai_objektif(kapal, kendaraan, state_akhir)
+    awal = nilai_objektif(kapal, kendaraan, state_awal, objektif)
+    akhir = nilai_objektif(kapal, kendaraan, state_akhir, objektif)
+    nama_objektif, satuan_objektif = OBJEKTIF[objektif]
     periksa_riwayat(riwayat)
     if not isinstance(algoritma, str) or not algoritma.strip():
         raise ValueError("algoritma harus diisi")
@@ -63,7 +64,7 @@ def simpan_percobaan(direktori, *, algoritma, seed, parameter, kapal, kendaraan,
     hasil = dict(versi_format=1, ilustrasi=ilustrasi, algoritma=algoritma, seed=seed,
                  parameter=parameter, kapal=kapal, kendaraan=kendaraan,
                  state_awal=state_awal, state_akhir=state_akhir,
-                 objektif="jumlah tarif_kirim", satuan_objektif="juta rupiah",
+                 objektif=nama_objektif, satuan_objektif=satuan_objektif,
                  objektif_awal=awal, objektif_akhir=akhir, durasi_detik=durasi_detik,
                  jumlah_iterasi=riwayat[-1]["iterasi"], riwayat=riwayat,
                  metrik=metrik or {})

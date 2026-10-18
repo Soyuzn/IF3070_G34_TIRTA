@@ -48,6 +48,16 @@ class UjiData(unittest.TestCase):
         state = dict(a=self.p, b=dict(self.p, kapal_id="k2"))
         self.assertEqual(nilai_objektif(kapal, self.kendaraan, state), 27)
 
+    def test_objektif_eta_memakai_kendaraan_yang_dimuat(self):
+        kapal = self.kapal + [dict(self.kapal[0], id="k2")]
+        state = dict(a=self.p, b=dict(self.p, kapal_id="k2"))
+        nilai = nilai_objektif(kapal, self.kendaraan, state, "tarif_eta")
+        self.assertAlmostEqual(nilai, 20 + 7 / 6)
+        state["b"] = None
+        self.assertEqual(nilai_objektif(kapal, self.kendaraan, state, "tarif_eta"), 20)
+        with self.assertRaises(ValueError):
+            nilai_objektif(kapal, self.kendaraan, state, "asing")
+
     def test_data_rusak_ditolak(self):
         for kolom, nilai in (("lebar", True), ("panjang", 0), ("berat", -1),
                               ("tarif_kirim", float("nan")), ("berat", float("inf")),
