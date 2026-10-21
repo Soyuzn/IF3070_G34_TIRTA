@@ -1,5 +1,5 @@
 """Tetangga state: pindah, putar, tukar."""
-from .data import nilai_objektif, periksa_state, ukuran
+from .data import _sel, nilai_objektif, periksa_state, ukuran
 
 ORIENTASI = ("vertikal", "horizontal")
 
@@ -94,3 +94,48 @@ def puncak_lokal(kapal, kendaraan, state):
                     if membaik(("pindah", id_kendaraan, posisi)):
                         return False
     return True
+
+
+
+def semua_tetangga(kapal, kendaraan, state):
+    """Semua tetangga valid (state_baru, langkah); peta sel dibuat sekali per state."""
+    dek, data = kapal[0], {k["id"]: k for k in kendaraan}
+    pemilik, berat = {}, 0
+    for i, p in state.items():
+        if p is not None:
+            pemilik.update(dict.fromkeys(_sel(p["x"], p["y"], *ukuran(data[i], p["orientasi"])), i))
+            berat += data[i]["berat"]
+
+    def muat(ubah):
+        # ubah: {id: posisi_baru}; sel milik kendaraan yang berubah dianggap kosong
+        selisih = sum(data[i]["berat"] * ((p is not None) - (state[i] is not None))
+                      for i, p in ubah.items())
+        if berat + selisih > dek["kapasitas"]:
+            return False
+        dipakai = set()
+        for i, p in ubah.items():
+            if p is None:
+                continue
+            lebar, panjang = ukuran(data[i], p["orientasi"])
+            if p["x"] + lebar > dek["lebar"] or p["y"] + panjang > dek["panjang"]:
+                return False
+            sel = _sel(p["x"], p["y"], lebar, panjang)
+            if not dipakai.isdisjoint(sel) or any(pemilik.get(s, i) not in ubah for s in sel):
+                return False
+            dipakai |= sel
+        return True
+
+    posisi = [None] + [{"kapal_id": dek["id"], "x": x, "y": y, "orientasi": o} for o in ORIENTASI
+                       for x in range(dek["lebar"]) for y in range(dek["panjang"])]
+    calon = []
+    for i, p in state.items():
+        calon += [(("pindah", i, q), {i: q}) for q in posisi if q != p]
+        if p is not None:
+            putar = dict(p, orientasi=ORIENTASI[p["orientasi"] == "vertikal"])
+            calon.append((("putar", i), {i: putar}))
+    ids = list(state)
+    calon += [(("tukar", a, b), {a: state[b], b: state[a]})
+              for n, a in enumerate(ids) for b in ids[n + 1:] if state[a] != state[b]]
+    for langkah, ubah in calon:
+        if muat(ubah):
+            yield _terapkan(state, langkah), langkah

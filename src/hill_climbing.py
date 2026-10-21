@@ -1,18 +1,14 @@
-"""Hill-climbing pada state kapal; sementara baru varian stochastic."""
+"""Hill-climbing: stochastic, steepest ascent, sideways move, random restart."""
 import random
 
-from .data import nilai_objektif
-from .tetangga import tetangga_acak
+from .data import inisialisasi_acak, nilai_objektif
+from .tetangga import semua_tetangga, tetangga_acak
+
+VARIAN = ("stochastic", "steepest", "sideways", "random_restart")
 
 
-def cari(kapal, kendaraan, state_awal, seed, maks_gagal=1000):
-    """Stochastic HC: ambil tetangga acak, terima jika lebih baik.
-
-    Berhenti setelah maks_gagal tetangga berturut-turut tidak memperbaiki.
-    """
-    acak = random.Random(seed)
-    state, nilai = state_awal, nilai_objektif(kapal, kendaraan, state_awal)
-    riwayat, gagal = [{"iterasi": 0, "objektif": nilai}], 0
+def _stochastic(kapal, kendaraan, state, acak, riwayat, maks_gagal):
+    nilai, gagal = riwayat[-1]["objektif"], 0
     while gagal < maks_gagal:
         hasil = tetangga_acak(kapal, kendaraan, state, acak)
         if hasil is None:
@@ -23,4 +19,53 @@ def cari(kapal, kendaraan, state_awal, seed, maks_gagal=1000):
         else:
             gagal += 1
         riwayat.append({"iterasi": len(riwayat), "objektif": nilai})
-    return state, riwayat, {"varian": "stochastic", "maks_gagal": maks_gagal}
+    return state
+
+
+def _steepest(kapal, kendaraan, state, acak, riwayat, maks_sideways=0, restart=None):
+    """Pindah ke tetangga terbaik; seri diacak. Sideways dihitung total, bukan beruntun."""
+    tarif = {k["id"]: k["tarif_kirim"] for k in kendaraan}
+    nilai, sideways = riwayat[-1]["objektif"], 0
+    while True:
+        terbaik = max(((sum(tarif[i] for i, p in baru.items() if p), acak.random(), baru)
+                       for baru, _ in semua_tetangga(kapal, kendaraan, state)), default=None)
+        if terbaik is None or terbaik[0] < nilai:
+            break
+        if terbaik[0] == nilai:
+            if sideways >= maks_sideways:
+                break
+            sideways += 1
+        nilai, state = terbaik[0], terbaik[2]
+        baris = {"iterasi": len(riwayat), "objektif": nilai}
+        riwayat.append(baris if restart is None else dict(baris, restart=restart))
+    return state, sideways
+
+
+def cari(kapal, kendaraan, state_awal, seed, varian="stochastic", maks_gagal=1000,
+         maks_sideways=100, maks_restart=10):
+    if varian not in VARIAN:
+        raise ValueError(f"varian harus salah satu dari {VARIAN}")
+    acak = random.Random(seed)
+    riwayat = [{"iterasi": 0, "objektif": nilai_objektif(kapal, kendaraan, state_awal)}]
+    if varian == "stochastic":
+        akhir = _stochastic(kapal, kendaraan, state_awal, acak, riwayat, maks_gagal)
+        return akhir, riwayat, {"varian": varian}
+    if varian != "random_restart":
+        batas = maks_sideways if varian == "sideways" else 0
+        akhir, sideways = _steepest(kapal, kendaraan, state_awal, acak, riwayat, batas)
+        return akhir, riwayat, {"varian": varian, "jumlah_sideways": sideways}
+
+    riwayat[0]["restart"], iterasi_per_restart = 0, []
+    terbaik, state = state_awal, state_awal
+    for restart in range(maks_restart + 1):
+        if restart:
+            state = inisialisasi_acak(kapal, kendaraan, acak.randrange(2**31))
+            nilai = nilai_objektif(kapal, kendaraan, state)
+            riwayat.append({"iterasi": len(riwayat), "objektif": nilai, "restart": restart})
+        mulai = len(riwayat)
+        state, _ = _steepest(kapal, kendaraan, state, acak, riwayat, restart=restart)
+        iterasi_per_restart.append(len(riwayat) - mulai)
+        if nilai_objektif(kapal, kendaraan, state) > nilai_objektif(kapal, kendaraan, terbaik):
+            terbaik = state
+    return terbaik, riwayat, {"varian": varian, "jumlah_restart": maks_restart,
+                              "iterasi_per_restart": iterasi_per_restart}
