@@ -14,19 +14,22 @@ class UjiVisualisasi(unittest.TestCase):
         import matplotlib.pyplot as plt
         from src.visualisasi import gambar_state, gambar_riwayat, gambar_penerimaan
         root = Path(__file__).resolve().parents[1]
-        for nama in ("kapal.json", "kapal_bonus.json"):
-            kapal, kendaraan = baca_data(root / "data" / nama, root / "data/kendaraan.json")
-            state = inisialisasi_acak(kapal, kendaraan, 42)
-            sebelum = copy.deepcopy(state)
-            fig = gambar_state(kapal, kendaraan, state)
-            self.assertEqual(len(fig.axes), len(kapal))
-            self.assertEqual(sum(len(ax.patches) for ax in fig.axes),
-                             sum(p is not None for p in state.values()))
-            for ax, dek in zip(fig.axes, kapal):
-                self.assertEqual(ax.get_ylim(), (dek["panjang"], 0))
-            fig.canvas.draw()
-            plt.close(fig)
-            self.assertEqual(state, sebelum)
+        kapal, kendaraan = baca_data(root / "data/kapal.json", root / "data/kendaraan.json")
+        state = inisialisasi_acak(kapal, kendaraan, 42)
+        sebelum = copy.deepcopy(state)
+        fig = gambar_state(kapal, kendaraan, state)
+        self.assertEqual(len(fig.axes), 1)
+        ax = fig.axes[0]
+        self.assertEqual(len(ax.patches), sum(p is not None for p in state.values()))
+        self.assertEqual(ax.get_ylim(), (kapal[0]["panjang"], 0))
+        self.assertEqual(list(ax.get_xticks()), list(range(kapal[0]["lebar"] + 1)))
+        self.assertEqual(list(ax.get_yticks()), list(range(kapal[0]["panjang"] + 1)))
+        luar = next(t.get_text() for t in fig.texts if t.get_text().startswith("Di luar kapal:"))
+        self.assertEqual(" ".join(luar.split()), "Di luar kapal: " + ", ".join(
+            k["id"] for k in kendaraan if state[k["id"]] is None))
+        fig.canvas.draw()
+        plt.close(fig)
+        self.assertEqual(state, sebelum)
         riwayat = [dict(iterasi=0, objektif=10),
                    dict(iterasi=1, objektif=8, eksponen_penerimaan=.5)]
         for fungsi in (gambar_riwayat, gambar_penerimaan):
@@ -35,21 +38,18 @@ class UjiVisualisasi(unittest.TestCase):
             fig.canvas.draw()
             plt.close(fig)
 
-    def test_gambar_bonus_mengikuti_objektif_eta(self):
+    def test_objektif_bonus_ditolak(self):
         import matplotlib
         matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
         from src.visualisasi import gambar_state, gambar_riwayat
 
         root = Path(__file__).resolve().parents[1]
         kapal, kendaraan = baca_data(root / "data/kapal.json", root / "data/kendaraan.json")
         state = inisialisasi_acak(kapal, kendaraan, 42)
-        fig = gambar_state(kapal, kendaraan, state, objektif="tarif_eta")
-        self.assertTrue(any("berbobot ETA" in teks.get_text() for teks in fig.texts))
-        plt.close(fig)
-        fig = gambar_riwayat([dict(iterasi=0, objektif=0)], objektif="tarif_eta")
-        self.assertIn("berbobot ETA", fig.axes[0].get_ylabel())
-        plt.close(fig)
+        with self.assertRaisesRegex(ValueError, "hanya tarif_kirim"):
+            gambar_state(kapal, kendaraan, state, objektif="tarif_eta")
+        with self.assertRaisesRegex(ValueError, "hanya tarif_kirim"):
+            gambar_riwayat([dict(iterasi=0, objektif=0)], objektif="tarif_eta")
 
 
 if __name__ == "__main__":

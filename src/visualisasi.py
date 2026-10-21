@@ -14,32 +14,30 @@ def gambar_state(kapal, kendaraan, state, judul="Keadaan kapal", objektif="tarif
     kendaraan_luar = [k["id"] for k in kendaraan if state[k["id"]] is None]
     catatan = "Di luar kapal: " + (", ".join(kendaraan_luar) or "Tidak ada")
     baris_catatan = textwrap.wrap(catatan, width=100)
-    fig, axes = plt.subplots(1, len(kapal), squeeze=False,
-                             figsize=(max(7, 6 * len(kapal)), 8))
+    fig, ax = plt.subplots(figsize=(7, 8))
     warna = {k["id"]: plt.get_cmap("tab20")(i % 20) for i, k in enumerate(kendaraan)}
 
-    for dek, ax in zip(kapal, axes[0]):
-        berat = 0
-        for data_kendaraan in kendaraan:
-            penempatan = state[data_kendaraan["id"]]
-            if penempatan is None or penempatan["kapal_id"] != dek["id"]:
-                continue
-            lebar, panjang = ukuran(data_kendaraan, penempatan["orientasi"])
-            x, y = penempatan["x"], penempatan["y"]
-            berat += data_kendaraan["berat"]
-            ax.add_patch(Rectangle(
-                (x, y), lebar, panjang, facecolor=warna[data_kendaraan["id"]],
-                edgecolor="black", alpha=.85))
-            label = f"{data_kendaraan['id']}\n{penempatan['orientasi']}"
-            ax.text(x + lebar / 2, y + panjang / 2, label, ha="center", va="center",
-                    fontsize=7, rotation=90 if lebar == 1 else 0)
-        ax.set(xlim=(0, dek["lebar"]), ylim=(dek["panjang"], 0),
-               xlabel="x (sel) →", ylabel="y (sel) ↓",
-               title=f"{dek['id']}\nBerat {berat:g}/{dek['kapasitas']:g} unit")
-        ax.set_xticks(range(dek["lebar"] + 1))
-        ax.set_yticks(range(dek["panjang"] + 1))
-        ax.grid(alpha=.25)
-        ax.set_aspect("equal")
+    dek, berat = kapal[0], 0
+    for data_kendaraan in kendaraan:
+        penempatan = state[data_kendaraan["id"]]
+        if penempatan is None:
+            continue
+        lebar, panjang = ukuran(data_kendaraan, penempatan["orientasi"])
+        x, y = penempatan["x"], penempatan["y"]
+        berat += data_kendaraan["berat"]
+        ax.add_patch(Rectangle(
+            (x, y), lebar, panjang, facecolor=warna[data_kendaraan["id"]],
+            edgecolor="black", alpha=.85))
+        label = f"{data_kendaraan['id']}\n{penempatan['orientasi']}"
+        ax.text(x + lebar / 2, y + panjang / 2, label, ha="center", va="center",
+                fontsize=7, rotation=90 if lebar == 1 else 0)
+    ax.set(xlim=(0, dek["lebar"]), ylim=(dek["panjang"], 0),
+           xlabel="x (sel) →", ylabel="y (sel) ↓",
+           title=f"{dek['id']}\nBerat {berat:g}/{dek['kapasitas']:g} unit")
+    ax.set_xticks(range(dek["lebar"] + 1))
+    ax.set_yticks(range(dek["panjang"] + 1))
+    ax.grid(alpha=.25)
+    ax.set_aspect("equal")
     fig.suptitle(f"{judul}\nObjektif: {nilai:g} {satuan}")
     fig.text(.04, .02, "\n".join(baris_catatan), fontsize=9, va="bottom")
     fig.tight_layout(rect=(0, .06 + .026 * len(baris_catatan), 1, .91))
@@ -48,7 +46,7 @@ def gambar_state(kapal, kendaraan, state, judul="Keadaan kapal", objektif="tarif
 
 def gambar_riwayat(riwayat, judul="Perkembangan objektif", objektif="tarif_kirim"):
     if objektif not in OBJEKTIF:
-        raise ValueError("objektif harus tarif_kirim atau tarif_eta")
+        raise ValueError("objektif yang didukung hanya tarif_kirim")
     periksa_riwayat(riwayat)
     fig, ax = plt.subplots(figsize=(8, 4))
     seri = (("objektif", "Objektif state saat ini"),

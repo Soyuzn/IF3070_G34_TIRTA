@@ -43,20 +43,22 @@ class UjiData(unittest.TestCase):
         kapal = [dict(self.kapal[0], kapasitas=5)]
         periksa_state(kapal, self.kendaraan, dict(a=self.p, b=dict(self.p, x=2, y=4)))
 
-    def test_multi_kapal_boleh_koordinat_sama(self):
+    def test_skenario_harus_tepat_satu_kapal(self):
         kapal = self.kapal + [dict(self.kapal[0], id="k2")]
-        state = dict(a=self.p, b=dict(self.p, kapal_id="k2"))
-        self.assertEqual(nilai_objektif(kapal, self.kendaraan, state), 27)
+        with self.assertRaisesRegex(ValueError, "tepat satu kapal"):
+            periksa_data(kapal, self.kendaraan)
+        with self.assertRaisesRegex(ValueError, "tepat satu kapal"):
+            inisialisasi_acak(kapal, self.kendaraan, 42)
 
-    def test_objektif_eta_memakai_kendaraan_yang_dimuat(self):
-        kapal = self.kapal + [dict(self.kapal[0], id="k2")]
-        state = dict(a=self.p, b=dict(self.p, kapal_id="k2"))
-        nilai = nilai_objektif(kapal, self.kendaraan, state, "tarif_eta")
-        self.assertAlmostEqual(nilai, 20 + 7 / 6)
-        state["b"] = None
-        self.assertEqual(nilai_objektif(kapal, self.kendaraan, state, "tarif_eta"), 20)
-        with self.assertRaises(ValueError):
-            nilai_objektif(kapal, self.kendaraan, state, "asing")
+    def test_hanya_tarif_kirim_dan_eta_tidak_memengaruhi_nilai(self):
+        kapal = [dict(self.kapal[0], kapasitas=5)]
+        state = dict(a=self.p, b=dict(self.p, x=2, y=4))
+        self.assertEqual(nilai_objektif(kapal, self.kendaraan, state), 27)
+        kendaraan = [dict(k, eta_hari=100) for k in self.kendaraan]
+        self.assertEqual(nilai_objektif(kapal, kendaraan, state), 27)
+        for objektif in ("tarif_eta", "asing"):
+            with self.subTest(objektif=objektif), self.assertRaises(ValueError):
+                nilai_objektif(kapal, kendaraan, state, objektif)
 
     def test_data_rusak_ditolak(self):
         for kolom, nilai in (("lebar", True), ("panjang", 0), ("berat", -1),
@@ -91,19 +93,18 @@ class UjiData(unittest.TestCase):
                     periksa_data(data_kapal, data_kendaraan)
 
     def test_seed_dataset_asli_tanpa_mutasi_atau_rng_global(self):
-        for file in ("kapal.json", "kapal_bonus.json"):
-            kapal, kendaraan = baca_data(ROOT / "data" / file, ROOT / "data/kendaraan.json")
-            sebelum = copy.deepcopy((kapal, kendaraan))
-            rng = random.getstate()
-            hasil = []
-            for seed in range(10):
-                state = inisialisasi_acak(kapal, kendaraan, seed)
-                periksa_state(kapal, kendaraan, state)
-                self.assertEqual(state, inisialisasi_acak(kapal, kendaraan, seed))
-                hasil.append(state)
-            self.assertTrue(any(state != hasil[0] for state in hasil[1:]))
-            self.assertEqual((kapal, kendaraan), sebelum)
-            self.assertEqual(random.getstate(), rng)
+        kapal, kendaraan = baca_data(ROOT / "data/kapal.json", ROOT / "data/kendaraan.json")
+        sebelum = copy.deepcopy((kapal, kendaraan))
+        rng = random.getstate()
+        hasil = []
+        for seed in range(10):
+            state = inisialisasi_acak(kapal, kendaraan, seed)
+            periksa_state(kapal, kendaraan, state)
+            self.assertEqual(state, inisialisasi_acak(kapal, kendaraan, seed))
+            hasil.append(state)
+        self.assertTrue(any(state != hasil[0] for state in hasil[1:]))
+        self.assertEqual((kapal, kendaraan), sebelum)
+        self.assertEqual(random.getstate(), rng)
 
     def test_kendaraan_tidak_muat_tetap_null(self):
         kendaraan = [dict(self.kendaraan[0], lebar=99), dict(self.kendaraan[1], berat=99)]

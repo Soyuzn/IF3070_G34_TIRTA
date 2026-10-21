@@ -25,27 +25,24 @@ class UjiIntegrasi(unittest.TestCase):
         return baca_json(tujuan / "hasil.json")
 
     def test_demo_cli_sesuai_dataset_dan_contoh_repo(self):
-        for nama_kapal, objektif in (("kapal.json", 414), ("kapal_bonus.json", 731)):
-            with self.subTest(kapal=nama_kapal), tempfile.TemporaryDirectory() as tmp:
-                tujuan = Path(tmp) / "demo"
-                hasil = self.jalankan_demo(nama_kapal, tujuan)
-                kapal, kendaraan = baca_data(
-                    ROOT / "data" / nama_kapal, ROOT / "data/kendaraan.json")
-                self.assertEqual((hasil["kapal"], hasil["kendaraan"]), (kapal, kendaraan))
-                for nama_state in ("state_awal", "state_akhir"):
-                    periksa_state(kapal, kendaraan, hasil[nama_state])
-                    self.assertEqual(nilai_objektif(kapal, kendaraan, hasil[nama_state]), objektif)
-                self.assertEqual(hasil["state_awal"], hasil["state_akhir"])
-                self.assertEqual(hasil["durasi_detik"], 0)
-                self.assertTrue(hasil["ilustrasi"])
-                with (tujuan / "riwayat.csv").open(newline="", encoding="utf-8") as berkas:
-                    riwayat = list(csv.DictReader(berkas))
-                self.assertEqual(riwayat[0]["objektif"], str(hasil["riwayat"][0]["objektif"]))
-                self.assertEqual(riwayat[0]["eksponen_penerimaan"], "")
-                if nama_kapal == "kapal.json":
-                    self.assertEqual(hasil, baca_json(ROOT / "output/ilustrasi_data/hasil.json"))
-                    self.assertEqual((tujuan / "riwayat.csv").read_bytes(),
-                                     (ROOT / "output/ilustrasi_data/riwayat.csv").read_bytes())
+        with tempfile.TemporaryDirectory() as tmp:
+            tujuan = Path(tmp) / "demo"
+            hasil = self.jalankan_demo("kapal.json", tujuan)
+            kapal, kendaraan = baca_data(ROOT / "data/kapal.json", ROOT / "data/kendaraan.json")
+            self.assertEqual((hasil["kapal"], hasil["kendaraan"]), (kapal, kendaraan))
+            for nama_state in ("state_awal", "state_akhir"):
+                periksa_state(kapal, kendaraan, hasil[nama_state])
+                self.assertEqual(nilai_objektif(kapal, kendaraan, hasil[nama_state]), 414)
+            self.assertEqual(hasil["state_awal"], hasil["state_akhir"])
+            self.assertEqual(hasil["durasi_detik"], 0)
+            self.assertTrue(hasil["ilustrasi"])
+            with (tujuan / "riwayat.csv").open(newline="", encoding="utf-8") as berkas:
+                riwayat = list(csv.DictReader(berkas))
+            self.assertEqual(riwayat[0]["objektif"], str(hasil["riwayat"][0]["objektif"]))
+            self.assertEqual(riwayat[0]["eksponen_penerimaan"], "")
+            self.assertEqual(hasil, baca_json(ROOT / "output/ilustrasi_data/hasil.json"))
+            self.assertEqual((tujuan / "riwayat.csv").read_bytes(),
+                             (ROOT / "output/ilustrasi_data/riwayat.csv").read_bytes())
 
     @unittest.skipUnless(importlib.util.find_spec("matplotlib"), "Matplotlib belum tersedia")
     def test_demo_cli_menghasilkan_lima_grafik_yang_bisa_dibaca(self):
@@ -53,27 +50,18 @@ class UjiIntegrasi(unittest.TestCase):
 
         nama_gambar = {"state_awal.png", "state_akhir.png", "objektif.png",
                        "penerimaan_sa_ilustrasi.png", "populasi_ga_ilustrasi.png"}
-        skenario = [("kapal.json", "tarif_kirim"), ("kapal_bonus.json", "tarif_kirim"),
-                    ("kapal_bonus.json", "tarif_eta")]
-        for nama_kapal, objektif in skenario:
-            with self.subTest(kapal=nama_kapal, objektif=objektif):
-                with tempfile.TemporaryDirectory() as tmp:
-                    tujuan = Path(tmp) / "demo"
-                    hasil = self.jalankan_demo(nama_kapal, tujuan, True, objektif)
-                    self.assertEqual({p.name for p in tujuan.glob("*.png")}, nama_gambar)
-                    if objektif == "tarif_eta":
-                        self.assertEqual(hasil["satuan_objektif"], "juta rupiah berbobot ETA")
-                        nilai = sum(k["tarif_kirim"] / (1 + k["eta_hari"])
-                                    for k in hasil["kendaraan"]
-                                    if hasil["state_akhir"][k["id"]] is not None)
-                        self.assertAlmostEqual(hasil["objektif_akhir"], nilai)
-                    for nama in nama_gambar:
-                        gambar = imread(tujuan / nama)
-                        self.assertGreater(gambar.size, 0)
-                        self.assertGreater(float(gambar.max() - gambar.min()), 0)
+        with tempfile.TemporaryDirectory() as tmp:
+            tujuan = Path(tmp) / "demo"
+            hasil = self.jalankan_demo("kapal.json", tujuan, True)
+            self.assertEqual({p.name for p in tujuan.glob("*.png")}, nama_gambar)
+            self.assertEqual(hasil["satuan_objektif"], "juta rupiah")
+            for nama in nama_gambar:
+                gambar = imread(tujuan / nama)
+                self.assertGreater(gambar.size, 0)
+                self.assertGreater(float(gambar.max() - gambar.min()), 0)
 
     def test_populasi_ga_tetap_utuh_setelah_disimpan(self):
-        kapal, kendaraan = baca_data(ROOT / "data/kapal_bonus.json", ROOT / "data/kendaraan.json")
+        kapal, kendaraan = baca_data(ROOT / "data/kapal.json", ROOT / "data/kendaraan.json")
         populasi = [inisialisasi_acak(kapal, kendaraan, seed) for seed in (40, 41, 42)]
         nilai = [nilai_objektif(kapal, kendaraan, state) for state in populasi]
         terbaik = populasi[nilai.index(max(nilai))]
