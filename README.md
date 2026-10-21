@@ -50,6 +50,9 @@ python3 -m src.eksperimen --modul src.hill_climbing --output output/hc_01 \
   --parameter '{"maks_gagal": 1000}'
 ```
 
+Bonus HC memakai modul yang sama, tambah `"varian": "steepest"`, `"sideways"`,
+atau `"random_restart"` pada parameter. Batas tiap varian ada di [integrasi](docs/integrasi.md).
+
 Tes otomatis:
 
 ```sh

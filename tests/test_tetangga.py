@@ -5,7 +5,7 @@ from itertools import combinations, product
 from pathlib import Path
 
 from src.data import baca_data, inisialisasi_acak, nilai_objektif, periksa_state, ukuran
-from src.tetangga import puncak_lokal, tetangga_acak
+from src.tetangga import ORIENTASI, _terapkan, _valid, puncak_lokal, semua_tetangga, tetangga_acak
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,6 +26,25 @@ class UjiTetangga(unittest.TestCase):
                     if posisi is not None:
                         posisi["x"] = -1
                 self.assertEqual(state, salinan)
+
+    def test_semua_tetangga_sama_dengan_cek_penuh(self):
+        kapal, kendaraan = baca_data(ROOT / "data/kapal.json", ROOT / "data/kendaraan.json")
+        state, dek = inisialisasi_acak(kapal, kendaraan, 42), kapal[0]
+        sebelum = copy.deepcopy(state)
+        posisi = [None] + [dict(kapal_id=dek["id"], x=x, y=y, orientasi=o) for o, x, y in
+                           product(ORIENTASI, range(dek["lebar"]), range(dek["panjang"]))]
+        calon = [("pindah", i, p) for i in state for p in posisi]
+        calon += [("putar", i) for i in state if state[i] is not None]
+        calon += [("tukar", a, b) for a, b in combinations(state, 2)]
+        harapan = [l for l in calon if (lambda b: b != state and _valid(kapal, kendaraan, b))(
+            _terapkan(state, l))]
+        hasil = list(semua_tetangga(kapal, kendaraan, state))
+        self.assertEqual(sorted(map(repr, harapan)), sorted(repr(l) for _, l in hasil))
+        self.assertEqual(state, sebelum)
+        for baru, langkah in hasil[:20]:
+            self.assertEqual(baru, _terapkan(state, langkah))
+        with self.assertRaises(ValueError):
+            list(semua_tetangga(kapal, kendaraan, {}))
 
     def test_kendaraan_kosong_dan_sampling_gagal_menghasilkan_none(self):
         kapal, kendaraan = baca_data(ROOT / "data/kapal.json", ROOT / "data/kendaraan.json")

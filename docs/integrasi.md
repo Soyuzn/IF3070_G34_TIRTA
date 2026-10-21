@@ -52,7 +52,7 @@ simpan_gambar(tujuan)
 Folder keluaran harus baru agar
 hasil run sebelumnya tidak tertimpa.
 
-## Hill-climbing wajib
+## Hill-climbing
 
 `src.hill_climbing.cari` menjalankan stochastic HC. Kandidat dari `tetangga_acak`
 diterima hanya jika tarif naik. `maks_gagal` (default 1000) membatasi kandidat
@@ -63,6 +63,33 @@ Ini batas sampling, bukan bukti bahwa semua tetangga sudah dicoba.
 Riwayat mencatat setiap kandidat yang dievaluasi, termasuk yang ditolak.
 Gunakan runner eksperimen untuk menyimpan state awal/akhir, objective, durasi,
 jumlah iterasi, dan PNG seperti algoritma lainnya.
+
+Bonus HC ada di modul yang sama. Pilih dengan parameter `varian`:
+
+| Varian | Cara memilih langkah | Batas tambahan |
+| --- | --- | --- |
+| `stochastic` | Kandidat acak, hanya terima jika naik | `maks_gagal=1000` |
+| `steepest` | Terbaik dari semua tetangga, harus naik | Tidak ada |
+| `sideways` | Seperti steepest, boleh menerima nilai sama | `maks_sideways=100` |
+| `random_restart` | Ulangi steepest dari state acak baru | `maks_restart=10` |
+
+Nilai seri pada steepest dipilih acak. Sideways menghitung total langkah dengan
+nilai sama dan berhenti saat batasnya tercapai. Batas 0 berarti tidak menerima
+langkah dengan nilai sama.
+
+`maks_restart` menghitung pengulangan setelah run pertama, jadi 2 berarti 3 run.
+`metrik` mencatat `jumlah_restart` dan `iterasi_per_restart`, dimulai dari run 0.
+Baris state acak baru punya indeks iterasi global sendiri, tetapi tidak dihitung
+sebagai langkah pencarian dalam `iterasi_per_restart`. Kurva bisa turun saat
+restart; state akhir tetap yang terbaik dari seluruh run.
+
+```sh
+python3 -m src.eksperimen --modul src.hill_climbing --output output/hc_bonus_01 \
+  --parameter '{"varian": "random_restart", "maks_restart": 2}'
+```
+
+Format state, fitness, dan output sama untuk wajib dan bonus. Keduanya tetap
+satu kapal dan total tarif kirim; varian lain tidak mengaktifkan objective ETA.
 
 ## Genetika
 
