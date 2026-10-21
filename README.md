@@ -61,3 +61,44 @@ rupiah, ETA dalam sisa hari. Semua angka dataset sintetis.
 Fitness menjumlahkan `tarif_kirim` kendaraan yang dimuat. Lihat [kontrak](docs/kontrak.md)
 dan [cara menyambungkan algoritma](docs/integrasi.md) sebelum mulai.
 `eta_hari` tetap ada pada dataset dan tidak digunakan dalam perhitungan fitness.
+
+## Pembagian tugas
+
+**Orang 1 (Core + Hill-Climbing): Mishael Gilland, 18224005**
+
+- Representasi state
+- Representasi kendaraan dan kapal
+- Initial state random
+- Objective function utama (shipping fee)
+- Constraint
+- Neighbor / move
+- State resolution
+- Visualisasi initial dan final state
+- Implementasi hill-climbing wajib
+- Bonus: implementasi seluruh varian hill-climbing
+- Testing seluruh varian hill-climbing
+
+**Orang 2 (Simulated Annealing + Eksperimen): Stephanie Mae, 18224117**
+
+- Implementasi simulated annealing
+- Parameter `evaluation_bias`
+- Acceptance probability
+- Pencatatan initial dan final state
+- Pencatatan objective function
+- Pencatatan iterasi dan durasi
+- Plot objective function terhadap iterasi
+- Plot e^(ΔE/T) terhadap iterasi
+- Analisis frekuensi stuck di local optima
+- Experiment runner / framework
+
+**Orang 3 (Genetic Algorithm + Analisis): Bryant Azraqi M., 18224067**
+
+- Implementasi genetic algorithm
+- Population / individual
+- Fitness
+- Selection, crossover, mutation
+- Parameter population dan iterasi
+- Eksperimen variasi iterasi
+- Eksperimen variasi population
+- Plot maximum dan average objective function
+- Pencatatan hasil eksperimen
