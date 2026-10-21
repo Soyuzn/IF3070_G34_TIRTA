@@ -92,6 +92,8 @@ def gambar_penerimaan(riwayat, judul="Eksponen penerimaan SA"):
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.plot(*zip(*data), marker="o", markersize=3)
     ax.set(xlabel="Iterasi", ylabel="exp(ΔE/T)", title=judul)
+    ax.set_yscale("symlog", linthresh=1)
+    ax.set_ylim(bottom=0)
     ax.grid(alpha=.25)
     fig.tight_layout()
     return fig

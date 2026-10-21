@@ -14,3 +14,6 @@ Sumber yang digunakan dalam pembuatan tugas besar ini:
    Mengukur durasi pencarian.
 6. Python, [random.choices](https://docs.python.org/3/library/random.html#random.choices).
    Seleksi induk roulette wheel memakai bobot fitness, tanpa library GA tambahan.
+7. Russell, S. dan Norvig, P. *Artificial Intelligence: A Modern Approach*, edisi 4,
+   bagian 4.1.2, Figure 4.5, hlm. 115. Acuan alur simulated annealing.
+   Jadwal pendinginan dan `evaluation_bias` ditentukan dalam implementasi proyek.

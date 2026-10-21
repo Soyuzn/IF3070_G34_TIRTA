@@ -47,8 +47,8 @@ tujuan = simpan_percobaan(
 simpan_gambar(tujuan)
 ```
 
-`cari` pada contoh diimpor dari modul algoritma masing-masing. GA sudah ada di
-`src.genetic`; HC dan SA dikerjakan terpisah. Folder keluaran harus baru agar
+`cari` pada contoh diimpor dari modul algoritma masing-masing. GA ada di
+`src.genetic`, SA di `src.simulated_annealing`; HC belum digabung. Folder keluaran harus baru agar
 hasil run sebelumnya tidak tertimpa.
 
 ## Genetika
@@ -74,6 +74,47 @@ terbaik generasi terakhir. CLI menyimpan individu terbaik populasi awal sebagai
 `state_awal`, sehingga sesuai statistik generasi 0. Kedua populasi utuh ada di
 `metrik`.
 
+## Simulated annealing
+
+SA memakai `tetangga_acak(kapal, kendaraan, state, acak)` dari `src/tetangga.py`.
+Hasilnya `(state_baru, langkah)` atau `None` bila sampling gagal. Langkahnya
+pindah, putar, atau tukar; kandidat tetap harus memenuhi semua batasan kapal.
+Sampling gagal tidak otomatis berarti local optimum.
+
+Default: `suhu_awal=50`, `pendinginan=0.995`, `suhu_minimum=0.1`,
+`batas_iterasi=1000`, `evaluation_bias=1`, `interval_stuck=50`.
+Suhu iterasi ke-i adalah `suhu_awal * pendinginan ** (i - 1)`.
+Berhenti saat batas iterasi tercapai atau suhu di bawah minimum.
+
+Nilai sama atau lebih baik selalu diterima. Jika turun, peluang penerimaannya
+`exp((delta / suhu) * evaluation_bias)`. Bias harus positif; nilai di atas 1
+membuat penurunan lebih sulit diterima. Ini pilihan implementasi SA dan tidak
+mengubah fitness. Grafik tetap memakai nilai mentah `exp(delta / suhu)`.
+Sumbu grafik eksponen memakai skala symlog agar nilai besar tetap terbaca.
+Eksponen yang meluap disimpan `None` dan dihitung dalam metrik.
+
+`frekuensi_stuck` adalah jumlah checkpoint stuck dibagi jumlah checkpoint.
+Pemeriksaan dilakukan tiap `interval_stuck` dan pada iterasi terakhir.
+Stuck berarti tidak ada satu langkah valid yang langsung menaikkan tarif;
+plateau termasuk. Ini bukan jumlah run yang gagal atau bukti optimum global.
+
+## Runner eksperimen
+
+`src/eksperimen.py` menjalankan satu konfigurasi untuk beberapa seed.
+Parameter algoritma ditulis sebagai JSON; nama kuncinya sama dengan argumen `cari`:
+
+```sh
+python3 -m src.eksperimen --modul src.genetic --output output/ga_ulangan_01 \
+  --seed 40 41 42 --parameter '{"jumlah_populasi": 20, "batas_iterasi": 100}'
+```
+
+Untuk SA, ganti modul dengan `src.simulated_annealing` dan gunakan parameter SA.
+Tiap seed disimpan dalam `ulangan_N_seed_S/`; ringkasan CSV dan Markdown berada
+di folder induk. `--tanpa-grafik` menyimpan data saja.
+Runner mengikuti pemilihan state awal GA di atas dan mencatat parameter efektif,
+termasuk default. Satu pemanggilan hanya menguji satu konfigurasi, jadi variasi
+jumlah populasi atau batas iterasi dijalankan terpisah dengan folder baru.
+
 ## Riwayat dan gambar
 
 Riwayat berupa list dict. Indeks `iterasi` dimulai dari 0 dan terus naik,
@@ -96,7 +137,7 @@ untuk HC, frekuensi stuck beserta definisinya untuk SA, serta populasi
 awal/akhir untuk GA. State awal/akhir GA memakai individu terbaik populasi itu.
 
 Visualisasi ada di `src/visualisasi.py`, memakai Matplotlib. Panggil
-`simpan_gambar(tujuan)` setelah `simpan_percobaan` selesai. CLI GA sudah melakukan ini.
+`simpan_gambar(tujuan)` setelah `simpan_percobaan` selesai. CLI GA dan runner melakukan ini.
 Hasilnya `state_awal.png`, `state_akhir.png`, dan `objektif.png` dalam folder run.
 Jika ada data penerimaan SA, dibuat juga `penerimaan_sa.png`. Gambar dibuat
 di luar timer pencarian. JSON dan CSV tetap menyimpan data lengkap percobaan.

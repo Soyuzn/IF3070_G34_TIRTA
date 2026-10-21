@@ -106,7 +106,9 @@ def cari(kapal, kendaraan, state_awal, seed,
         populasi = generasi_baru
 
     return deepcopy(terbaik), riwayat, {
-        "populasi_awal": populasi_awal, "populasi_akhir": deepcopy(populasi)}
+        "populasi_awal": populasi_awal, "populasi_akhir": deepcopy(populasi),
+        "parameter_efektif": dict(jumlah_populasi=jumlah_populasi,
+                                  batas_iterasi=batas_iterasi, peluang_mutasi=peluang_mutasi)}
 
 
 def main():

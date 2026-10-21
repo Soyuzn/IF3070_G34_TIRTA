@@ -8,7 +8,7 @@ Sumber belajarnya ada di [referensi](docs/referensi.md).
 ## Struktur
 
 - `data/`: 30 kendaraan dan data kapal
-- `src/`: utilitas bersama dan algoritma genetika
+- `src/`: data, tetangga, GA, SA, eksperimen, pencatatan, dan visualisasi
 - `tests/`: tes utilitas dan algoritma
 - `output/`: hasil run
 - `docs/`: kontrak, cara integrasi, template analisis, dan laporan
@@ -31,6 +31,17 @@ Gunakan folder `--output` baru untuk tiap run. `--seed` default 42.
 Hasil ada di `output/ga_satu_01/`: `hasil.json`, `riwayat.csv`, `state_awal.png`,
 `state_akhir.png`, dan `objektif.png`. Buka PNG langsung dari Finder.
 `src/visualisasi.py` menggambar posisi kendaraan dan grafik memakai Matplotlib.
+
+SA lewat runner eksperimen, tiga ulangan dengan seed 40, 41, 42:
+
+```sh
+python3 -m src.eksperimen --modul src.simulated_annealing --output output/sa_01 \
+  --parameter '{"batas_iterasi": 1000, "evaluation_bias": 1}'
+```
+
+Tiap ulangan punya JSON, CSV, dan PNG, termasuk `penerimaan_sa.png` jika ada
+data eksponennya. `ringkasan.csv` dan `ringkasan.md` merangkum seluruh ulangan.
+Runner juga bisa memakai `--modul src.genetic`; rinciannya di [integrasi](docs/integrasi.md).
 
 Tes otomatis:
 
