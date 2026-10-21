@@ -2,14 +2,14 @@
 
 ## Tech stack
 
-Python 3.10+, JSON, Matplotlib. Selain Matplotlib, modul yang dipakai bawaan
-Python. Sumber belajarnya ada di [referensi](docs/referensi.md).
+Python 3.10+, JSON, CSV, dan Matplotlib untuk gambar.
+Sumber belajarnya ada di [referensi](docs/referensi.md).
 
 ## Struktur
 
-- `data/`: 30 kendaraan, skenario satu kapal dan dua kapal
-- `src/`: baca data, inisialisasi, validasi, pencatatan, visualisasi
-- `tests/`: tes utilitas bersama
+- `data/`: 30 kendaraan dan data kapal
+- `src/`: utilitas bersama dan algoritma genetika
+- `tests/`: tes utilitas dan algoritma
 - `output/`: hasil run
 - `docs/`: kontrak, cara integrasi, template analisis, dan laporan
 
@@ -18,20 +18,27 @@ Python. Sumber belajarnya ada di [referensi](docs/referensi.md).
 Jalankan dari direktori utama repo:
 
 ```sh
-python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m src.contoh
-python -m unittest discover -s tests -v
+python3 -m pip install -r requirements.txt
+python3 -m src.genetic --jumlah-populasi 20 --batas-iterasi 10 --seed 1 \
+  --output output/ga_satu_01
 ```
 
-Contoh membuat JSON, CSV, dan PNG di `output/ilustrasi/`. Ini baru state acak
-dan contoh grafik, belum hasil HC/SA/GA. Pakai folder baru untuk run berikutnya:
+Jika belum punya `.venv`, buat dahulu dengan `python3 -m venv .venv`.
+Program memakai satu kapal dari `data/kapal.json` dan fitness total tarif kirim.
+Gunakan folder `--output` baru untuk tiap run. `--seed` default 42.
+
+Hasil ada di `output/ga_satu_01/`: `hasil.json`, `riwayat.csv`, `state_awal.png`,
+`state_akhir.png`, dan `objektif.png`. Buka PNG langsung dari Finder.
+`src/visualisasi.py` menggambar posisi kendaraan dan grafik memakai Matplotlib.
+
+Tes otomatis:
 
 ```sh
-python -m src.contoh --kapal data/kapal_bonus.json --objektif tarif_eta \
-  --output output/ilustrasi_eta
+python3 -m unittest discover -s tests -v
 ```
+
+Tes memakai folder sementara dan tidak menambah hasil ke `output/`.
 
 ## Kontrak dan satuan
 
@@ -40,6 +47,6 @@ dimuat punya `kapal_id`, `x`, `y`, `orientasi`. Titik asal di kiri atas dek.
 Ukuran dalam sel grid, berat/kapasitas dalam unit yang sama, tarif dalam juta
 rupiah, ETA dalam sisa hari. Semua angka dataset sintetis.
 
-Objective wajib menjumlahkan `tarif_kirim` yang dimuat. Bonus `tarif_eta`
-menjumlahkan `tarif_kirim / (1 + eta_hari)`. Lihat [kontrak](docs/kontrak.md)
+Fitness menjumlahkan `tarif_kirim` kendaraan yang dimuat. Lihat [kontrak](docs/kontrak.md)
 dan [cara menyambungkan algoritma](docs/integrasi.md) sebelum mulai.
+`eta_hari` tetap ada pada dataset dan tidak digunakan dalam perhitungan fitness.

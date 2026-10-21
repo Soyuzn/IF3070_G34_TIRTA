@@ -1,14 +1,15 @@
 # Analisis eksperimen TIRTA
 
-Status: belum dijalankan. Isi dengan hasil nyata; jangan pakai keluaran ilustrasi.
+Status: belum dijalankan. Isi dengan hasil pengujian baru.
 
 ## Kondisi pengujian
 
 - Commit, dataset, kapal, kapasitas, perangkat, versi Python:
-- Objective: jumlah `tarif_kirim` (juta rupiah), atau bonus yang dilaporkan terpisah:
+- Objective: jumlah `tarif_kirim` (juta rupiah):
 - Definisi iterasi, kriteria berhenti, varian HC, definisi/satuan stuck SA:
 - Daftar seed inisialisasi dan pencarian, seluruh parameter tiap konfigurasi:
-- Durasi: proses pencarian saja, tanpa inisialisasi, plotting, dan penyimpanan:
+- Durasi: pencarian, tanpa baca data, membuat state acak pertama, gambar, dan simpan:
+- GA: pembentukan populasi termasuk durasi pencarian:
 - GA: state representatif adalah individu terbaik; sertakan populasi awal/akhir:
 
 ## Rencana percobaan
