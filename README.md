@@ -8,7 +8,7 @@ Sumber belajarnya ada di [referensi](docs/referensi.md).
 ## Struktur
 
 - `data/`: 30 kendaraan dan data kapal
-- `src/`: data, tetangga, GA, SA, eksperimen, pencatatan, dan visualisasi
+- `src/`: data, tetangga, HC, GA, SA, eksperimen, pencatatan, dan visualisasi
 - `tests/`: tes utilitas dan algoritma
 - `output/`: hasil run
 - `docs/`: kontrak, cara integrasi, template analisis, dan laporan
@@ -42,6 +42,13 @@ python3 -m src.eksperimen --modul src.simulated_annealing --output output/sa_01 
 Tiap ulangan punya JSON, CSV, dan PNG, termasuk `penerimaan_sa.png` jika ada
 data eksponennya. `ringkasan.csv` dan `ringkasan.md` merangkum seluruh ulangan.
 Runner juga bisa memakai `--modul src.genetic`; rinciannya di [integrasi](docs/integrasi.md).
+
+HC wajib memakai stochastic, juga tiga ulangan:
+
+```sh
+python3 -m src.eksperimen --modul src.hill_climbing --output output/hc_01 \
+  --parameter '{"maks_gagal": 1000}'
+```
 
 Tes otomatis:
 

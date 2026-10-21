@@ -48,8 +48,21 @@ simpan_gambar(tujuan)
 ```
 
 `cari` pada contoh diimpor dari modul algoritma masing-masing. GA ada di
-`src.genetic`, SA di `src.simulated_annealing`; HC belum digabung. Folder keluaran harus baru agar
+`src.genetic`, SA di `src.simulated_annealing`, HC di `src.hill_climbing`.
+Folder keluaran harus baru agar
 hasil run sebelumnya tidak tertimpa.
+
+## Hill-climbing wajib
+
+`src.hill_climbing.cari` menjalankan stochastic HC. Kandidat dari `tetangga_acak`
+diterima hanya jika tarif naik. `maks_gagal` (default 1000) membatasi kandidat
+berturut-turut yang tidak memperbaiki nilai; hitungannya kembali nol saat naik.
+Pencarian juga berhenti jika generator tidak menemukan kandidat valid.
+Ini batas sampling, bukan bukti bahwa semua tetangga sudah dicoba.
+
+Riwayat mencatat setiap kandidat yang dievaluasi, termasuk yang ditolak.
+Gunakan runner eksperimen untuk menyimpan state awal/akhir, objective, durasi,
+jumlah iterasi, dan PNG seperti algoritma lainnya.
 
 ## Genetika
 
