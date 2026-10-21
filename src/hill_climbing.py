@@ -41,22 +41,9 @@ def _steepest(kapal, kendaraan, state, acak, riwayat, maks_sideways=0, restart=N
     return state, sideways
 
 
-def cari(kapal, kendaraan, state_awal, seed, varian="stochastic", maks_gagal=1000,
-         maks_sideways=100, maks_restart=10):
-    if varian not in VARIAN:
-        raise ValueError(f"varian harus salah satu dari {VARIAN}")
-    acak = random.Random(seed)
-    riwayat = [{"iterasi": 0, "objektif": nilai_objektif(kapal, kendaraan, state_awal)}]
-    if varian == "stochastic":
-        akhir = _stochastic(kapal, kendaraan, state_awal, acak, riwayat, maks_gagal)
-        return akhir, riwayat, {"varian": varian}
-    if varian != "random_restart":
-        batas = maks_sideways if varian == "sideways" else 0
-        akhir, sideways = _steepest(kapal, kendaraan, state_awal, acak, riwayat, batas)
-        return akhir, riwayat, {"varian": varian, "jumlah_sideways": sideways}
-
-    riwayat[0]["restart"], iterasi_per_restart = 0, []
-    terbaik, state = state_awal, state_awal
+def _random_restart(kapal, kendaraan, state, acak, riwayat, maks_restart):
+    """Steepest ascent diulang dari state acak baru; simpan yang terbaik."""
+    riwayat[0]["restart"], iterasi_per_restart, terbaik = 0, [], state
     for restart in range(maks_restart + 1):
         if restart:
             state = inisialisasi_acak(kapal, kendaraan, acak.randrange(2**31))
@@ -67,5 +54,23 @@ def cari(kapal, kendaraan, state_awal, seed, varian="stochastic", maks_gagal=100
         iterasi_per_restart.append(len(riwayat) - mulai)
         if nilai_objektif(kapal, kendaraan, state) > nilai_objektif(kapal, kendaraan, terbaik):
             terbaik = state
-    return terbaik, riwayat, {"varian": varian, "jumlah_restart": maks_restart,
-                              "iterasi_per_restart": iterasi_per_restart}
+    return terbaik, iterasi_per_restart
+
+
+def cari(kapal, kendaraan, state_awal, seed, varian="stochastic", maks_gagal=1000,
+         maks_sideways=100, maks_restart=10):
+    if varian not in VARIAN:
+        raise ValueError(f"varian harus salah satu dari {VARIAN}")
+    acak = random.Random(seed)
+    riwayat = [{"iterasi": 0, "objektif": nilai_objektif(kapal, kendaraan, state_awal)}]
+    if varian == "stochastic":
+        akhir = _stochastic(kapal, kendaraan, state_awal, acak, riwayat, maks_gagal)
+        return akhir, riwayat, {"varian": varian}
+    if varian == "random_restart":
+        akhir, per_restart = _random_restart(kapal, kendaraan, state_awal, acak, riwayat,
+                                             maks_restart)
+        return akhir, riwayat, {"varian": varian, "jumlah_restart": maks_restart,
+                                "iterasi_per_restart": per_restart}
+    batas = maks_sideways if varian == "sideways" else 0
+    akhir, sideways = _steepest(kapal, kendaraan, state_awal, acak, riwayat, batas)
+    return akhir, riwayat, {"varian": varian, "jumlah_sideways": sideways}
