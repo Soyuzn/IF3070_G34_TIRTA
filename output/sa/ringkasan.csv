@@ -1,0 +1,4 @@
+ulangan,seed,objektif_awal,objektif_akhir,jumlah_iterasi,durasi_detik,frekuensi_stuck,direktori
+1,40,404,413,1000,0.5559461670000019,0.0,ulangan_1_seed_40
+2,41,412,420,1000,0.5653038330001436,0.0,ulangan_2_seed_41
+3,42,414,417,1000,0.5172112909999669,0.05,ulangan_3_seed_42

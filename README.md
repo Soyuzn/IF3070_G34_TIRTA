@@ -1,73 +1,77 @@
 # IF3070 G34 TIRTA
 
-## Tech stack
+Python 3.10+, Matplotlib, JSON, CSV.
 
-Python 3.10+, JSON, CSV, dan Matplotlib untuk gambar.
-Sumber belajarnya ada di [referensi](docs/referensi.md).
+## Folder
 
-## Struktur
+- `data/`: kendaraan dan kapal
+- `src/`: algoritma, validasi, pencatatan, visualisasi
+- `tests/`: tes program
+- `output/`: hasil run dan gambar
+- `docs/`: kontrak dan laporan
 
-- `data/`: 30 kendaraan dan data kapal
-- `src/`: data, tetangga, HC, GA, SA, eksperimen, pencatatan, dan visualisasi
-- `tests/`: tes utilitas dan algoritma
-- `output/`: hasil run
-- `docs/`: kontrak, cara integrasi, template analisis, dan laporan
+## Cara run
 
-## Jalankan
+Buka terminal di root repo. Kalau belum ada `.venv`, buat sekali:
 
-Jalankan dari direktori utama repo:
+```sh
+python3 -m venv .venv
+```
+
+Aktifkan lalu pasang kebutuhan program:
 
 ```sh
 source .venv/bin/activate
 python3 -m pip install -r requirements.txt
-python3 -m src.genetic --jumlah-populasi 20 --batas-iterasi 10 --seed 1 \
-  --output output/ga_satu_01
 ```
 
-Jika belum punya `.venv`, buat dahulu dengan `python3 -m venv .venv`.
-Program memakai satu kapal dari `data/kapal.json` dan fitness total tarif kirim.
-Gunakan folder `--output` baru untuk tiap run. `--seed` default 42.
-
-Hasil ada di `output/ga_satu_01/`: `hasil.json`, `riwayat.csv`, `state_awal.png`,
-`state_akhir.png`, dan `objektif.png`. Buka PNG langsung dari Finder.
-`src/visualisasi.py` menggambar posisi kendaraan dan grafik memakai Matplotlib.
-
-SA lewat runner eksperimen, tiga ulangan dengan seed 40, 41, 42:
+GA, satu run:
 
 ```sh
-python3 -m src.eksperimen --modul src.simulated_annealing --output output/sa_01 \
-  --parameter '{"batas_iterasi": 1000, "evaluation_bias": 1}'
+python3 -m src.genetic --jumlah-populasi 30 --batas-iterasi 30 --seed 40 \
+  --output output/ga_01
 ```
 
-Tiap ulangan punya JSON, CSV, dan PNG, termasuk `penerimaan_sa.png` jika ada
-data eksponennya. `ringkasan.csv` dan `ringkasan.md` merangkum seluruh ulangan.
-Runner juga bisa memakai `--modul src.genetic`; rinciannya di [integrasi](docs/integrasi.md).
-
-HC wajib memakai stochastic, juga tiga ulangan:
+HC dan SA lewat runner. Masing-masing menjalankan seed 40, 41, 42:
 
 ```sh
 python3 -m src.eksperimen --modul src.hill_climbing --output output/hc_01 \
-  --parameter '{"maks_gagal": 1000}'
+  --seed 40 41 42 --parameter '{"varian": "stochastic", "maks_gagal": 1000}'
+
+python3 -m src.eksperimen --modul src.simulated_annealing --output output/sa_01 \
+  --seed 40 41 42 --parameter '{"batas_iterasi": 1000}'
 ```
 
-Bonus HC memakai modul yang sama, tambah `"varian": "steepest"`, `"sideways"`,
-atau `"random_restart"` pada parameter. Batas tiap varian ada di [integrasi](docs/integrasi.md).
+Untuk bonus HC, ganti `varian` menjadi `steepest`, `sideways`, atau `random_restart`.
+Batas default sideways 100 langkah dengan nilai sama, restart 10 kali setelah pencarian pertama.
+Bisa diubah lewat `maks_sideways` dan `maks_restart` di `--parameter`.
 
-Tes otomatis:
+Ganti nama folder output tiap mengulang run. Hasil lama tidak ditimpa.
+GA menyimpan hasil langsung di folder output, runner membuat subfolder per ulangan.
+Isinya `hasil.json`, `riwayat.csv`, `state_awal.png`, `state_akhir.png`, dan `objektif.png`.
+SA juga punya `penerimaan_sa.png` jika ada data eksponennya.
+Runner menambah `ringkasan.csv` dan `ringkasan.md` di folder induk. PNG bisa dibuka langsung.
+
+Tes program:
 
 ```sh
 python3 -m unittest discover -s tests -v
 ```
 
-Tes memakai folder sementara dan tidak menambah hasil ke `output/`.
+## Data
 
-## Kontrak dan satuan
+30 kendaraan, satu kapal. Angkanya sintetis. Nilai objektif adalah total tarif kirim
+kendaraan yang dimuat. Ukuran dalam sel grid, berat dan kapasitas dalam unit yang sama,
+tarif dalam juta rupiah. ETA dalam hari, tetapi tidak masuk hitungan objektif.
+Format state dan keluaran algoritma ada di [kontrak](docs/kontrak.md).
 
-State memuat semua ID kendaraan. `None` berarti di luar kapal; kendaraan yang
-dimuat punya `kapal_id`, `x`, `y`, `orientasi`. Titik asal di kiri atas dek.
-Ukuran dalam sel grid, berat/kapasitas dalam unit yang sama, tarif dalam juta
-rupiah, ETA dalam sisa hari. Semua angka dataset sintetis.
+## Referensi
 
-Fitness menjumlahkan `tarif_kirim` kendaraan yang dimuat. Lihat [kontrak](docs/kontrak.md)
-dan [cara menyambungkan algoritma](docs/integrasi.md) sebelum mulai.
-`eta_hari` tetap ada pada dataset dan tidak digunakan dalam perhitungan fitness.
+- Matplotlib: [dasar grafik](https://matplotlib.org/stable/users/explain/quick_start.html),
+  [Rectangle](https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Rectangle.html),
+  [simpan PNG](https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.savefig.html).
+- Python: [random dan seed](https://docs.python.org/3/library/random.html),
+  [seleksi induk berbobot](https://docs.python.org/3/library/random.html#random.choices),
+  [pengukuran durasi](https://docs.python.org/3/library/time.html#time.perf_counter).
+- Russell dan Norvig, *Artificial Intelligence: A Modern Approach*, edisi 4,
+  bagian 4.1.2, Figure 4.5, hlm. 115. Acuan SA; jadwal suhu dan bias diatur di kode.

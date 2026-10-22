@@ -1,0 +1,9508 @@
+{
+  "versi_format": 1,
+  "objektif": "jumlah tarif_kirim",
+  "satuan_objektif": "juta rupiah",
+  "algoritma": "hill_climbing",
+  "seed": 41,
+  "parameter": {
+    "varian": "stochastic",
+    "maks_gagal": 1000,
+    "maks_sideways": 100,
+    "maks_restart": 10
+  },
+  "kapal": [
+    {
+      "id": "kapal_utama",
+      "lebar": 10,
+      "panjang": 16,
+      "kapasitas": 60
+    }
+  ],
+  "kendaraan": [
+    {
+      "id": "motor_01",
+      "lebar": 1,
+      "panjang": 2,
+      "tarif_kirim": 8,
+      "berat": 1,
+      "eta_hari": 1
+    },
+    {
+      "id": "motor_02",
+      "lebar": 1,
+      "panjang": 2,
+      "tarif_kirim": 9,
+      "berat": 1,
+      "eta_hari": 3
+    },
+    {
+      "id": "motor_03",
+      "lebar": 1,
+      "panjang": 3,
+      "tarif_kirim": 11,
+      "berat": 1,
+      "eta_hari": 6
+    },
+    {
+      "id": "lcgc_01",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 22,
+      "berat": 3,
+      "eta_hari": 0
+    },
+    {
+      "id": "lcgc_02",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 23,
+      "berat": 3,
+      "eta_hari": 5
+    },
+    {
+      "id": "lcgc_03",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 26,
+      "berat": 3,
+      "eta_hari": 1
+    },
+    {
+      "id": "sedan_01",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 24,
+      "berat": 4,
+      "eta_hari": 0
+    },
+    {
+      "id": "sedan_02",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 25,
+      "berat": 4,
+      "eta_hari": 2
+    },
+    {
+      "id": "sedan_03",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 31,
+      "berat": 5,
+      "eta_hari": 4
+    },
+    {
+      "id": "suv_01",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 33,
+      "berat": 5,
+      "eta_hari": 1
+    },
+    {
+      "id": "suv_02",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 34,
+      "berat": 5,
+      "eta_hari": 3
+    },
+    {
+      "id": "suv_03",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 43,
+      "berat": 7,
+      "eta_hari": 0
+    },
+    {
+      "id": "pickup_01",
+      "lebar": 2,
+      "panjang": 5,
+      "tarif_kirim": 40,
+      "berat": 6,
+      "eta_hari": 0
+    },
+    {
+      "id": "pickup_02",
+      "lebar": 2,
+      "panjang": 5,
+      "tarif_kirim": 42,
+      "berat": 6,
+      "eta_hari": 4
+    },
+    {
+      "id": "pickup_03",
+      "lebar": 2,
+      "panjang": 6,
+      "tarif_kirim": 47,
+      "berat": 7,
+      "eta_hari": 2
+    },
+    {
+      "id": "mobil_boks_01",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 48,
+      "berat": 7,
+      "eta_hari": 2
+    },
+    {
+      "id": "mobil_boks_02",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 50,
+      "berat": 7,
+      "eta_hari": 5
+    },
+    {
+      "id": "mobil_boks_03",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 59,
+      "berat": 9,
+      "eta_hari": 5
+    },
+    {
+      "id": "mpv_01",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 55,
+      "berat": 8,
+      "eta_hari": 1
+    },
+    {
+      "id": "mpv_02",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 56,
+      "berat": 8,
+      "eta_hari": 6
+    },
+    {
+      "id": "mpv_03",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 51,
+      "berat": 7,
+      "eta_hari": 3
+    },
+    {
+      "id": "minibus_01",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 58,
+      "berat": 9,
+      "eta_hari": 1
+    },
+    {
+      "id": "minibus_02",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 60,
+      "berat": 9,
+      "eta_hari": 6
+    },
+    {
+      "id": "minibus_03",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 69,
+      "berat": 10,
+      "eta_hari": 4
+    },
+    {
+      "id": "truk_01",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 68,
+      "berat": 11,
+      "eta_hari": 2
+    },
+    {
+      "id": "truk_02",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 70,
+      "berat": 11,
+      "eta_hari": 4
+    },
+    {
+      "id": "truk_03",
+      "lebar": 4,
+      "panjang": 6,
+      "tarif_kirim": 82,
+      "berat": 13,
+      "eta_hari": 1
+    },
+    {
+      "id": "bus_01",
+      "lebar": 4,
+      "panjang": 7,
+      "tarif_kirim": 90,
+      "berat": 14,
+      "eta_hari": 3
+    },
+    {
+      "id": "bus_02",
+      "lebar": 4,
+      "panjang": 7,
+      "tarif_kirim": 92,
+      "berat": 14,
+      "eta_hari": 7
+    },
+    {
+      "id": "bus_03",
+      "lebar": 4,
+      "panjang": 8,
+      "tarif_kirim": 105,
+      "berat": 16,
+      "eta_hari": 6
+    }
+  ],
+  "state_awal": {
+    "motor_01": {
+      "kapal_id": "kapal_utama",
+      "x": 9,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "motor_02": {
+      "kapal_id": "kapal_utama",
+      "x": 9,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "motor_03": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 13,
+      "orientasi": "vertikal"
+    },
+    "lcgc_01": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 7,
+      "orientasi": "horizontal"
+    },
+    "lcgc_02": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "lcgc_03": null,
+    "sedan_01": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "sedan_02": null,
+    "sedan_03": null,
+    "suv_01": null,
+    "suv_02": null,
+    "suv_03": null,
+    "pickup_01": null,
+    "pickup_02": null,
+    "pickup_03": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 0,
+      "orientasi": "horizontal"
+    },
+    "mobil_boks_01": null,
+    "mobil_boks_02": null,
+    "mobil_boks_03": null,
+    "mpv_01": null,
+    "mpv_02": {
+      "kapal_id": "kapal_utama",
+      "x": 4,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "mpv_03": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 9,
+      "orientasi": "horizontal"
+    },
+    "minibus_01": null,
+    "minibus_02": null,
+    "minibus_03": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 6,
+      "orientasi": "vertikal"
+    },
+    "truk_01": null,
+    "truk_02": null,
+    "truk_03": null,
+    "bus_01": null,
+    "bus_02": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 12,
+      "orientasi": "horizontal"
+    },
+    "bus_03": null
+  },
+  "state_akhir": {
+    "motor_01": {
+      "kapal_id": "kapal_utama",
+      "x": 9,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "motor_02": {
+      "kapal_id": "kapal_utama",
+      "x": 9,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "motor_03": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 13,
+      "orientasi": "vertikal"
+    },
+    "lcgc_01": null,
+    "lcgc_02": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "lcgc_03": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 7,
+      "orientasi": "horizontal"
+    },
+    "sedan_01": null,
+    "sedan_02": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "sedan_03": null,
+    "suv_01": null,
+    "suv_02": null,
+    "suv_03": null,
+    "pickup_01": null,
+    "pickup_02": null,
+    "pickup_03": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 0,
+      "orientasi": "horizontal"
+    },
+    "mobil_boks_01": null,
+    "mobil_boks_02": null,
+    "mobil_boks_03": null,
+    "mpv_01": null,
+    "mpv_02": null,
+    "mpv_03": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 9,
+      "orientasi": "horizontal"
+    },
+    "minibus_01": null,
+    "minibus_02": {
+      "kapal_id": "kapal_utama",
+      "x": 4,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "minibus_03": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 6,
+      "orientasi": "vertikal"
+    },
+    "truk_01": null,
+    "truk_02": null,
+    "truk_03": null,
+    "bus_01": null,
+    "bus_02": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 12,
+      "orientasi": "horizontal"
+    },
+    "bus_03": null
+  },
+  "objektif_awal": 412,
+  "objektif_akhir": 421,
+  "durasi_detik": 1.2775879999999233,
+  "jumlah_iterasi": 2259,
+  "riwayat": [
+    {
+      "iterasi": 0,
+      "objektif": 412
+    },
+    {
+      "iterasi": 1,
+      "objektif": 412
+    },
+    {
+      "iterasi": 2,
+      "objektif": 412
+    },
+    {
+      "iterasi": 3,
+      "objektif": 412
+    },
+    {
+      "iterasi": 4,
+      "objektif": 412
+    },
+    {
+      "iterasi": 5,
+      "objektif": 412
+    },
+    {
+      "iterasi": 6,
+      "objektif": 412
+    },
+    {
+      "iterasi": 7,
+      "objektif": 412
+    },
+    {
+      "iterasi": 8,
+      "objektif": 412
+    },
+    {
+      "iterasi": 9,
+      "objektif": 412
+    },
+    {
+      "iterasi": 10,
+      "objektif": 412
+    },
+    {
+      "iterasi": 11,
+      "objektif": 412
+    },
+    {
+      "iterasi": 12,
+      "objektif": 412
+    },
+    {
+      "iterasi": 13,
+      "objektif": 412
+    },
+    {
+      "iterasi": 14,
+      "objektif": 412
+    },
+    {
+      "iterasi": 15,
+      "objektif": 412
+    },
+    {
+      "iterasi": 16,
+      "objektif": 412
+    },
+    {
+      "iterasi": 17,
+      "objektif": 412
+    },
+    {
+      "iterasi": 18,
+      "objektif": 415
+    },
+    {
+      "iterasi": 19,
+      "objektif": 415
+    },
+    {
+      "iterasi": 20,
+      "objektif": 415
+    },
+    {
+      "iterasi": 21,
+      "objektif": 415
+    },
+    {
+      "iterasi": 22,
+      "objektif": 415
+    },
+    {
+      "iterasi": 23,
+      "objektif": 415
+    },
+    {
+      "iterasi": 24,
+      "objektif": 415
+    },
+    {
+      "iterasi": 25,
+      "objektif": 415
+    },
+    {
+      "iterasi": 26,
+      "objektif": 415
+    },
+    {
+      "iterasi": 27,
+      "objektif": 415
+    },
+    {
+      "iterasi": 28,
+      "objektif": 415
+    },
+    {
+      "iterasi": 29,
+      "objektif": 415
+    },
+    {
+      "iterasi": 30,
+      "objektif": 415
+    },
+    {
+      "iterasi": 31,
+      "objektif": 415
+    },
+    {
+      "iterasi": 32,
+      "objektif": 415
+    },
+    {
+      "iterasi": 33,
+      "objektif": 415
+    },
+    {
+      "iterasi": 34,
+      "objektif": 415
+    },
+    {
+      "iterasi": 35,
+      "objektif": 415
+    },
+    {
+      "iterasi": 36,
+      "objektif": 415
+    },
+    {
+      "iterasi": 37,
+      "objektif": 415
+    },
+    {
+      "iterasi": 38,
+      "objektif": 415
+    },
+    {
+      "iterasi": 39,
+      "objektif": 415
+    },
+    {
+      "iterasi": 40,
+      "objektif": 415
+    },
+    {
+      "iterasi": 41,
+      "objektif": 415
+    },
+    {
+      "iterasi": 42,
+      "objektif": 415
+    },
+    {
+      "iterasi": 43,
+      "objektif": 415
+    },
+    {
+      "iterasi": 44,
+      "objektif": 415
+    },
+    {
+      "iterasi": 45,
+      "objektif": 415
+    },
+    {
+      "iterasi": 46,
+      "objektif": 415
+    },
+    {
+      "iterasi": 47,
+      "objektif": 415
+    },
+    {
+      "iterasi": 48,
+      "objektif": 415
+    },
+    {
+      "iterasi": 49,
+      "objektif": 415
+    },
+    {
+      "iterasi": 50,
+      "objektif": 415
+    },
+    {
+      "iterasi": 51,
+      "objektif": 415
+    },
+    {
+      "iterasi": 52,
+      "objektif": 415
+    },
+    {
+      "iterasi": 53,
+      "objektif": 415
+    },
+    {
+      "iterasi": 54,
+      "objektif": 415
+    },
+    {
+      "iterasi": 55,
+      "objektif": 415
+    },
+    {
+      "iterasi": 56,
+      "objektif": 415
+    },
+    {
+      "iterasi": 57,
+      "objektif": 415
+    },
+    {
+      "iterasi": 58,
+      "objektif": 415
+    },
+    {
+      "iterasi": 59,
+      "objektif": 415
+    },
+    {
+      "iterasi": 60,
+      "objektif": 415
+    },
+    {
+      "iterasi": 61,
+      "objektif": 415
+    },
+    {
+      "iterasi": 62,
+      "objektif": 415
+    },
+    {
+      "iterasi": 63,
+      "objektif": 415
+    },
+    {
+      "iterasi": 64,
+      "objektif": 415
+    },
+    {
+      "iterasi": 65,
+      "objektif": 415
+    },
+    {
+      "iterasi": 66,
+      "objektif": 415
+    },
+    {
+      "iterasi": 67,
+      "objektif": 415
+    },
+    {
+      "iterasi": 68,
+      "objektif": 415
+    },
+    {
+      "iterasi": 69,
+      "objektif": 415
+    },
+    {
+      "iterasi": 70,
+      "objektif": 415
+    },
+    {
+      "iterasi": 71,
+      "objektif": 415
+    },
+    {
+      "iterasi": 72,
+      "objektif": 415
+    },
+    {
+      "iterasi": 73,
+      "objektif": 415
+    },
+    {
+      "iterasi": 74,
+      "objektif": 415
+    },
+    {
+      "iterasi": 75,
+      "objektif": 415
+    },
+    {
+      "iterasi": 76,
+      "objektif": 415
+    },
+    {
+      "iterasi": 77,
+      "objektif": 415
+    },
+    {
+      "iterasi": 78,
+      "objektif": 415
+    },
+    {
+      "iterasi": 79,
+      "objektif": 415
+    },
+    {
+      "iterasi": 80,
+      "objektif": 415
+    },
+    {
+      "iterasi": 81,
+      "objektif": 415
+    },
+    {
+      "iterasi": 82,
+      "objektif": 419
+    },
+    {
+      "iterasi": 83,
+      "objektif": 419
+    },
+    {
+      "iterasi": 84,
+      "objektif": 419
+    },
+    {
+      "iterasi": 85,
+      "objektif": 419
+    },
+    {
+      "iterasi": 86,
+      "objektif": 419
+    },
+    {
+      "iterasi": 87,
+      "objektif": 419
+    },
+    {
+      "iterasi": 88,
+      "objektif": 419
+    },
+    {
+      "iterasi": 89,
+      "objektif": 419
+    },
+    {
+      "iterasi": 90,
+      "objektif": 419
+    },
+    {
+      "iterasi": 91,
+      "objektif": 419
+    },
+    {
+      "iterasi": 92,
+      "objektif": 419
+    },
+    {
+      "iterasi": 93,
+      "objektif": 419
+    },
+    {
+      "iterasi": 94,
+      "objektif": 419
+    },
+    {
+      "iterasi": 95,
+      "objektif": 419
+    },
+    {
+      "iterasi": 96,
+      "objektif": 419
+    },
+    {
+      "iterasi": 97,
+      "objektif": 419
+    },
+    {
+      "iterasi": 98,
+      "objektif": 419
+    },
+    {
+      "iterasi": 99,
+      "objektif": 419
+    },
+    {
+      "iterasi": 100,
+      "objektif": 419
+    },
+    {
+      "iterasi": 101,
+      "objektif": 419
+    },
+    {
+      "iterasi": 102,
+      "objektif": 419
+    },
+    {
+      "iterasi": 103,
+      "objektif": 419
+    },
+    {
+      "iterasi": 104,
+      "objektif": 419
+    },
+    {
+      "iterasi": 105,
+      "objektif": 419
+    },
+    {
+      "iterasi": 106,
+      "objektif": 419
+    },
+    {
+      "iterasi": 107,
+      "objektif": 419
+    },
+    {
+      "iterasi": 108,
+      "objektif": 419
+    },
+    {
+      "iterasi": 109,
+      "objektif": 419
+    },
+    {
+      "iterasi": 110,
+      "objektif": 419
+    },
+    {
+      "iterasi": 111,
+      "objektif": 419
+    },
+    {
+      "iterasi": 112,
+      "objektif": 419
+    },
+    {
+      "iterasi": 113,
+      "objektif": 419
+    },
+    {
+      "iterasi": 114,
+      "objektif": 419
+    },
+    {
+      "iterasi": 115,
+      "objektif": 419
+    },
+    {
+      "iterasi": 116,
+      "objektif": 419
+    },
+    {
+      "iterasi": 117,
+      "objektif": 419
+    },
+    {
+      "iterasi": 118,
+      "objektif": 419
+    },
+    {
+      "iterasi": 119,
+      "objektif": 419
+    },
+    {
+      "iterasi": 120,
+      "objektif": 419
+    },
+    {
+      "iterasi": 121,
+      "objektif": 419
+    },
+    {
+      "iterasi": 122,
+      "objektif": 419
+    },
+    {
+      "iterasi": 123,
+      "objektif": 419
+    },
+    {
+      "iterasi": 124,
+      "objektif": 419
+    },
+    {
+      "iterasi": 125,
+      "objektif": 419
+    },
+    {
+      "iterasi": 126,
+      "objektif": 419
+    },
+    {
+      "iterasi": 127,
+      "objektif": 419
+    },
+    {
+      "iterasi": 128,
+      "objektif": 419
+    },
+    {
+      "iterasi": 129,
+      "objektif": 419
+    },
+    {
+      "iterasi": 130,
+      "objektif": 419
+    },
+    {
+      "iterasi": 131,
+      "objektif": 419
+    },
+    {
+      "iterasi": 132,
+      "objektif": 419
+    },
+    {
+      "iterasi": 133,
+      "objektif": 419
+    },
+    {
+      "iterasi": 134,
+      "objektif": 419
+    },
+    {
+      "iterasi": 135,
+      "objektif": 419
+    },
+    {
+      "iterasi": 136,
+      "objektif": 419
+    },
+    {
+      "iterasi": 137,
+      "objektif": 419
+    },
+    {
+      "iterasi": 138,
+      "objektif": 419
+    },
+    {
+      "iterasi": 139,
+      "objektif": 419
+    },
+    {
+      "iterasi": 140,
+      "objektif": 419
+    },
+    {
+      "iterasi": 141,
+      "objektif": 419
+    },
+    {
+      "iterasi": 142,
+      "objektif": 419
+    },
+    {
+      "iterasi": 143,
+      "objektif": 419
+    },
+    {
+      "iterasi": 144,
+      "objektif": 419
+    },
+    {
+      "iterasi": 145,
+      "objektif": 419
+    },
+    {
+      "iterasi": 146,
+      "objektif": 419
+    },
+    {
+      "iterasi": 147,
+      "objektif": 419
+    },
+    {
+      "iterasi": 148,
+      "objektif": 419
+    },
+    {
+      "iterasi": 149,
+      "objektif": 419
+    },
+    {
+      "iterasi": 150,
+      "objektif": 419
+    },
+    {
+      "iterasi": 151,
+      "objektif": 419
+    },
+    {
+      "iterasi": 152,
+      "objektif": 419
+    },
+    {
+      "iterasi": 153,
+      "objektif": 419
+    },
+    {
+      "iterasi": 154,
+      "objektif": 419
+    },
+    {
+      "iterasi": 155,
+      "objektif": 419
+    },
+    {
+      "iterasi": 156,
+      "objektif": 419
+    },
+    {
+      "iterasi": 157,
+      "objektif": 419
+    },
+    {
+      "iterasi": 158,
+      "objektif": 419
+    },
+    {
+      "iterasi": 159,
+      "objektif": 419
+    },
+    {
+      "iterasi": 160,
+      "objektif": 419
+    },
+    {
+      "iterasi": 161,
+      "objektif": 419
+    },
+    {
+      "iterasi": 162,
+      "objektif": 419
+    },
+    {
+      "iterasi": 163,
+      "objektif": 419
+    },
+    {
+      "iterasi": 164,
+      "objektif": 419
+    },
+    {
+      "iterasi": 165,
+      "objektif": 419
+    },
+    {
+      "iterasi": 166,
+      "objektif": 419
+    },
+    {
+      "iterasi": 167,
+      "objektif": 419
+    },
+    {
+      "iterasi": 168,
+      "objektif": 419
+    },
+    {
+      "iterasi": 169,
+      "objektif": 419
+    },
+    {
+      "iterasi": 170,
+      "objektif": 419
+    },
+    {
+      "iterasi": 171,
+      "objektif": 419
+    },
+    {
+      "iterasi": 172,
+      "objektif": 419
+    },
+    {
+      "iterasi": 173,
+      "objektif": 419
+    },
+    {
+      "iterasi": 174,
+      "objektif": 419
+    },
+    {
+      "iterasi": 175,
+      "objektif": 419
+    },
+    {
+      "iterasi": 176,
+      "objektif": 419
+    },
+    {
+      "iterasi": 177,
+      "objektif": 419
+    },
+    {
+      "iterasi": 178,
+      "objektif": 419
+    },
+    {
+      "iterasi": 179,
+      "objektif": 419
+    },
+    {
+      "iterasi": 180,
+      "objektif": 419
+    },
+    {
+      "iterasi": 181,
+      "objektif": 419
+    },
+    {
+      "iterasi": 182,
+      "objektif": 419
+    },
+    {
+      "iterasi": 183,
+      "objektif": 419
+    },
+    {
+      "iterasi": 184,
+      "objektif": 419
+    },
+    {
+      "iterasi": 185,
+      "objektif": 419
+    },
+    {
+      "iterasi": 186,
+      "objektif": 419
+    },
+    {
+      "iterasi": 187,
+      "objektif": 419
+    },
+    {
+      "iterasi": 188,
+      "objektif": 419
+    },
+    {
+      "iterasi": 189,
+      "objektif": 419
+    },
+    {
+      "iterasi": 190,
+      "objektif": 419
+    },
+    {
+      "iterasi": 191,
+      "objektif": 419
+    },
+    {
+      "iterasi": 192,
+      "objektif": 419
+    },
+    {
+      "iterasi": 193,
+      "objektif": 419
+    },
+    {
+      "iterasi": 194,
+      "objektif": 419
+    },
+    {
+      "iterasi": 195,
+      "objektif": 419
+    },
+    {
+      "iterasi": 196,
+      "objektif": 419
+    },
+    {
+      "iterasi": 197,
+      "objektif": 419
+    },
+    {
+      "iterasi": 198,
+      "objektif": 419
+    },
+    {
+      "iterasi": 199,
+      "objektif": 419
+    },
+    {
+      "iterasi": 200,
+      "objektif": 419
+    },
+    {
+      "iterasi": 201,
+      "objektif": 419
+    },
+    {
+      "iterasi": 202,
+      "objektif": 419
+    },
+    {
+      "iterasi": 203,
+      "objektif": 419
+    },
+    {
+      "iterasi": 204,
+      "objektif": 419
+    },
+    {
+      "iterasi": 205,
+      "objektif": 419
+    },
+    {
+      "iterasi": 206,
+      "objektif": 419
+    },
+    {
+      "iterasi": 207,
+      "objektif": 419
+    },
+    {
+      "iterasi": 208,
+      "objektif": 419
+    },
+    {
+      "iterasi": 209,
+      "objektif": 419
+    },
+    {
+      "iterasi": 210,
+      "objektif": 419
+    },
+    {
+      "iterasi": 211,
+      "objektif": 419
+    },
+    {
+      "iterasi": 212,
+      "objektif": 419
+    },
+    {
+      "iterasi": 213,
+      "objektif": 419
+    },
+    {
+      "iterasi": 214,
+      "objektif": 419
+    },
+    {
+      "iterasi": 215,
+      "objektif": 419
+    },
+    {
+      "iterasi": 216,
+      "objektif": 419
+    },
+    {
+      "iterasi": 217,
+      "objektif": 419
+    },
+    {
+      "iterasi": 218,
+      "objektif": 419
+    },
+    {
+      "iterasi": 219,
+      "objektif": 419
+    },
+    {
+      "iterasi": 220,
+      "objektif": 419
+    },
+    {
+      "iterasi": 221,
+      "objektif": 419
+    },
+    {
+      "iterasi": 222,
+      "objektif": 419
+    },
+    {
+      "iterasi": 223,
+      "objektif": 419
+    },
+    {
+      "iterasi": 224,
+      "objektif": 419
+    },
+    {
+      "iterasi": 225,
+      "objektif": 419
+    },
+    {
+      "iterasi": 226,
+      "objektif": 419
+    },
+    {
+      "iterasi": 227,
+      "objektif": 419
+    },
+    {
+      "iterasi": 228,
+      "objektif": 419
+    },
+    {
+      "iterasi": 229,
+      "objektif": 419
+    },
+    {
+      "iterasi": 230,
+      "objektif": 419
+    },
+    {
+      "iterasi": 231,
+      "objektif": 419
+    },
+    {
+      "iterasi": 232,
+      "objektif": 419
+    },
+    {
+      "iterasi": 233,
+      "objektif": 419
+    },
+    {
+      "iterasi": 234,
+      "objektif": 419
+    },
+    {
+      "iterasi": 235,
+      "objektif": 419
+    },
+    {
+      "iterasi": 236,
+      "objektif": 419
+    },
+    {
+      "iterasi": 237,
+      "objektif": 419
+    },
+    {
+      "iterasi": 238,
+      "objektif": 419
+    },
+    {
+      "iterasi": 239,
+      "objektif": 419
+    },
+    {
+      "iterasi": 240,
+      "objektif": 419
+    },
+    {
+      "iterasi": 241,
+      "objektif": 419
+    },
+    {
+      "iterasi": 242,
+      "objektif": 419
+    },
+    {
+      "iterasi": 243,
+      "objektif": 419
+    },
+    {
+      "iterasi": 244,
+      "objektif": 419
+    },
+    {
+      "iterasi": 245,
+      "objektif": 419
+    },
+    {
+      "iterasi": 246,
+      "objektif": 419
+    },
+    {
+      "iterasi": 247,
+      "objektif": 419
+    },
+    {
+      "iterasi": 248,
+      "objektif": 419
+    },
+    {
+      "iterasi": 249,
+      "objektif": 419
+    },
+    {
+      "iterasi": 250,
+      "objektif": 419
+    },
+    {
+      "iterasi": 251,
+      "objektif": 419
+    },
+    {
+      "iterasi": 252,
+      "objektif": 419
+    },
+    {
+      "iterasi": 253,
+      "objektif": 419
+    },
+    {
+      "iterasi": 254,
+      "objektif": 419
+    },
+    {
+      "iterasi": 255,
+      "objektif": 419
+    },
+    {
+      "iterasi": 256,
+      "objektif": 419
+    },
+    {
+      "iterasi": 257,
+      "objektif": 419
+    },
+    {
+      "iterasi": 258,
+      "objektif": 419
+    },
+    {
+      "iterasi": 259,
+      "objektif": 419
+    },
+    {
+      "iterasi": 260,
+      "objektif": 419
+    },
+    {
+      "iterasi": 261,
+      "objektif": 419
+    },
+    {
+      "iterasi": 262,
+      "objektif": 419
+    },
+    {
+      "iterasi": 263,
+      "objektif": 419
+    },
+    {
+      "iterasi": 264,
+      "objektif": 419
+    },
+    {
+      "iterasi": 265,
+      "objektif": 419
+    },
+    {
+      "iterasi": 266,
+      "objektif": 419
+    },
+    {
+      "iterasi": 267,
+      "objektif": 419
+    },
+    {
+      "iterasi": 268,
+      "objektif": 419
+    },
+    {
+      "iterasi": 269,
+      "objektif": 419
+    },
+    {
+      "iterasi": 270,
+      "objektif": 419
+    },
+    {
+      "iterasi": 271,
+      "objektif": 419
+    },
+    {
+      "iterasi": 272,
+      "objektif": 419
+    },
+    {
+      "iterasi": 273,
+      "objektif": 419
+    },
+    {
+      "iterasi": 274,
+      "objektif": 419
+    },
+    {
+      "iterasi": 275,
+      "objektif": 419
+    },
+    {
+      "iterasi": 276,
+      "objektif": 419
+    },
+    {
+      "iterasi": 277,
+      "objektif": 419
+    },
+    {
+      "iterasi": 278,
+      "objektif": 419
+    },
+    {
+      "iterasi": 279,
+      "objektif": 419
+    },
+    {
+      "iterasi": 280,
+      "objektif": 419
+    },
+    {
+      "iterasi": 281,
+      "objektif": 419
+    },
+    {
+      "iterasi": 282,
+      "objektif": 419
+    },
+    {
+      "iterasi": 283,
+      "objektif": 419
+    },
+    {
+      "iterasi": 284,
+      "objektif": 419
+    },
+    {
+      "iterasi": 285,
+      "objektif": 419
+    },
+    {
+      "iterasi": 286,
+      "objektif": 419
+    },
+    {
+      "iterasi": 287,
+      "objektif": 419
+    },
+    {
+      "iterasi": 288,
+      "objektif": 419
+    },
+    {
+      "iterasi": 289,
+      "objektif": 419
+    },
+    {
+      "iterasi": 290,
+      "objektif": 419
+    },
+    {
+      "iterasi": 291,
+      "objektif": 419
+    },
+    {
+      "iterasi": 292,
+      "objektif": 419
+    },
+    {
+      "iterasi": 293,
+      "objektif": 419
+    },
+    {
+      "iterasi": 294,
+      "objektif": 419
+    },
+    {
+      "iterasi": 295,
+      "objektif": 419
+    },
+    {
+      "iterasi": 296,
+      "objektif": 419
+    },
+    {
+      "iterasi": 297,
+      "objektif": 419
+    },
+    {
+      "iterasi": 298,
+      "objektif": 419
+    },
+    {
+      "iterasi": 299,
+      "objektif": 419
+    },
+    {
+      "iterasi": 300,
+      "objektif": 419
+    },
+    {
+      "iterasi": 301,
+      "objektif": 419
+    },
+    {
+      "iterasi": 302,
+      "objektif": 419
+    },
+    {
+      "iterasi": 303,
+      "objektif": 419
+    },
+    {
+      "iterasi": 304,
+      "objektif": 419
+    },
+    {
+      "iterasi": 305,
+      "objektif": 419
+    },
+    {
+      "iterasi": 306,
+      "objektif": 419
+    },
+    {
+      "iterasi": 307,
+      "objektif": 419
+    },
+    {
+      "iterasi": 308,
+      "objektif": 419
+    },
+    {
+      "iterasi": 309,
+      "objektif": 419
+    },
+    {
+      "iterasi": 310,
+      "objektif": 419
+    },
+    {
+      "iterasi": 311,
+      "objektif": 419
+    },
+    {
+      "iterasi": 312,
+      "objektif": 419
+    },
+    {
+      "iterasi": 313,
+      "objektif": 419
+    },
+    {
+      "iterasi": 314,
+      "objektif": 419
+    },
+    {
+      "iterasi": 315,
+      "objektif": 419
+    },
+    {
+      "iterasi": 316,
+      "objektif": 419
+    },
+    {
+      "iterasi": 317,
+      "objektif": 419
+    },
+    {
+      "iterasi": 318,
+      "objektif": 419
+    },
+    {
+      "iterasi": 319,
+      "objektif": 419
+    },
+    {
+      "iterasi": 320,
+      "objektif": 419
+    },
+    {
+      "iterasi": 321,
+      "objektif": 419
+    },
+    {
+      "iterasi": 322,
+      "objektif": 419
+    },
+    {
+      "iterasi": 323,
+      "objektif": 419
+    },
+    {
+      "iterasi": 324,
+      "objektif": 419
+    },
+    {
+      "iterasi": 325,
+      "objektif": 419
+    },
+    {
+      "iterasi": 326,
+      "objektif": 419
+    },
+    {
+      "iterasi": 327,
+      "objektif": 419
+    },
+    {
+      "iterasi": 328,
+      "objektif": 419
+    },
+    {
+      "iterasi": 329,
+      "objektif": 419
+    },
+    {
+      "iterasi": 330,
+      "objektif": 419
+    },
+    {
+      "iterasi": 331,
+      "objektif": 419
+    },
+    {
+      "iterasi": 332,
+      "objektif": 419
+    },
+    {
+      "iterasi": 333,
+      "objektif": 419
+    },
+    {
+      "iterasi": 334,
+      "objektif": 419
+    },
+    {
+      "iterasi": 335,
+      "objektif": 419
+    },
+    {
+      "iterasi": 336,
+      "objektif": 419
+    },
+    {
+      "iterasi": 337,
+      "objektif": 419
+    },
+    {
+      "iterasi": 338,
+      "objektif": 419
+    },
+    {
+      "iterasi": 339,
+      "objektif": 419
+    },
+    {
+      "iterasi": 340,
+      "objektif": 419
+    },
+    {
+      "iterasi": 341,
+      "objektif": 419
+    },
+    {
+      "iterasi": 342,
+      "objektif": 419
+    },
+    {
+      "iterasi": 343,
+      "objektif": 419
+    },
+    {
+      "iterasi": 344,
+      "objektif": 419
+    },
+    {
+      "iterasi": 345,
+      "objektif": 419
+    },
+    {
+      "iterasi": 346,
+      "objektif": 419
+    },
+    {
+      "iterasi": 347,
+      "objektif": 419
+    },
+    {
+      "iterasi": 348,
+      "objektif": 419
+    },
+    {
+      "iterasi": 349,
+      "objektif": 420
+    },
+    {
+      "iterasi": 350,
+      "objektif": 420
+    },
+    {
+      "iterasi": 351,
+      "objektif": 420
+    },
+    {
+      "iterasi": 352,
+      "objektif": 420
+    },
+    {
+      "iterasi": 353,
+      "objektif": 420
+    },
+    {
+      "iterasi": 354,
+      "objektif": 420
+    },
+    {
+      "iterasi": 355,
+      "objektif": 420
+    },
+    {
+      "iterasi": 356,
+      "objektif": 420
+    },
+    {
+      "iterasi": 357,
+      "objektif": 420
+    },
+    {
+      "iterasi": 358,
+      "objektif": 420
+    },
+    {
+      "iterasi": 359,
+      "objektif": 420
+    },
+    {
+      "iterasi": 360,
+      "objektif": 420
+    },
+    {
+      "iterasi": 361,
+      "objektif": 420
+    },
+    {
+      "iterasi": 362,
+      "objektif": 420
+    },
+    {
+      "iterasi": 363,
+      "objektif": 420
+    },
+    {
+      "iterasi": 364,
+      "objektif": 420
+    },
+    {
+      "iterasi": 365,
+      "objektif": 420
+    },
+    {
+      "iterasi": 366,
+      "objektif": 420
+    },
+    {
+      "iterasi": 367,
+      "objektif": 420
+    },
+    {
+      "iterasi": 368,
+      "objektif": 420
+    },
+    {
+      "iterasi": 369,
+      "objektif": 420
+    },
+    {
+      "iterasi": 370,
+      "objektif": 420
+    },
+    {
+      "iterasi": 371,
+      "objektif": 420
+    },
+    {
+      "iterasi": 372,
+      "objektif": 420
+    },
+    {
+      "iterasi": 373,
+      "objektif": 420
+    },
+    {
+      "iterasi": 374,
+      "objektif": 420
+    },
+    {
+      "iterasi": 375,
+      "objektif": 420
+    },
+    {
+      "iterasi": 376,
+      "objektif": 420
+    },
+    {
+      "iterasi": 377,
+      "objektif": 420
+    },
+    {
+      "iterasi": 378,
+      "objektif": 420
+    },
+    {
+      "iterasi": 379,
+      "objektif": 420
+    },
+    {
+      "iterasi": 380,
+      "objektif": 420
+    },
+    {
+      "iterasi": 381,
+      "objektif": 420
+    },
+    {
+      "iterasi": 382,
+      "objektif": 420
+    },
+    {
+      "iterasi": 383,
+      "objektif": 420
+    },
+    {
+      "iterasi": 384,
+      "objektif": 420
+    },
+    {
+      "iterasi": 385,
+      "objektif": 420
+    },
+    {
+      "iterasi": 386,
+      "objektif": 420
+    },
+    {
+      "iterasi": 387,
+      "objektif": 420
+    },
+    {
+      "iterasi": 388,
+      "objektif": 420
+    },
+    {
+      "iterasi": 389,
+      "objektif": 420
+    },
+    {
+      "iterasi": 390,
+      "objektif": 420
+    },
+    {
+      "iterasi": 391,
+      "objektif": 420
+    },
+    {
+      "iterasi": 392,
+      "objektif": 420
+    },
+    {
+      "iterasi": 393,
+      "objektif": 420
+    },
+    {
+      "iterasi": 394,
+      "objektif": 420
+    },
+    {
+      "iterasi": 395,
+      "objektif": 420
+    },
+    {
+      "iterasi": 396,
+      "objektif": 420
+    },
+    {
+      "iterasi": 397,
+      "objektif": 420
+    },
+    {
+      "iterasi": 398,
+      "objektif": 420
+    },
+    {
+      "iterasi": 399,
+      "objektif": 420
+    },
+    {
+      "iterasi": 400,
+      "objektif": 420
+    },
+    {
+      "iterasi": 401,
+      "objektif": 420
+    },
+    {
+      "iterasi": 402,
+      "objektif": 420
+    },
+    {
+      "iterasi": 403,
+      "objektif": 420
+    },
+    {
+      "iterasi": 404,
+      "objektif": 420
+    },
+    {
+      "iterasi": 405,
+      "objektif": 420
+    },
+    {
+      "iterasi": 406,
+      "objektif": 420
+    },
+    {
+      "iterasi": 407,
+      "objektif": 420
+    },
+    {
+      "iterasi": 408,
+      "objektif": 420
+    },
+    {
+      "iterasi": 409,
+      "objektif": 420
+    },
+    {
+      "iterasi": 410,
+      "objektif": 420
+    },
+    {
+      "iterasi": 411,
+      "objektif": 420
+    },
+    {
+      "iterasi": 412,
+      "objektif": 420
+    },
+    {
+      "iterasi": 413,
+      "objektif": 420
+    },
+    {
+      "iterasi": 414,
+      "objektif": 420
+    },
+    {
+      "iterasi": 415,
+      "objektif": 420
+    },
+    {
+      "iterasi": 416,
+      "objektif": 420
+    },
+    {
+      "iterasi": 417,
+      "objektif": 420
+    },
+    {
+      "iterasi": 418,
+      "objektif": 420
+    },
+    {
+      "iterasi": 419,
+      "objektif": 420
+    },
+    {
+      "iterasi": 420,
+      "objektif": 420
+    },
+    {
+      "iterasi": 421,
+      "objektif": 420
+    },
+    {
+      "iterasi": 422,
+      "objektif": 420
+    },
+    {
+      "iterasi": 423,
+      "objektif": 420
+    },
+    {
+      "iterasi": 424,
+      "objektif": 420
+    },
+    {
+      "iterasi": 425,
+      "objektif": 420
+    },
+    {
+      "iterasi": 426,
+      "objektif": 420
+    },
+    {
+      "iterasi": 427,
+      "objektif": 420
+    },
+    {
+      "iterasi": 428,
+      "objektif": 420
+    },
+    {
+      "iterasi": 429,
+      "objektif": 420
+    },
+    {
+      "iterasi": 430,
+      "objektif": 420
+    },
+    {
+      "iterasi": 431,
+      "objektif": 420
+    },
+    {
+      "iterasi": 432,
+      "objektif": 420
+    },
+    {
+      "iterasi": 433,
+      "objektif": 420
+    },
+    {
+      "iterasi": 434,
+      "objektif": 420
+    },
+    {
+      "iterasi": 435,
+      "objektif": 420
+    },
+    {
+      "iterasi": 436,
+      "objektif": 420
+    },
+    {
+      "iterasi": 437,
+      "objektif": 420
+    },
+    {
+      "iterasi": 438,
+      "objektif": 420
+    },
+    {
+      "iterasi": 439,
+      "objektif": 420
+    },
+    {
+      "iterasi": 440,
+      "objektif": 420
+    },
+    {
+      "iterasi": 441,
+      "objektif": 420
+    },
+    {
+      "iterasi": 442,
+      "objektif": 420
+    },
+    {
+      "iterasi": 443,
+      "objektif": 420
+    },
+    {
+      "iterasi": 444,
+      "objektif": 420
+    },
+    {
+      "iterasi": 445,
+      "objektif": 420
+    },
+    {
+      "iterasi": 446,
+      "objektif": 420
+    },
+    {
+      "iterasi": 447,
+      "objektif": 420
+    },
+    {
+      "iterasi": 448,
+      "objektif": 420
+    },
+    {
+      "iterasi": 449,
+      "objektif": 420
+    },
+    {
+      "iterasi": 450,
+      "objektif": 420
+    },
+    {
+      "iterasi": 451,
+      "objektif": 420
+    },
+    {
+      "iterasi": 452,
+      "objektif": 420
+    },
+    {
+      "iterasi": 453,
+      "objektif": 420
+    },
+    {
+      "iterasi": 454,
+      "objektif": 420
+    },
+    {
+      "iterasi": 455,
+      "objektif": 420
+    },
+    {
+      "iterasi": 456,
+      "objektif": 420
+    },
+    {
+      "iterasi": 457,
+      "objektif": 420
+    },
+    {
+      "iterasi": 458,
+      "objektif": 420
+    },
+    {
+      "iterasi": 459,
+      "objektif": 420
+    },
+    {
+      "iterasi": 460,
+      "objektif": 420
+    },
+    {
+      "iterasi": 461,
+      "objektif": 420
+    },
+    {
+      "iterasi": 462,
+      "objektif": 420
+    },
+    {
+      "iterasi": 463,
+      "objektif": 420
+    },
+    {
+      "iterasi": 464,
+      "objektif": 420
+    },
+    {
+      "iterasi": 465,
+      "objektif": 420
+    },
+    {
+      "iterasi": 466,
+      "objektif": 420
+    },
+    {
+      "iterasi": 467,
+      "objektif": 420
+    },
+    {
+      "iterasi": 468,
+      "objektif": 420
+    },
+    {
+      "iterasi": 469,
+      "objektif": 420
+    },
+    {
+      "iterasi": 470,
+      "objektif": 420
+    },
+    {
+      "iterasi": 471,
+      "objektif": 420
+    },
+    {
+      "iterasi": 472,
+      "objektif": 420
+    },
+    {
+      "iterasi": 473,
+      "objektif": 420
+    },
+    {
+      "iterasi": 474,
+      "objektif": 420
+    },
+    {
+      "iterasi": 475,
+      "objektif": 420
+    },
+    {
+      "iterasi": 476,
+      "objektif": 420
+    },
+    {
+      "iterasi": 477,
+      "objektif": 420
+    },
+    {
+      "iterasi": 478,
+      "objektif": 420
+    },
+    {
+      "iterasi": 479,
+      "objektif": 420
+    },
+    {
+      "iterasi": 480,
+      "objektif": 420
+    },
+    {
+      "iterasi": 481,
+      "objektif": 420
+    },
+    {
+      "iterasi": 482,
+      "objektif": 420
+    },
+    {
+      "iterasi": 483,
+      "objektif": 420
+    },
+    {
+      "iterasi": 484,
+      "objektif": 420
+    },
+    {
+      "iterasi": 485,
+      "objektif": 420
+    },
+    {
+      "iterasi": 486,
+      "objektif": 420
+    },
+    {
+      "iterasi": 487,
+      "objektif": 420
+    },
+    {
+      "iterasi": 488,
+      "objektif": 420
+    },
+    {
+      "iterasi": 489,
+      "objektif": 420
+    },
+    {
+      "iterasi": 490,
+      "objektif": 420
+    },
+    {
+      "iterasi": 491,
+      "objektif": 420
+    },
+    {
+      "iterasi": 492,
+      "objektif": 420
+    },
+    {
+      "iterasi": 493,
+      "objektif": 420
+    },
+    {
+      "iterasi": 494,
+      "objektif": 420
+    },
+    {
+      "iterasi": 495,
+      "objektif": 420
+    },
+    {
+      "iterasi": 496,
+      "objektif": 420
+    },
+    {
+      "iterasi": 497,
+      "objektif": 420
+    },
+    {
+      "iterasi": 498,
+      "objektif": 420
+    },
+    {
+      "iterasi": 499,
+      "objektif": 420
+    },
+    {
+      "iterasi": 500,
+      "objektif": 420
+    },
+    {
+      "iterasi": 501,
+      "objektif": 420
+    },
+    {
+      "iterasi": 502,
+      "objektif": 420
+    },
+    {
+      "iterasi": 503,
+      "objektif": 420
+    },
+    {
+      "iterasi": 504,
+      "objektif": 420
+    },
+    {
+      "iterasi": 505,
+      "objektif": 420
+    },
+    {
+      "iterasi": 506,
+      "objektif": 420
+    },
+    {
+      "iterasi": 507,
+      "objektif": 420
+    },
+    {
+      "iterasi": 508,
+      "objektif": 420
+    },
+    {
+      "iterasi": 509,
+      "objektif": 420
+    },
+    {
+      "iterasi": 510,
+      "objektif": 420
+    },
+    {
+      "iterasi": 511,
+      "objektif": 420
+    },
+    {
+      "iterasi": 512,
+      "objektif": 420
+    },
+    {
+      "iterasi": 513,
+      "objektif": 420
+    },
+    {
+      "iterasi": 514,
+      "objektif": 420
+    },
+    {
+      "iterasi": 515,
+      "objektif": 420
+    },
+    {
+      "iterasi": 516,
+      "objektif": 420
+    },
+    {
+      "iterasi": 517,
+      "objektif": 420
+    },
+    {
+      "iterasi": 518,
+      "objektif": 420
+    },
+    {
+      "iterasi": 519,
+      "objektif": 420
+    },
+    {
+      "iterasi": 520,
+      "objektif": 420
+    },
+    {
+      "iterasi": 521,
+      "objektif": 420
+    },
+    {
+      "iterasi": 522,
+      "objektif": 420
+    },
+    {
+      "iterasi": 523,
+      "objektif": 420
+    },
+    {
+      "iterasi": 524,
+      "objektif": 420
+    },
+    {
+      "iterasi": 525,
+      "objektif": 420
+    },
+    {
+      "iterasi": 526,
+      "objektif": 420
+    },
+    {
+      "iterasi": 527,
+      "objektif": 420
+    },
+    {
+      "iterasi": 528,
+      "objektif": 420
+    },
+    {
+      "iterasi": 529,
+      "objektif": 420
+    },
+    {
+      "iterasi": 530,
+      "objektif": 420
+    },
+    {
+      "iterasi": 531,
+      "objektif": 420
+    },
+    {
+      "iterasi": 532,
+      "objektif": 420
+    },
+    {
+      "iterasi": 533,
+      "objektif": 420
+    },
+    {
+      "iterasi": 534,
+      "objektif": 420
+    },
+    {
+      "iterasi": 535,
+      "objektif": 420
+    },
+    {
+      "iterasi": 536,
+      "objektif": 420
+    },
+    {
+      "iterasi": 537,
+      "objektif": 420
+    },
+    {
+      "iterasi": 538,
+      "objektif": 420
+    },
+    {
+      "iterasi": 539,
+      "objektif": 420
+    },
+    {
+      "iterasi": 540,
+      "objektif": 420
+    },
+    {
+      "iterasi": 541,
+      "objektif": 420
+    },
+    {
+      "iterasi": 542,
+      "objektif": 420
+    },
+    {
+      "iterasi": 543,
+      "objektif": 420
+    },
+    {
+      "iterasi": 544,
+      "objektif": 420
+    },
+    {
+      "iterasi": 545,
+      "objektif": 420
+    },
+    {
+      "iterasi": 546,
+      "objektif": 420
+    },
+    {
+      "iterasi": 547,
+      "objektif": 420
+    },
+    {
+      "iterasi": 548,
+      "objektif": 420
+    },
+    {
+      "iterasi": 549,
+      "objektif": 420
+    },
+    {
+      "iterasi": 550,
+      "objektif": 420
+    },
+    {
+      "iterasi": 551,
+      "objektif": 420
+    },
+    {
+      "iterasi": 552,
+      "objektif": 420
+    },
+    {
+      "iterasi": 553,
+      "objektif": 420
+    },
+    {
+      "iterasi": 554,
+      "objektif": 420
+    },
+    {
+      "iterasi": 555,
+      "objektif": 420
+    },
+    {
+      "iterasi": 556,
+      "objektif": 420
+    },
+    {
+      "iterasi": 557,
+      "objektif": 420
+    },
+    {
+      "iterasi": 558,
+      "objektif": 420
+    },
+    {
+      "iterasi": 559,
+      "objektif": 420
+    },
+    {
+      "iterasi": 560,
+      "objektif": 420
+    },
+    {
+      "iterasi": 561,
+      "objektif": 420
+    },
+    {
+      "iterasi": 562,
+      "objektif": 420
+    },
+    {
+      "iterasi": 563,
+      "objektif": 420
+    },
+    {
+      "iterasi": 564,
+      "objektif": 420
+    },
+    {
+      "iterasi": 565,
+      "objektif": 420
+    },
+    {
+      "iterasi": 566,
+      "objektif": 420
+    },
+    {
+      "iterasi": 567,
+      "objektif": 420
+    },
+    {
+      "iterasi": 568,
+      "objektif": 420
+    },
+    {
+      "iterasi": 569,
+      "objektif": 420
+    },
+    {
+      "iterasi": 570,
+      "objektif": 420
+    },
+    {
+      "iterasi": 571,
+      "objektif": 420
+    },
+    {
+      "iterasi": 572,
+      "objektif": 420
+    },
+    {
+      "iterasi": 573,
+      "objektif": 420
+    },
+    {
+      "iterasi": 574,
+      "objektif": 420
+    },
+    {
+      "iterasi": 575,
+      "objektif": 420
+    },
+    {
+      "iterasi": 576,
+      "objektif": 420
+    },
+    {
+      "iterasi": 577,
+      "objektif": 420
+    },
+    {
+      "iterasi": 578,
+      "objektif": 420
+    },
+    {
+      "iterasi": 579,
+      "objektif": 420
+    },
+    {
+      "iterasi": 580,
+      "objektif": 420
+    },
+    {
+      "iterasi": 581,
+      "objektif": 420
+    },
+    {
+      "iterasi": 582,
+      "objektif": 420
+    },
+    {
+      "iterasi": 583,
+      "objektif": 420
+    },
+    {
+      "iterasi": 584,
+      "objektif": 420
+    },
+    {
+      "iterasi": 585,
+      "objektif": 420
+    },
+    {
+      "iterasi": 586,
+      "objektif": 420
+    },
+    {
+      "iterasi": 587,
+      "objektif": 420
+    },
+    {
+      "iterasi": 588,
+      "objektif": 420
+    },
+    {
+      "iterasi": 589,
+      "objektif": 420
+    },
+    {
+      "iterasi": 590,
+      "objektif": 420
+    },
+    {
+      "iterasi": 591,
+      "objektif": 420
+    },
+    {
+      "iterasi": 592,
+      "objektif": 420
+    },
+    {
+      "iterasi": 593,
+      "objektif": 420
+    },
+    {
+      "iterasi": 594,
+      "objektif": 420
+    },
+    {
+      "iterasi": 595,
+      "objektif": 420
+    },
+    {
+      "iterasi": 596,
+      "objektif": 420
+    },
+    {
+      "iterasi": 597,
+      "objektif": 420
+    },
+    {
+      "iterasi": 598,
+      "objektif": 420
+    },
+    {
+      "iterasi": 599,
+      "objektif": 420
+    },
+    {
+      "iterasi": 600,
+      "objektif": 420
+    },
+    {
+      "iterasi": 601,
+      "objektif": 420
+    },
+    {
+      "iterasi": 602,
+      "objektif": 420
+    },
+    {
+      "iterasi": 603,
+      "objektif": 420
+    },
+    {
+      "iterasi": 604,
+      "objektif": 420
+    },
+    {
+      "iterasi": 605,
+      "objektif": 420
+    },
+    {
+      "iterasi": 606,
+      "objektif": 420
+    },
+    {
+      "iterasi": 607,
+      "objektif": 420
+    },
+    {
+      "iterasi": 608,
+      "objektif": 420
+    },
+    {
+      "iterasi": 609,
+      "objektif": 420
+    },
+    {
+      "iterasi": 610,
+      "objektif": 420
+    },
+    {
+      "iterasi": 611,
+      "objektif": 420
+    },
+    {
+      "iterasi": 612,
+      "objektif": 420
+    },
+    {
+      "iterasi": 613,
+      "objektif": 420
+    },
+    {
+      "iterasi": 614,
+      "objektif": 420
+    },
+    {
+      "iterasi": 615,
+      "objektif": 420
+    },
+    {
+      "iterasi": 616,
+      "objektif": 420
+    },
+    {
+      "iterasi": 617,
+      "objektif": 420
+    },
+    {
+      "iterasi": 618,
+      "objektif": 420
+    },
+    {
+      "iterasi": 619,
+      "objektif": 420
+    },
+    {
+      "iterasi": 620,
+      "objektif": 420
+    },
+    {
+      "iterasi": 621,
+      "objektif": 420
+    },
+    {
+      "iterasi": 622,
+      "objektif": 420
+    },
+    {
+      "iterasi": 623,
+      "objektif": 420
+    },
+    {
+      "iterasi": 624,
+      "objektif": 420
+    },
+    {
+      "iterasi": 625,
+      "objektif": 420
+    },
+    {
+      "iterasi": 626,
+      "objektif": 420
+    },
+    {
+      "iterasi": 627,
+      "objektif": 420
+    },
+    {
+      "iterasi": 628,
+      "objektif": 420
+    },
+    {
+      "iterasi": 629,
+      "objektif": 420
+    },
+    {
+      "iterasi": 630,
+      "objektif": 420
+    },
+    {
+      "iterasi": 631,
+      "objektif": 420
+    },
+    {
+      "iterasi": 632,
+      "objektif": 420
+    },
+    {
+      "iterasi": 633,
+      "objektif": 420
+    },
+    {
+      "iterasi": 634,
+      "objektif": 420
+    },
+    {
+      "iterasi": 635,
+      "objektif": 420
+    },
+    {
+      "iterasi": 636,
+      "objektif": 420
+    },
+    {
+      "iterasi": 637,
+      "objektif": 420
+    },
+    {
+      "iterasi": 638,
+      "objektif": 420
+    },
+    {
+      "iterasi": 639,
+      "objektif": 420
+    },
+    {
+      "iterasi": 640,
+      "objektif": 420
+    },
+    {
+      "iterasi": 641,
+      "objektif": 420
+    },
+    {
+      "iterasi": 642,
+      "objektif": 420
+    },
+    {
+      "iterasi": 643,
+      "objektif": 420
+    },
+    {
+      "iterasi": 644,
+      "objektif": 420
+    },
+    {
+      "iterasi": 645,
+      "objektif": 420
+    },
+    {
+      "iterasi": 646,
+      "objektif": 420
+    },
+    {
+      "iterasi": 647,
+      "objektif": 420
+    },
+    {
+      "iterasi": 648,
+      "objektif": 420
+    },
+    {
+      "iterasi": 649,
+      "objektif": 420
+    },
+    {
+      "iterasi": 650,
+      "objektif": 420
+    },
+    {
+      "iterasi": 651,
+      "objektif": 420
+    },
+    {
+      "iterasi": 652,
+      "objektif": 420
+    },
+    {
+      "iterasi": 653,
+      "objektif": 420
+    },
+    {
+      "iterasi": 654,
+      "objektif": 420
+    },
+    {
+      "iterasi": 655,
+      "objektif": 420
+    },
+    {
+      "iterasi": 656,
+      "objektif": 420
+    },
+    {
+      "iterasi": 657,
+      "objektif": 420
+    },
+    {
+      "iterasi": 658,
+      "objektif": 420
+    },
+    {
+      "iterasi": 659,
+      "objektif": 420
+    },
+    {
+      "iterasi": 660,
+      "objektif": 420
+    },
+    {
+      "iterasi": 661,
+      "objektif": 420
+    },
+    {
+      "iterasi": 662,
+      "objektif": 420
+    },
+    {
+      "iterasi": 663,
+      "objektif": 420
+    },
+    {
+      "iterasi": 664,
+      "objektif": 420
+    },
+    {
+      "iterasi": 665,
+      "objektif": 420
+    },
+    {
+      "iterasi": 666,
+      "objektif": 420
+    },
+    {
+      "iterasi": 667,
+      "objektif": 420
+    },
+    {
+      "iterasi": 668,
+      "objektif": 420
+    },
+    {
+      "iterasi": 669,
+      "objektif": 420
+    },
+    {
+      "iterasi": 670,
+      "objektif": 420
+    },
+    {
+      "iterasi": 671,
+      "objektif": 420
+    },
+    {
+      "iterasi": 672,
+      "objektif": 420
+    },
+    {
+      "iterasi": 673,
+      "objektif": 420
+    },
+    {
+      "iterasi": 674,
+      "objektif": 420
+    },
+    {
+      "iterasi": 675,
+      "objektif": 420
+    },
+    {
+      "iterasi": 676,
+      "objektif": 420
+    },
+    {
+      "iterasi": 677,
+      "objektif": 420
+    },
+    {
+      "iterasi": 678,
+      "objektif": 420
+    },
+    {
+      "iterasi": 679,
+      "objektif": 420
+    },
+    {
+      "iterasi": 680,
+      "objektif": 420
+    },
+    {
+      "iterasi": 681,
+      "objektif": 420
+    },
+    {
+      "iterasi": 682,
+      "objektif": 420
+    },
+    {
+      "iterasi": 683,
+      "objektif": 420
+    },
+    {
+      "iterasi": 684,
+      "objektif": 420
+    },
+    {
+      "iterasi": 685,
+      "objektif": 420
+    },
+    {
+      "iterasi": 686,
+      "objektif": 420
+    },
+    {
+      "iterasi": 687,
+      "objektif": 420
+    },
+    {
+      "iterasi": 688,
+      "objektif": 420
+    },
+    {
+      "iterasi": 689,
+      "objektif": 420
+    },
+    {
+      "iterasi": 690,
+      "objektif": 420
+    },
+    {
+      "iterasi": 691,
+      "objektif": 420
+    },
+    {
+      "iterasi": 692,
+      "objektif": 420
+    },
+    {
+      "iterasi": 693,
+      "objektif": 420
+    },
+    {
+      "iterasi": 694,
+      "objektif": 420
+    },
+    {
+      "iterasi": 695,
+      "objektif": 420
+    },
+    {
+      "iterasi": 696,
+      "objektif": 420
+    },
+    {
+      "iterasi": 697,
+      "objektif": 420
+    },
+    {
+      "iterasi": 698,
+      "objektif": 420
+    },
+    {
+      "iterasi": 699,
+      "objektif": 420
+    },
+    {
+      "iterasi": 700,
+      "objektif": 420
+    },
+    {
+      "iterasi": 701,
+      "objektif": 420
+    },
+    {
+      "iterasi": 702,
+      "objektif": 420
+    },
+    {
+      "iterasi": 703,
+      "objektif": 420
+    },
+    {
+      "iterasi": 704,
+      "objektif": 420
+    },
+    {
+      "iterasi": 705,
+      "objektif": 420
+    },
+    {
+      "iterasi": 706,
+      "objektif": 420
+    },
+    {
+      "iterasi": 707,
+      "objektif": 420
+    },
+    {
+      "iterasi": 708,
+      "objektif": 420
+    },
+    {
+      "iterasi": 709,
+      "objektif": 420
+    },
+    {
+      "iterasi": 710,
+      "objektif": 420
+    },
+    {
+      "iterasi": 711,
+      "objektif": 420
+    },
+    {
+      "iterasi": 712,
+      "objektif": 420
+    },
+    {
+      "iterasi": 713,
+      "objektif": 420
+    },
+    {
+      "iterasi": 714,
+      "objektif": 420
+    },
+    {
+      "iterasi": 715,
+      "objektif": 420
+    },
+    {
+      "iterasi": 716,
+      "objektif": 420
+    },
+    {
+      "iterasi": 717,
+      "objektif": 420
+    },
+    {
+      "iterasi": 718,
+      "objektif": 420
+    },
+    {
+      "iterasi": 719,
+      "objektif": 420
+    },
+    {
+      "iterasi": 720,
+      "objektif": 420
+    },
+    {
+      "iterasi": 721,
+      "objektif": 420
+    },
+    {
+      "iterasi": 722,
+      "objektif": 420
+    },
+    {
+      "iterasi": 723,
+      "objektif": 420
+    },
+    {
+      "iterasi": 724,
+      "objektif": 420
+    },
+    {
+      "iterasi": 725,
+      "objektif": 420
+    },
+    {
+      "iterasi": 726,
+      "objektif": 420
+    },
+    {
+      "iterasi": 727,
+      "objektif": 420
+    },
+    {
+      "iterasi": 728,
+      "objektif": 420
+    },
+    {
+      "iterasi": 729,
+      "objektif": 420
+    },
+    {
+      "iterasi": 730,
+      "objektif": 420
+    },
+    {
+      "iterasi": 731,
+      "objektif": 420
+    },
+    {
+      "iterasi": 732,
+      "objektif": 420
+    },
+    {
+      "iterasi": 733,
+      "objektif": 420
+    },
+    {
+      "iterasi": 734,
+      "objektif": 420
+    },
+    {
+      "iterasi": 735,
+      "objektif": 420
+    },
+    {
+      "iterasi": 736,
+      "objektif": 420
+    },
+    {
+      "iterasi": 737,
+      "objektif": 420
+    },
+    {
+      "iterasi": 738,
+      "objektif": 420
+    },
+    {
+      "iterasi": 739,
+      "objektif": 420
+    },
+    {
+      "iterasi": 740,
+      "objektif": 420
+    },
+    {
+      "iterasi": 741,
+      "objektif": 420
+    },
+    {
+      "iterasi": 742,
+      "objektif": 420
+    },
+    {
+      "iterasi": 743,
+      "objektif": 420
+    },
+    {
+      "iterasi": 744,
+      "objektif": 420
+    },
+    {
+      "iterasi": 745,
+      "objektif": 420
+    },
+    {
+      "iterasi": 746,
+      "objektif": 420
+    },
+    {
+      "iterasi": 747,
+      "objektif": 420
+    },
+    {
+      "iterasi": 748,
+      "objektif": 420
+    },
+    {
+      "iterasi": 749,
+      "objektif": 420
+    },
+    {
+      "iterasi": 750,
+      "objektif": 420
+    },
+    {
+      "iterasi": 751,
+      "objektif": 420
+    },
+    {
+      "iterasi": 752,
+      "objektif": 420
+    },
+    {
+      "iterasi": 753,
+      "objektif": 420
+    },
+    {
+      "iterasi": 754,
+      "objektif": 420
+    },
+    {
+      "iterasi": 755,
+      "objektif": 420
+    },
+    {
+      "iterasi": 756,
+      "objektif": 420
+    },
+    {
+      "iterasi": 757,
+      "objektif": 420
+    },
+    {
+      "iterasi": 758,
+      "objektif": 420
+    },
+    {
+      "iterasi": 759,
+      "objektif": 420
+    },
+    {
+      "iterasi": 760,
+      "objektif": 420
+    },
+    {
+      "iterasi": 761,
+      "objektif": 420
+    },
+    {
+      "iterasi": 762,
+      "objektif": 420
+    },
+    {
+      "iterasi": 763,
+      "objektif": 420
+    },
+    {
+      "iterasi": 764,
+      "objektif": 420
+    },
+    {
+      "iterasi": 765,
+      "objektif": 420
+    },
+    {
+      "iterasi": 766,
+      "objektif": 420
+    },
+    {
+      "iterasi": 767,
+      "objektif": 420
+    },
+    {
+      "iterasi": 768,
+      "objektif": 420
+    },
+    {
+      "iterasi": 769,
+      "objektif": 420
+    },
+    {
+      "iterasi": 770,
+      "objektif": 420
+    },
+    {
+      "iterasi": 771,
+      "objektif": 420
+    },
+    {
+      "iterasi": 772,
+      "objektif": 420
+    },
+    {
+      "iterasi": 773,
+      "objektif": 420
+    },
+    {
+      "iterasi": 774,
+      "objektif": 420
+    },
+    {
+      "iterasi": 775,
+      "objektif": 420
+    },
+    {
+      "iterasi": 776,
+      "objektif": 420
+    },
+    {
+      "iterasi": 777,
+      "objektif": 420
+    },
+    {
+      "iterasi": 778,
+      "objektif": 420
+    },
+    {
+      "iterasi": 779,
+      "objektif": 420
+    },
+    {
+      "iterasi": 780,
+      "objektif": 420
+    },
+    {
+      "iterasi": 781,
+      "objektif": 420
+    },
+    {
+      "iterasi": 782,
+      "objektif": 420
+    },
+    {
+      "iterasi": 783,
+      "objektif": 420
+    },
+    {
+      "iterasi": 784,
+      "objektif": 420
+    },
+    {
+      "iterasi": 785,
+      "objektif": 420
+    },
+    {
+      "iterasi": 786,
+      "objektif": 420
+    },
+    {
+      "iterasi": 787,
+      "objektif": 420
+    },
+    {
+      "iterasi": 788,
+      "objektif": 420
+    },
+    {
+      "iterasi": 789,
+      "objektif": 420
+    },
+    {
+      "iterasi": 790,
+      "objektif": 420
+    },
+    {
+      "iterasi": 791,
+      "objektif": 420
+    },
+    {
+      "iterasi": 792,
+      "objektif": 420
+    },
+    {
+      "iterasi": 793,
+      "objektif": 420
+    },
+    {
+      "iterasi": 794,
+      "objektif": 420
+    },
+    {
+      "iterasi": 795,
+      "objektif": 420
+    },
+    {
+      "iterasi": 796,
+      "objektif": 420
+    },
+    {
+      "iterasi": 797,
+      "objektif": 420
+    },
+    {
+      "iterasi": 798,
+      "objektif": 420
+    },
+    {
+      "iterasi": 799,
+      "objektif": 420
+    },
+    {
+      "iterasi": 800,
+      "objektif": 420
+    },
+    {
+      "iterasi": 801,
+      "objektif": 420
+    },
+    {
+      "iterasi": 802,
+      "objektif": 420
+    },
+    {
+      "iterasi": 803,
+      "objektif": 420
+    },
+    {
+      "iterasi": 804,
+      "objektif": 420
+    },
+    {
+      "iterasi": 805,
+      "objektif": 420
+    },
+    {
+      "iterasi": 806,
+      "objektif": 420
+    },
+    {
+      "iterasi": 807,
+      "objektif": 420
+    },
+    {
+      "iterasi": 808,
+      "objektif": 420
+    },
+    {
+      "iterasi": 809,
+      "objektif": 420
+    },
+    {
+      "iterasi": 810,
+      "objektif": 420
+    },
+    {
+      "iterasi": 811,
+      "objektif": 420
+    },
+    {
+      "iterasi": 812,
+      "objektif": 420
+    },
+    {
+      "iterasi": 813,
+      "objektif": 420
+    },
+    {
+      "iterasi": 814,
+      "objektif": 420
+    },
+    {
+      "iterasi": 815,
+      "objektif": 420
+    },
+    {
+      "iterasi": 816,
+      "objektif": 420
+    },
+    {
+      "iterasi": 817,
+      "objektif": 420
+    },
+    {
+      "iterasi": 818,
+      "objektif": 420
+    },
+    {
+      "iterasi": 819,
+      "objektif": 420
+    },
+    {
+      "iterasi": 820,
+      "objektif": 420
+    },
+    {
+      "iterasi": 821,
+      "objektif": 420
+    },
+    {
+      "iterasi": 822,
+      "objektif": 420
+    },
+    {
+      "iterasi": 823,
+      "objektif": 420
+    },
+    {
+      "iterasi": 824,
+      "objektif": 420
+    },
+    {
+      "iterasi": 825,
+      "objektif": 420
+    },
+    {
+      "iterasi": 826,
+      "objektif": 420
+    },
+    {
+      "iterasi": 827,
+      "objektif": 420
+    },
+    {
+      "iterasi": 828,
+      "objektif": 420
+    },
+    {
+      "iterasi": 829,
+      "objektif": 420
+    },
+    {
+      "iterasi": 830,
+      "objektif": 420
+    },
+    {
+      "iterasi": 831,
+      "objektif": 420
+    },
+    {
+      "iterasi": 832,
+      "objektif": 420
+    },
+    {
+      "iterasi": 833,
+      "objektif": 420
+    },
+    {
+      "iterasi": 834,
+      "objektif": 420
+    },
+    {
+      "iterasi": 835,
+      "objektif": 420
+    },
+    {
+      "iterasi": 836,
+      "objektif": 420
+    },
+    {
+      "iterasi": 837,
+      "objektif": 420
+    },
+    {
+      "iterasi": 838,
+      "objektif": 420
+    },
+    {
+      "iterasi": 839,
+      "objektif": 420
+    },
+    {
+      "iterasi": 840,
+      "objektif": 420
+    },
+    {
+      "iterasi": 841,
+      "objektif": 420
+    },
+    {
+      "iterasi": 842,
+      "objektif": 420
+    },
+    {
+      "iterasi": 843,
+      "objektif": 420
+    },
+    {
+      "iterasi": 844,
+      "objektif": 420
+    },
+    {
+      "iterasi": 845,
+      "objektif": 420
+    },
+    {
+      "iterasi": 846,
+      "objektif": 420
+    },
+    {
+      "iterasi": 847,
+      "objektif": 420
+    },
+    {
+      "iterasi": 848,
+      "objektif": 420
+    },
+    {
+      "iterasi": 849,
+      "objektif": 420
+    },
+    {
+      "iterasi": 850,
+      "objektif": 420
+    },
+    {
+      "iterasi": 851,
+      "objektif": 420
+    },
+    {
+      "iterasi": 852,
+      "objektif": 420
+    },
+    {
+      "iterasi": 853,
+      "objektif": 420
+    },
+    {
+      "iterasi": 854,
+      "objektif": 420
+    },
+    {
+      "iterasi": 855,
+      "objektif": 420
+    },
+    {
+      "iterasi": 856,
+      "objektif": 420
+    },
+    {
+      "iterasi": 857,
+      "objektif": 420
+    },
+    {
+      "iterasi": 858,
+      "objektif": 420
+    },
+    {
+      "iterasi": 859,
+      "objektif": 420
+    },
+    {
+      "iterasi": 860,
+      "objektif": 420
+    },
+    {
+      "iterasi": 861,
+      "objektif": 420
+    },
+    {
+      "iterasi": 862,
+      "objektif": 420
+    },
+    {
+      "iterasi": 863,
+      "objektif": 420
+    },
+    {
+      "iterasi": 864,
+      "objektif": 420
+    },
+    {
+      "iterasi": 865,
+      "objektif": 420
+    },
+    {
+      "iterasi": 866,
+      "objektif": 420
+    },
+    {
+      "iterasi": 867,
+      "objektif": 420
+    },
+    {
+      "iterasi": 868,
+      "objektif": 420
+    },
+    {
+      "iterasi": 869,
+      "objektif": 420
+    },
+    {
+      "iterasi": 870,
+      "objektif": 420
+    },
+    {
+      "iterasi": 871,
+      "objektif": 420
+    },
+    {
+      "iterasi": 872,
+      "objektif": 420
+    },
+    {
+      "iterasi": 873,
+      "objektif": 420
+    },
+    {
+      "iterasi": 874,
+      "objektif": 420
+    },
+    {
+      "iterasi": 875,
+      "objektif": 420
+    },
+    {
+      "iterasi": 876,
+      "objektif": 420
+    },
+    {
+      "iterasi": 877,
+      "objektif": 420
+    },
+    {
+      "iterasi": 878,
+      "objektif": 420
+    },
+    {
+      "iterasi": 879,
+      "objektif": 420
+    },
+    {
+      "iterasi": 880,
+      "objektif": 420
+    },
+    {
+      "iterasi": 881,
+      "objektif": 420
+    },
+    {
+      "iterasi": 882,
+      "objektif": 420
+    },
+    {
+      "iterasi": 883,
+      "objektif": 420
+    },
+    {
+      "iterasi": 884,
+      "objektif": 420
+    },
+    {
+      "iterasi": 885,
+      "objektif": 420
+    },
+    {
+      "iterasi": 886,
+      "objektif": 420
+    },
+    {
+      "iterasi": 887,
+      "objektif": 420
+    },
+    {
+      "iterasi": 888,
+      "objektif": 420
+    },
+    {
+      "iterasi": 889,
+      "objektif": 420
+    },
+    {
+      "iterasi": 890,
+      "objektif": 420
+    },
+    {
+      "iterasi": 891,
+      "objektif": 420
+    },
+    {
+      "iterasi": 892,
+      "objektif": 420
+    },
+    {
+      "iterasi": 893,
+      "objektif": 420
+    },
+    {
+      "iterasi": 894,
+      "objektif": 420
+    },
+    {
+      "iterasi": 895,
+      "objektif": 420
+    },
+    {
+      "iterasi": 896,
+      "objektif": 420
+    },
+    {
+      "iterasi": 897,
+      "objektif": 420
+    },
+    {
+      "iterasi": 898,
+      "objektif": 420
+    },
+    {
+      "iterasi": 899,
+      "objektif": 420
+    },
+    {
+      "iterasi": 900,
+      "objektif": 420
+    },
+    {
+      "iterasi": 901,
+      "objektif": 420
+    },
+    {
+      "iterasi": 902,
+      "objektif": 420
+    },
+    {
+      "iterasi": 903,
+      "objektif": 420
+    },
+    {
+      "iterasi": 904,
+      "objektif": 420
+    },
+    {
+      "iterasi": 905,
+      "objektif": 420
+    },
+    {
+      "iterasi": 906,
+      "objektif": 420
+    },
+    {
+      "iterasi": 907,
+      "objektif": 420
+    },
+    {
+      "iterasi": 908,
+      "objektif": 420
+    },
+    {
+      "iterasi": 909,
+      "objektif": 420
+    },
+    {
+      "iterasi": 910,
+      "objektif": 420
+    },
+    {
+      "iterasi": 911,
+      "objektif": 420
+    },
+    {
+      "iterasi": 912,
+      "objektif": 420
+    },
+    {
+      "iterasi": 913,
+      "objektif": 420
+    },
+    {
+      "iterasi": 914,
+      "objektif": 420
+    },
+    {
+      "iterasi": 915,
+      "objektif": 420
+    },
+    {
+      "iterasi": 916,
+      "objektif": 420
+    },
+    {
+      "iterasi": 917,
+      "objektif": 420
+    },
+    {
+      "iterasi": 918,
+      "objektif": 420
+    },
+    {
+      "iterasi": 919,
+      "objektif": 420
+    },
+    {
+      "iterasi": 920,
+      "objektif": 420
+    },
+    {
+      "iterasi": 921,
+      "objektif": 420
+    },
+    {
+      "iterasi": 922,
+      "objektif": 420
+    },
+    {
+      "iterasi": 923,
+      "objektif": 420
+    },
+    {
+      "iterasi": 924,
+      "objektif": 420
+    },
+    {
+      "iterasi": 925,
+      "objektif": 420
+    },
+    {
+      "iterasi": 926,
+      "objektif": 420
+    },
+    {
+      "iterasi": 927,
+      "objektif": 420
+    },
+    {
+      "iterasi": 928,
+      "objektif": 420
+    },
+    {
+      "iterasi": 929,
+      "objektif": 420
+    },
+    {
+      "iterasi": 930,
+      "objektif": 420
+    },
+    {
+      "iterasi": 931,
+      "objektif": 420
+    },
+    {
+      "iterasi": 932,
+      "objektif": 420
+    },
+    {
+      "iterasi": 933,
+      "objektif": 420
+    },
+    {
+      "iterasi": 934,
+      "objektif": 420
+    },
+    {
+      "iterasi": 935,
+      "objektif": 420
+    },
+    {
+      "iterasi": 936,
+      "objektif": 420
+    },
+    {
+      "iterasi": 937,
+      "objektif": 420
+    },
+    {
+      "iterasi": 938,
+      "objektif": 420
+    },
+    {
+      "iterasi": 939,
+      "objektif": 420
+    },
+    {
+      "iterasi": 940,
+      "objektif": 420
+    },
+    {
+      "iterasi": 941,
+      "objektif": 420
+    },
+    {
+      "iterasi": 942,
+      "objektif": 420
+    },
+    {
+      "iterasi": 943,
+      "objektif": 420
+    },
+    {
+      "iterasi": 944,
+      "objektif": 420
+    },
+    {
+      "iterasi": 945,
+      "objektif": 420
+    },
+    {
+      "iterasi": 946,
+      "objektif": 420
+    },
+    {
+      "iterasi": 947,
+      "objektif": 420
+    },
+    {
+      "iterasi": 948,
+      "objektif": 420
+    },
+    {
+      "iterasi": 949,
+      "objektif": 420
+    },
+    {
+      "iterasi": 950,
+      "objektif": 420
+    },
+    {
+      "iterasi": 951,
+      "objektif": 420
+    },
+    {
+      "iterasi": 952,
+      "objektif": 420
+    },
+    {
+      "iterasi": 953,
+      "objektif": 420
+    },
+    {
+      "iterasi": 954,
+      "objektif": 420
+    },
+    {
+      "iterasi": 955,
+      "objektif": 420
+    },
+    {
+      "iterasi": 956,
+      "objektif": 420
+    },
+    {
+      "iterasi": 957,
+      "objektif": 420
+    },
+    {
+      "iterasi": 958,
+      "objektif": 420
+    },
+    {
+      "iterasi": 959,
+      "objektif": 420
+    },
+    {
+      "iterasi": 960,
+      "objektif": 420
+    },
+    {
+      "iterasi": 961,
+      "objektif": 420
+    },
+    {
+      "iterasi": 962,
+      "objektif": 420
+    },
+    {
+      "iterasi": 963,
+      "objektif": 420
+    },
+    {
+      "iterasi": 964,
+      "objektif": 420
+    },
+    {
+      "iterasi": 965,
+      "objektif": 420
+    },
+    {
+      "iterasi": 966,
+      "objektif": 420
+    },
+    {
+      "iterasi": 967,
+      "objektif": 420
+    },
+    {
+      "iterasi": 968,
+      "objektif": 420
+    },
+    {
+      "iterasi": 969,
+      "objektif": 420
+    },
+    {
+      "iterasi": 970,
+      "objektif": 420
+    },
+    {
+      "iterasi": 971,
+      "objektif": 420
+    },
+    {
+      "iterasi": 972,
+      "objektif": 420
+    },
+    {
+      "iterasi": 973,
+      "objektif": 420
+    },
+    {
+      "iterasi": 974,
+      "objektif": 420
+    },
+    {
+      "iterasi": 975,
+      "objektif": 420
+    },
+    {
+      "iterasi": 976,
+      "objektif": 420
+    },
+    {
+      "iterasi": 977,
+      "objektif": 420
+    },
+    {
+      "iterasi": 978,
+      "objektif": 420
+    },
+    {
+      "iterasi": 979,
+      "objektif": 420
+    },
+    {
+      "iterasi": 980,
+      "objektif": 420
+    },
+    {
+      "iterasi": 981,
+      "objektif": 420
+    },
+    {
+      "iterasi": 982,
+      "objektif": 420
+    },
+    {
+      "iterasi": 983,
+      "objektif": 420
+    },
+    {
+      "iterasi": 984,
+      "objektif": 420
+    },
+    {
+      "iterasi": 985,
+      "objektif": 420
+    },
+    {
+      "iterasi": 986,
+      "objektif": 420
+    },
+    {
+      "iterasi": 987,
+      "objektif": 420
+    },
+    {
+      "iterasi": 988,
+      "objektif": 420
+    },
+    {
+      "iterasi": 989,
+      "objektif": 420
+    },
+    {
+      "iterasi": 990,
+      "objektif": 420
+    },
+    {
+      "iterasi": 991,
+      "objektif": 420
+    },
+    {
+      "iterasi": 992,
+      "objektif": 420
+    },
+    {
+      "iterasi": 993,
+      "objektif": 420
+    },
+    {
+      "iterasi": 994,
+      "objektif": 420
+    },
+    {
+      "iterasi": 995,
+      "objektif": 420
+    },
+    {
+      "iterasi": 996,
+      "objektif": 420
+    },
+    {
+      "iterasi": 997,
+      "objektif": 420
+    },
+    {
+      "iterasi": 998,
+      "objektif": 420
+    },
+    {
+      "iterasi": 999,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1000,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1001,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1002,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1003,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1004,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1005,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1006,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1007,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1008,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1009,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1010,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1011,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1012,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1013,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1014,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1015,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1016,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1017,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1018,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1019,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1020,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1021,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1022,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1023,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1024,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1025,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1026,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1027,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1028,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1029,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1030,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1031,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1032,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1033,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1034,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1035,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1036,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1037,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1038,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1039,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1040,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1041,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1042,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1043,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1044,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1045,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1046,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1047,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1048,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1049,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1050,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1051,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1052,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1053,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1054,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1055,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1056,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1057,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1058,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1059,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1060,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1061,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1062,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1063,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1064,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1065,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1066,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1067,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1068,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1069,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1070,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1071,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1072,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1073,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1074,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1075,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1076,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1077,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1078,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1079,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1080,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1081,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1082,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1083,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1084,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1085,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1086,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1087,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1088,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1089,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1090,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1091,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1092,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1093,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1094,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1095,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1096,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1097,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1098,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1099,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1100,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1101,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1102,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1103,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1104,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1105,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1106,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1107,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1108,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1109,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1110,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1111,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1112,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1113,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1114,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1115,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1116,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1117,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1118,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1119,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1120,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1121,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1122,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1123,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1124,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1125,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1126,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1127,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1128,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1129,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1130,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1131,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1132,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1133,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1134,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1135,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1136,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1137,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1138,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1139,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1140,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1141,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1142,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1143,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1144,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1145,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1146,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1147,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1148,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1149,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1150,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1151,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1152,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1153,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1154,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1155,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1156,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1157,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1158,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1159,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1160,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1161,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1162,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1163,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1164,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1165,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1166,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1167,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1168,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1169,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1170,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1171,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1172,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1173,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1174,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1175,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1176,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1177,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1178,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1179,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1180,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1181,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1182,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1183,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1184,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1185,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1186,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1187,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1188,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1189,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1190,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1191,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1192,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1193,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1194,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1195,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1196,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1197,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1198,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1199,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1200,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1201,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1202,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1203,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1204,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1205,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1206,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1207,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1208,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1209,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1210,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1211,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1212,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1213,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1214,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1215,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1216,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1217,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1218,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1219,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1220,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1221,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1222,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1223,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1224,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1225,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1226,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1227,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1228,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1229,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1230,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1231,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1232,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1233,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1234,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1235,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1236,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1237,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1238,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1239,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1240,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1241,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1242,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1243,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1244,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1245,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1246,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1247,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1248,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1249,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1250,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1251,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1252,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1253,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1254,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1255,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1256,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1257,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1258,
+      "objektif": 420
+    },
+    {
+      "iterasi": 1259,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1260,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1261,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1262,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1263,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1264,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1265,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1266,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1267,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1268,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1269,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1270,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1271,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1272,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1273,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1274,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1275,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1276,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1277,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1278,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1279,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1280,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1281,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1282,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1283,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1284,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1285,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1286,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1287,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1288,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1289,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1290,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1291,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1292,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1293,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1294,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1295,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1296,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1297,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1298,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1299,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1300,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1301,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1302,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1303,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1304,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1305,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1306,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1307,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1308,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1309,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1310,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1311,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1312,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1313,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1314,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1315,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1316,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1317,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1318,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1319,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1320,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1321,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1322,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1323,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1324,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1325,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1326,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1327,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1328,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1329,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1330,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1331,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1332,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1333,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1334,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1335,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1336,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1337,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1338,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1339,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1340,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1341,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1342,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1343,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1344,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1345,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1346,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1347,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1348,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1349,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1350,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1351,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1352,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1353,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1354,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1355,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1356,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1357,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1358,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1359,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1360,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1361,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1362,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1363,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1364,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1365,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1366,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1367,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1368,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1369,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1370,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1371,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1372,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1373,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1374,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1375,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1376,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1377,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1378,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1379,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1380,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1381,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1382,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1383,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1384,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1385,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1386,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1387,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1388,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1389,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1390,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1391,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1392,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1393,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1394,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1395,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1396,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1397,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1398,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1399,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1400,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1401,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1402,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1403,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1404,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1405,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1406,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1407,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1408,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1409,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1410,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1411,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1412,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1413,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1414,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1415,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1416,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1417,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1418,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1419,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1420,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1421,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1422,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1423,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1424,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1425,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1426,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1427,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1428,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1429,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1430,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1431,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1432,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1433,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1434,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1435,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1436,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1437,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1438,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1439,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1440,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1441,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1442,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1443,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1444,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1445,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1446,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1447,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1448,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1449,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1450,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1451,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1452,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1453,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1454,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1455,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1456,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1457,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1458,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1459,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1460,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1461,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1462,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1463,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1464,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1465,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1466,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1467,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1468,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1469,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1470,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1471,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1472,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1473,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1474,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1475,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1476,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1477,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1478,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1479,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1480,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1481,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1482,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1483,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1484,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1485,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1486,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1487,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1488,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1489,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1490,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1491,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1492,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1493,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1494,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1495,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1496,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1497,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1498,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1499,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1500,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1501,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1502,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1503,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1504,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1505,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1506,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1507,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1508,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1509,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1510,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1511,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1512,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1513,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1514,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1515,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1516,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1517,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1518,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1519,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1520,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1521,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1522,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1523,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1524,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1525,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1526,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1527,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1528,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1529,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1530,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1531,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1532,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1533,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1534,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1535,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1536,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1537,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1538,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1539,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1540,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1541,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1542,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1543,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1544,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1545,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1546,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1547,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1548,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1549,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1550,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1551,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1552,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1553,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1554,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1555,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1556,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1557,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1558,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1559,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1560,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1561,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1562,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1563,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1564,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1565,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1566,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1567,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1568,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1569,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1570,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1571,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1572,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1573,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1574,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1575,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1576,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1577,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1578,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1579,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1580,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1581,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1582,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1583,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1584,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1585,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1586,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1587,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1588,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1589,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1590,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1591,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1592,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1593,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1594,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1595,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1596,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1597,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1598,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1599,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1600,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1601,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1602,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1603,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1604,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1605,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1606,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1607,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1608,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1609,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1610,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1611,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1612,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1613,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1614,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1615,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1616,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1617,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1618,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1619,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1620,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1621,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1622,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1623,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1624,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1625,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1626,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1627,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1628,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1629,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1630,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1631,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1632,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1633,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1634,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1635,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1636,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1637,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1638,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1639,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1640,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1641,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1642,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1643,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1644,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1645,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1646,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1647,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1648,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1649,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1650,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1651,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1652,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1653,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1654,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1655,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1656,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1657,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1658,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1659,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1660,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1661,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1662,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1663,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1664,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1665,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1666,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1667,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1668,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1669,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1670,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1671,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1672,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1673,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1674,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1675,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1676,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1677,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1678,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1679,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1680,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1681,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1682,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1683,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1684,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1685,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1686,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1687,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1688,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1689,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1690,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1691,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1692,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1693,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1694,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1695,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1696,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1697,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1698,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1699,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1700,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1701,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1702,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1703,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1704,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1705,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1706,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1707,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1708,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1709,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1710,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1711,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1712,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1713,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1714,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1715,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1716,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1717,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1718,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1719,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1720,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1721,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1722,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1723,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1724,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1725,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1726,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1727,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1728,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1729,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1730,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1731,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1732,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1733,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1734,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1735,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1736,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1737,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1738,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1739,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1740,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1741,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1742,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1743,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1744,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1745,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1746,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1747,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1748,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1749,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1750,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1751,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1752,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1753,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1754,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1755,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1756,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1757,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1758,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1759,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1760,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1761,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1762,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1763,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1764,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1765,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1766,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1767,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1768,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1769,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1770,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1771,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1772,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1773,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1774,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1775,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1776,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1777,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1778,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1779,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1780,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1781,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1782,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1783,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1784,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1785,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1786,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1787,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1788,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1789,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1790,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1791,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1792,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1793,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1794,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1795,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1796,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1797,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1798,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1799,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1800,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1801,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1802,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1803,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1804,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1805,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1806,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1807,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1808,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1809,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1810,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1811,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1812,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1813,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1814,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1815,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1816,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1817,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1818,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1819,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1820,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1821,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1822,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1823,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1824,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1825,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1826,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1827,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1828,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1829,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1830,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1831,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1832,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1833,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1834,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1835,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1836,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1837,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1838,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1839,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1840,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1841,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1842,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1843,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1844,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1845,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1846,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1847,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1848,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1849,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1850,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1851,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1852,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1853,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1854,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1855,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1856,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1857,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1858,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1859,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1860,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1861,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1862,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1863,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1864,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1865,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1866,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1867,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1868,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1869,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1870,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1871,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1872,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1873,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1874,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1875,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1876,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1877,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1878,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1879,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1880,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1881,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1882,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1883,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1884,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1885,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1886,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1887,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1888,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1889,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1890,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1891,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1892,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1893,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1894,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1895,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1896,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1897,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1898,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1899,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1900,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1901,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1902,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1903,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1904,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1905,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1906,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1907,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1908,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1909,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1910,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1911,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1912,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1913,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1914,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1915,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1916,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1917,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1918,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1919,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1920,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1921,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1922,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1923,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1924,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1925,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1926,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1927,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1928,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1929,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1930,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1931,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1932,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1933,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1934,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1935,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1936,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1937,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1938,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1939,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1940,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1941,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1942,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1943,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1944,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1945,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1946,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1947,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1948,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1949,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1950,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1951,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1952,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1953,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1954,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1955,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1956,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1957,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1958,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1959,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1960,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1961,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1962,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1963,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1964,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1965,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1966,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1967,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1968,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1969,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1970,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1971,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1972,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1973,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1974,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1975,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1976,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1977,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1978,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1979,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1980,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1981,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1982,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1983,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1984,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1985,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1986,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1987,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1988,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1989,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1990,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1991,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1992,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1993,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1994,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1995,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1996,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1997,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1998,
+      "objektif": 421
+    },
+    {
+      "iterasi": 1999,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2000,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2001,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2002,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2003,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2004,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2005,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2006,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2007,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2008,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2009,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2010,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2011,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2012,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2013,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2014,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2015,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2016,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2017,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2018,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2019,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2020,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2021,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2022,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2023,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2024,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2025,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2026,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2027,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2028,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2029,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2030,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2031,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2032,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2033,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2034,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2035,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2036,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2037,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2038,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2039,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2040,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2041,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2042,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2043,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2044,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2045,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2046,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2047,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2048,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2049,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2050,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2051,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2052,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2053,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2054,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2055,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2056,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2057,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2058,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2059,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2060,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2061,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2062,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2063,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2064,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2065,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2066,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2067,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2068,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2069,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2070,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2071,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2072,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2073,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2074,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2075,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2076,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2077,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2078,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2079,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2080,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2081,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2082,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2083,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2084,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2085,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2086,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2087,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2088,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2089,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2090,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2091,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2092,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2093,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2094,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2095,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2096,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2097,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2098,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2099,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2100,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2101,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2102,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2103,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2104,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2105,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2106,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2107,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2108,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2109,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2110,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2111,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2112,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2113,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2114,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2115,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2116,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2117,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2118,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2119,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2120,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2121,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2122,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2123,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2124,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2125,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2126,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2127,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2128,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2129,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2130,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2131,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2132,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2133,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2134,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2135,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2136,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2137,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2138,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2139,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2140,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2141,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2142,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2143,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2144,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2145,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2146,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2147,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2148,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2149,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2150,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2151,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2152,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2153,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2154,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2155,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2156,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2157,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2158,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2159,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2160,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2161,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2162,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2163,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2164,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2165,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2166,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2167,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2168,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2169,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2170,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2171,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2172,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2173,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2174,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2175,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2176,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2177,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2178,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2179,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2180,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2181,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2182,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2183,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2184,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2185,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2186,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2187,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2188,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2189,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2190,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2191,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2192,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2193,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2194,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2195,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2196,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2197,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2198,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2199,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2200,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2201,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2202,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2203,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2204,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2205,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2206,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2207,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2208,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2209,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2210,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2211,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2212,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2213,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2214,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2215,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2216,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2217,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2218,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2219,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2220,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2221,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2222,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2223,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2224,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2225,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2226,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2227,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2228,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2229,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2230,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2231,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2232,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2233,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2234,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2235,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2236,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2237,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2238,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2239,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2240,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2241,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2242,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2243,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2244,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2245,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2246,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2247,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2248,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2249,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2250,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2251,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2252,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2253,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2254,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2255,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2256,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2257,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2258,
+      "objektif": 421
+    },
+    {
+      "iterasi": 2259,
+      "objektif": 421
+    }
+  ],
+  "metrik": {
+    "varian": "stochastic",
+    "parameter_efektif": {
+      "varian": "stochastic",
+      "maks_gagal": 1000,
+      "maks_sideways": 100,
+      "maks_restart": 10
+    },
+    "maks_gagal": 1000,
+    "lingkungan": {
+      "python": "3.13.4",
+      "sistem": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+      "sha256_src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "5766808a80c4be682db679374b12315d323d5ca5b6a3fe67350724f5f26f1e51",
+        "eksperimen.py": "4d265bdfaa2ae97b380252423a1c8acfd11557aa64592b0c5caf143e89b725a6",
+        "genetic.py": "37927e7a07e110b4a920b95c0529c63a465cc66c5834c87f57716878af5cb04b",
+        "hill_climbing.py": "ca87a716273956505c14d57f3ee652d230d1b70cae2ffa343951f09eaf71e125",
+        "pencatatan.py": "4f2881cdf8522e7f1e046a53455ed6bac188c420ca548aba663ad7d4d792a71a",
+        "simulated_annealing.py": "1544234b1e921e3d2c718df45fc4c0cd769f277e6776ab0bbeb74d35da5b66fd",
+        "tetangga.py": "94a1ca8ed3177089dcc26e8cd7ca4695ac306b30356828c48faca7eaadae8ebe",
+        "visualisasi.py": "f158237a8bfd0dc06419d7babd7f292ec668b7a7fdf41abf2514b6ec677f7d07"
+      }
+    }
+  }
+}

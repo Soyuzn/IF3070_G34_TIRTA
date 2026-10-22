@@ -1,5 +1,5 @@
 """Visualisasi state dan riwayat eksperimen."""
-# Rujukan Matplotlib: docs/referensi.md.
+# Rujukan Matplotlib ada di README.md.
 import textwrap
 from pathlib import Path
 
