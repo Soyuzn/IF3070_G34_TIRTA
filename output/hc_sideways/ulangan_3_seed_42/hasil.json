@@ -1,0 +1,904 @@
+{
+  "versi_format": 1,
+  "objektif": "jumlah tarif_kirim",
+  "satuan_objektif": "juta rupiah",
+  "algoritma": "hill_climbing",
+  "seed": 42,
+  "parameter": {
+    "varian": "sideways",
+    "maks_sideways": 100,
+    "maks_gagal": 1000,
+    "maks_restart": 10
+  },
+  "kapal": [
+    {
+      "id": "kapal_utama",
+      "lebar": 10,
+      "panjang": 16,
+      "kapasitas": 60
+    }
+  ],
+  "kendaraan": [
+    {
+      "id": "motor_01",
+      "lebar": 1,
+      "panjang": 2,
+      "tarif_kirim": 8,
+      "berat": 1,
+      "eta_hari": 1
+    },
+    {
+      "id": "motor_02",
+      "lebar": 1,
+      "panjang": 2,
+      "tarif_kirim": 9,
+      "berat": 1,
+      "eta_hari": 3
+    },
+    {
+      "id": "motor_03",
+      "lebar": 1,
+      "panjang": 3,
+      "tarif_kirim": 11,
+      "berat": 1,
+      "eta_hari": 6
+    },
+    {
+      "id": "lcgc_01",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 22,
+      "berat": 3,
+      "eta_hari": 0
+    },
+    {
+      "id": "lcgc_02",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 23,
+      "berat": 3,
+      "eta_hari": 5
+    },
+    {
+      "id": "lcgc_03",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 26,
+      "berat": 3,
+      "eta_hari": 1
+    },
+    {
+      "id": "sedan_01",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 24,
+      "berat": 4,
+      "eta_hari": 0
+    },
+    {
+      "id": "sedan_02",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 25,
+      "berat": 4,
+      "eta_hari": 2
+    },
+    {
+      "id": "sedan_03",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 31,
+      "berat": 5,
+      "eta_hari": 4
+    },
+    {
+      "id": "suv_01",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 33,
+      "berat": 5,
+      "eta_hari": 1
+    },
+    {
+      "id": "suv_02",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 34,
+      "berat": 5,
+      "eta_hari": 3
+    },
+    {
+      "id": "suv_03",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 43,
+      "berat": 7,
+      "eta_hari": 0
+    },
+    {
+      "id": "pickup_01",
+      "lebar": 2,
+      "panjang": 5,
+      "tarif_kirim": 40,
+      "berat": 6,
+      "eta_hari": 0
+    },
+    {
+      "id": "pickup_02",
+      "lebar": 2,
+      "panjang": 5,
+      "tarif_kirim": 42,
+      "berat": 6,
+      "eta_hari": 4
+    },
+    {
+      "id": "pickup_03",
+      "lebar": 2,
+      "panjang": 6,
+      "tarif_kirim": 47,
+      "berat": 7,
+      "eta_hari": 2
+    },
+    {
+      "id": "mobil_boks_01",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 48,
+      "berat": 7,
+      "eta_hari": 2
+    },
+    {
+      "id": "mobil_boks_02",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 50,
+      "berat": 7,
+      "eta_hari": 5
+    },
+    {
+      "id": "mobil_boks_03",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 59,
+      "berat": 9,
+      "eta_hari": 5
+    },
+    {
+      "id": "mpv_01",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 55,
+      "berat": 8,
+      "eta_hari": 1
+    },
+    {
+      "id": "mpv_02",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 56,
+      "berat": 8,
+      "eta_hari": 6
+    },
+    {
+      "id": "mpv_03",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 51,
+      "berat": 7,
+      "eta_hari": 3
+    },
+    {
+      "id": "minibus_01",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 58,
+      "berat": 9,
+      "eta_hari": 1
+    },
+    {
+      "id": "minibus_02",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 60,
+      "berat": 9,
+      "eta_hari": 6
+    },
+    {
+      "id": "minibus_03",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 69,
+      "berat": 10,
+      "eta_hari": 4
+    },
+    {
+      "id": "truk_01",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 68,
+      "berat": 11,
+      "eta_hari": 2
+    },
+    {
+      "id": "truk_02",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 70,
+      "berat": 11,
+      "eta_hari": 4
+    },
+    {
+      "id": "truk_03",
+      "lebar": 4,
+      "panjang": 6,
+      "tarif_kirim": 82,
+      "berat": 13,
+      "eta_hari": 1
+    },
+    {
+      "id": "bus_01",
+      "lebar": 4,
+      "panjang": 7,
+      "tarif_kirim": 90,
+      "berat": 14,
+      "eta_hari": 3
+    },
+    {
+      "id": "bus_02",
+      "lebar": 4,
+      "panjang": 7,
+      "tarif_kirim": 92,
+      "berat": 14,
+      "eta_hari": 7
+    },
+    {
+      "id": "bus_03",
+      "lebar": 4,
+      "panjang": 8,
+      "tarif_kirim": 105,
+      "berat": 16,
+      "eta_hari": 6
+    }
+  ],
+  "state_awal": {
+    "motor_01": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 14,
+      "orientasi": "vertikal"
+    },
+    "motor_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 3,
+      "orientasi": "horizontal"
+    },
+    "motor_03": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "lcgc_01": null,
+    "lcgc_02": {
+      "kapal_id": "kapal_utama",
+      "x": 7,
+      "y": 0,
+      "orientasi": "horizontal"
+    },
+    "lcgc_03": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 0,
+      "orientasi": "horizontal"
+    },
+    "sedan_01": {
+      "kapal_id": "kapal_utama",
+      "x": 7,
+      "y": 14,
+      "orientasi": "horizontal"
+    },
+    "sedan_02": null,
+    "sedan_03": null,
+    "suv_01": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "suv_02": {
+      "kapal_id": "kapal_utama",
+      "x": 5,
+      "y": 8,
+      "orientasi": "horizontal"
+    },
+    "suv_03": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 5,
+      "orientasi": "vertikal"
+    },
+    "pickup_01": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "pickup_02": null,
+    "pickup_03": {
+      "kapal_id": "kapal_utama",
+      "x": 4,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "mobil_boks_01": null,
+    "mobil_boks_02": null,
+    "mobil_boks_03": null,
+    "mpv_01": null,
+    "mpv_02": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 11,
+      "orientasi": "horizontal"
+    },
+    "mpv_03": null,
+    "minibus_01": null,
+    "minibus_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 9,
+      "orientasi": "vertikal"
+    },
+    "minibus_03": null,
+    "truk_01": null,
+    "truk_02": null,
+    "truk_03": null,
+    "bus_01": null,
+    "bus_02": null,
+    "bus_03": null
+  },
+  "state_akhir": {
+    "motor_01": {
+      "kapal_id": "kapal_utama",
+      "x": 5,
+      "y": 13,
+      "orientasi": "vertikal"
+    },
+    "motor_02": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 7,
+      "orientasi": "vertikal"
+    },
+    "motor_03": {
+      "kapal_id": "kapal_utama",
+      "x": 4,
+      "y": 10,
+      "orientasi": "vertikal"
+    },
+    "lcgc_01": null,
+    "lcgc_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 4,
+      "orientasi": "horizontal"
+    },
+    "lcgc_03": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 13,
+      "orientasi": "vertikal"
+    },
+    "sedan_01": null,
+    "sedan_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "sedan_03": null,
+    "suv_01": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "suv_02": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "suv_03": null,
+    "pickup_01": null,
+    "pickup_02": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 1,
+      "orientasi": "vertikal"
+    },
+    "pickup_03": {
+      "kapal_id": "kapal_utama",
+      "x": 4,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "mobil_boks_01": null,
+    "mobil_boks_02": null,
+    "mobil_boks_03": null,
+    "mpv_01": null,
+    "mpv_02": {
+      "kapal_id": "kapal_utama",
+      "x": 5,
+      "y": 8,
+      "orientasi": "horizontal"
+    },
+    "mpv_03": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 13,
+      "orientasi": "horizontal"
+    },
+    "minibus_01": null,
+    "minibus_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 9,
+      "orientasi": "vertikal"
+    },
+    "minibus_03": null,
+    "truk_01": null,
+    "truk_02": null,
+    "truk_03": null,
+    "bus_01": null,
+    "bus_02": null,
+    "bus_03": null
+  },
+  "objektif_awal": 414,
+  "objektif_akhir": 425,
+  "durasi_detik": 1.7768577500000902,
+  "jumlah_iterasi": 103,
+  "riwayat": [
+    {
+      "iterasi": 0,
+      "objektif": 414
+    },
+    {
+      "iterasi": 1,
+      "objektif": 422
+    },
+    {
+      "iterasi": 2,
+      "objektif": 424
+    },
+    {
+      "iterasi": 3,
+      "objektif": 425
+    },
+    {
+      "iterasi": 4,
+      "objektif": 425
+    },
+    {
+      "iterasi": 5,
+      "objektif": 425
+    },
+    {
+      "iterasi": 6,
+      "objektif": 425
+    },
+    {
+      "iterasi": 7,
+      "objektif": 425
+    },
+    {
+      "iterasi": 8,
+      "objektif": 425
+    },
+    {
+      "iterasi": 9,
+      "objektif": 425
+    },
+    {
+      "iterasi": 10,
+      "objektif": 425
+    },
+    {
+      "iterasi": 11,
+      "objektif": 425
+    },
+    {
+      "iterasi": 12,
+      "objektif": 425
+    },
+    {
+      "iterasi": 13,
+      "objektif": 425
+    },
+    {
+      "iterasi": 14,
+      "objektif": 425
+    },
+    {
+      "iterasi": 15,
+      "objektif": 425
+    },
+    {
+      "iterasi": 16,
+      "objektif": 425
+    },
+    {
+      "iterasi": 17,
+      "objektif": 425
+    },
+    {
+      "iterasi": 18,
+      "objektif": 425
+    },
+    {
+      "iterasi": 19,
+      "objektif": 425
+    },
+    {
+      "iterasi": 20,
+      "objektif": 425
+    },
+    {
+      "iterasi": 21,
+      "objektif": 425
+    },
+    {
+      "iterasi": 22,
+      "objektif": 425
+    },
+    {
+      "iterasi": 23,
+      "objektif": 425
+    },
+    {
+      "iterasi": 24,
+      "objektif": 425
+    },
+    {
+      "iterasi": 25,
+      "objektif": 425
+    },
+    {
+      "iterasi": 26,
+      "objektif": 425
+    },
+    {
+      "iterasi": 27,
+      "objektif": 425
+    },
+    {
+      "iterasi": 28,
+      "objektif": 425
+    },
+    {
+      "iterasi": 29,
+      "objektif": 425
+    },
+    {
+      "iterasi": 30,
+      "objektif": 425
+    },
+    {
+      "iterasi": 31,
+      "objektif": 425
+    },
+    {
+      "iterasi": 32,
+      "objektif": 425
+    },
+    {
+      "iterasi": 33,
+      "objektif": 425
+    },
+    {
+      "iterasi": 34,
+      "objektif": 425
+    },
+    {
+      "iterasi": 35,
+      "objektif": 425
+    },
+    {
+      "iterasi": 36,
+      "objektif": 425
+    },
+    {
+      "iterasi": 37,
+      "objektif": 425
+    },
+    {
+      "iterasi": 38,
+      "objektif": 425
+    },
+    {
+      "iterasi": 39,
+      "objektif": 425
+    },
+    {
+      "iterasi": 40,
+      "objektif": 425
+    },
+    {
+      "iterasi": 41,
+      "objektif": 425
+    },
+    {
+      "iterasi": 42,
+      "objektif": 425
+    },
+    {
+      "iterasi": 43,
+      "objektif": 425
+    },
+    {
+      "iterasi": 44,
+      "objektif": 425
+    },
+    {
+      "iterasi": 45,
+      "objektif": 425
+    },
+    {
+      "iterasi": 46,
+      "objektif": 425
+    },
+    {
+      "iterasi": 47,
+      "objektif": 425
+    },
+    {
+      "iterasi": 48,
+      "objektif": 425
+    },
+    {
+      "iterasi": 49,
+      "objektif": 425
+    },
+    {
+      "iterasi": 50,
+      "objektif": 425
+    },
+    {
+      "iterasi": 51,
+      "objektif": 425
+    },
+    {
+      "iterasi": 52,
+      "objektif": 425
+    },
+    {
+      "iterasi": 53,
+      "objektif": 425
+    },
+    {
+      "iterasi": 54,
+      "objektif": 425
+    },
+    {
+      "iterasi": 55,
+      "objektif": 425
+    },
+    {
+      "iterasi": 56,
+      "objektif": 425
+    },
+    {
+      "iterasi": 57,
+      "objektif": 425
+    },
+    {
+      "iterasi": 58,
+      "objektif": 425
+    },
+    {
+      "iterasi": 59,
+      "objektif": 425
+    },
+    {
+      "iterasi": 60,
+      "objektif": 425
+    },
+    {
+      "iterasi": 61,
+      "objektif": 425
+    },
+    {
+      "iterasi": 62,
+      "objektif": 425
+    },
+    {
+      "iterasi": 63,
+      "objektif": 425
+    },
+    {
+      "iterasi": 64,
+      "objektif": 425
+    },
+    {
+      "iterasi": 65,
+      "objektif": 425
+    },
+    {
+      "iterasi": 66,
+      "objektif": 425
+    },
+    {
+      "iterasi": 67,
+      "objektif": 425
+    },
+    {
+      "iterasi": 68,
+      "objektif": 425
+    },
+    {
+      "iterasi": 69,
+      "objektif": 425
+    },
+    {
+      "iterasi": 70,
+      "objektif": 425
+    },
+    {
+      "iterasi": 71,
+      "objektif": 425
+    },
+    {
+      "iterasi": 72,
+      "objektif": 425
+    },
+    {
+      "iterasi": 73,
+      "objektif": 425
+    },
+    {
+      "iterasi": 74,
+      "objektif": 425
+    },
+    {
+      "iterasi": 75,
+      "objektif": 425
+    },
+    {
+      "iterasi": 76,
+      "objektif": 425
+    },
+    {
+      "iterasi": 77,
+      "objektif": 425
+    },
+    {
+      "iterasi": 78,
+      "objektif": 425
+    },
+    {
+      "iterasi": 79,
+      "objektif": 425
+    },
+    {
+      "iterasi": 80,
+      "objektif": 425
+    },
+    {
+      "iterasi": 81,
+      "objektif": 425
+    },
+    {
+      "iterasi": 82,
+      "objektif": 425
+    },
+    {
+      "iterasi": 83,
+      "objektif": 425
+    },
+    {
+      "iterasi": 84,
+      "objektif": 425
+    },
+    {
+      "iterasi": 85,
+      "objektif": 425
+    },
+    {
+      "iterasi": 86,
+      "objektif": 425
+    },
+    {
+      "iterasi": 87,
+      "objektif": 425
+    },
+    {
+      "iterasi": 88,
+      "objektif": 425
+    },
+    {
+      "iterasi": 89,
+      "objektif": 425
+    },
+    {
+      "iterasi": 90,
+      "objektif": 425
+    },
+    {
+      "iterasi": 91,
+      "objektif": 425
+    },
+    {
+      "iterasi": 92,
+      "objektif": 425
+    },
+    {
+      "iterasi": 93,
+      "objektif": 425
+    },
+    {
+      "iterasi": 94,
+      "objektif": 425
+    },
+    {
+      "iterasi": 95,
+      "objektif": 425
+    },
+    {
+      "iterasi": 96,
+      "objektif": 425
+    },
+    {
+      "iterasi": 97,
+      "objektif": 425
+    },
+    {
+      "iterasi": 98,
+      "objektif": 425
+    },
+    {
+      "iterasi": 99,
+      "objektif": 425
+    },
+    {
+      "iterasi": 100,
+      "objektif": 425
+    },
+    {
+      "iterasi": 101,
+      "objektif": 425
+    },
+    {
+      "iterasi": 102,
+      "objektif": 425
+    },
+    {
+      "iterasi": 103,
+      "objektif": 425
+    }
+  ],
+  "metrik": {
+    "varian": "sideways",
+    "parameter_efektif": {
+      "varian": "sideways",
+      "maks_gagal": 1000,
+      "maks_sideways": 100,
+      "maks_restart": 10
+    },
+    "jumlah_sideways": 100,
+    "lingkungan": {
+      "python": "3.13.4",
+      "sistem": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+      "sha256_src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "5766808a80c4be682db679374b12315d323d5ca5b6a3fe67350724f5f26f1e51",
+        "eksperimen.py": "4d265bdfaa2ae97b380252423a1c8acfd11557aa64592b0c5caf143e89b725a6",
+        "genetic.py": "37927e7a07e110b4a920b95c0529c63a465cc66c5834c87f57716878af5cb04b",
+        "hill_climbing.py": "ca87a716273956505c14d57f3ee652d230d1b70cae2ffa343951f09eaf71e125",
+        "pencatatan.py": "4f2881cdf8522e7f1e046a53455ed6bac188c420ca548aba663ad7d4d792a71a",
+        "simulated_annealing.py": "1544234b1e921e3d2c718df45fc4c0cd769f277e6776ab0bbeb74d35da5b66fd",
+        "tetangga.py": "94a1ca8ed3177089dcc26e8cd7ca4695ac306b30356828c48faca7eaadae8ebe",
+        "visualisasi.py": "f158237a8bfd0dc06419d7babd7f292ec668b7a7fdf41abf2514b6ec677f7d07"
+      }
+    }
+  }
+}

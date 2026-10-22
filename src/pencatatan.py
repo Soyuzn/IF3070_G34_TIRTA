@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from time import perf_counter
 
-from .data import OBJEKTIF, angka_valid, nilai_objektif
+from .data import angka_valid, nilai_objektif
 
 KOLOM = ("iterasi", "objektif", "maksimum_populasi", "rata_rata_populasi",
          "eksponen_penerimaan", "restart")
@@ -46,12 +46,10 @@ def periksa_riwayat(riwayat):
 
 
 def simpan_percobaan(direktori, *, algoritma, seed, parameter, kapal, kendaraan,
-                     state_awal, state_akhir, durasi_detik, riwayat, metrik=None,
-                     ilustrasi=False, objektif="tarif_kirim"):
+                     state_awal, state_akhir, durasi_detik, riwayat, metrik=None):
     """Menyimpan hasil.json dan riwayat.csv tanpa menimpa percobaan lama."""
-    awal = nilai_objektif(kapal, kendaraan, state_awal, objektif)
-    akhir = nilai_objektif(kapal, kendaraan, state_akhir, objektif)
-    nama_objektif, satuan_objektif = OBJEKTIF[objektif]
+    awal = nilai_objektif(kapal, kendaraan, state_awal)
+    akhir = nilai_objektif(kapal, kendaraan, state_akhir)
     periksa_riwayat(riwayat)
     if not isinstance(algoritma, str) or not algoritma.strip():
         raise ValueError("algoritma harus diisi")
@@ -59,12 +57,10 @@ def simpan_percobaan(direktori, *, algoritma, seed, parameter, kapal, kendaraan,
         raise ValueError("seed harus integer; durasi_detik harus valid")
     if not isinstance(parameter, dict) or (metrik is not None and not isinstance(metrik, dict)):
         raise ValueError("parameter dan metrik harus dict")
-    if type(ilustrasi) is not bool:
-        raise ValueError("ilustrasi harus bool")
-    hasil = dict(versi_format=1, ilustrasi=ilustrasi, algoritma=algoritma, seed=seed,
+    hasil = dict(versi_format=1, objektif="jumlah tarif_kirim", satuan_objektif="juta rupiah",
+                 algoritma=algoritma, seed=seed,
                  parameter=parameter, kapal=kapal, kendaraan=kendaraan,
                  state_awal=state_awal, state_akhir=state_akhir,
-                 objektif=nama_objektif, satuan_objektif=satuan_objektif,
                  objektif_awal=awal, objektif_akhir=akhir, durasi_detik=durasi_detik,
                  jumlah_iterasi=riwayat[-1]["iterasi"], riwayat=riwayat,
                  metrik=metrik or {})

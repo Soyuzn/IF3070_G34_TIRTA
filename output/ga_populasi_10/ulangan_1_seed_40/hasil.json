@@ -1,0 +1,2423 @@
+{
+  "versi_format": 1,
+  "objektif": "jumlah tarif_kirim",
+  "satuan_objektif": "juta rupiah",
+  "algoritma": "genetic",
+  "seed": 40,
+  "parameter": {
+    "jumlah_populasi": 10,
+    "batas_iterasi": 30,
+    "peluang_mutasi": 0.2
+  },
+  "kapal": [
+    {
+      "id": "kapal_utama",
+      "lebar": 10,
+      "panjang": 16,
+      "kapasitas": 60
+    }
+  ],
+  "kendaraan": [
+    {
+      "id": "motor_01",
+      "lebar": 1,
+      "panjang": 2,
+      "tarif_kirim": 8,
+      "berat": 1,
+      "eta_hari": 1
+    },
+    {
+      "id": "motor_02",
+      "lebar": 1,
+      "panjang": 2,
+      "tarif_kirim": 9,
+      "berat": 1,
+      "eta_hari": 3
+    },
+    {
+      "id": "motor_03",
+      "lebar": 1,
+      "panjang": 3,
+      "tarif_kirim": 11,
+      "berat": 1,
+      "eta_hari": 6
+    },
+    {
+      "id": "lcgc_01",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 22,
+      "berat": 3,
+      "eta_hari": 0
+    },
+    {
+      "id": "lcgc_02",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 23,
+      "berat": 3,
+      "eta_hari": 5
+    },
+    {
+      "id": "lcgc_03",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 26,
+      "berat": 3,
+      "eta_hari": 1
+    },
+    {
+      "id": "sedan_01",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 24,
+      "berat": 4,
+      "eta_hari": 0
+    },
+    {
+      "id": "sedan_02",
+      "lebar": 2,
+      "panjang": 3,
+      "tarif_kirim": 25,
+      "berat": 4,
+      "eta_hari": 2
+    },
+    {
+      "id": "sedan_03",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 31,
+      "berat": 5,
+      "eta_hari": 4
+    },
+    {
+      "id": "suv_01",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 33,
+      "berat": 5,
+      "eta_hari": 1
+    },
+    {
+      "id": "suv_02",
+      "lebar": 2,
+      "panjang": 4,
+      "tarif_kirim": 34,
+      "berat": 5,
+      "eta_hari": 3
+    },
+    {
+      "id": "suv_03",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 43,
+      "berat": 7,
+      "eta_hari": 0
+    },
+    {
+      "id": "pickup_01",
+      "lebar": 2,
+      "panjang": 5,
+      "tarif_kirim": 40,
+      "berat": 6,
+      "eta_hari": 0
+    },
+    {
+      "id": "pickup_02",
+      "lebar": 2,
+      "panjang": 5,
+      "tarif_kirim": 42,
+      "berat": 6,
+      "eta_hari": 4
+    },
+    {
+      "id": "pickup_03",
+      "lebar": 2,
+      "panjang": 6,
+      "tarif_kirim": 47,
+      "berat": 7,
+      "eta_hari": 2
+    },
+    {
+      "id": "mobil_boks_01",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 48,
+      "berat": 7,
+      "eta_hari": 2
+    },
+    {
+      "id": "mobil_boks_02",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 50,
+      "berat": 7,
+      "eta_hari": 5
+    },
+    {
+      "id": "mobil_boks_03",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 59,
+      "berat": 9,
+      "eta_hari": 5
+    },
+    {
+      "id": "mpv_01",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 55,
+      "berat": 8,
+      "eta_hari": 1
+    },
+    {
+      "id": "mpv_02",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 56,
+      "berat": 8,
+      "eta_hari": 6
+    },
+    {
+      "id": "mpv_03",
+      "lebar": 3,
+      "panjang": 4,
+      "tarif_kirim": 51,
+      "berat": 7,
+      "eta_hari": 3
+    },
+    {
+      "id": "minibus_01",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 58,
+      "berat": 9,
+      "eta_hari": 1
+    },
+    {
+      "id": "minibus_02",
+      "lebar": 3,
+      "panjang": 5,
+      "tarif_kirim": 60,
+      "berat": 9,
+      "eta_hari": 6
+    },
+    {
+      "id": "minibus_03",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 69,
+      "berat": 10,
+      "eta_hari": 4
+    },
+    {
+      "id": "truk_01",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 68,
+      "berat": 11,
+      "eta_hari": 2
+    },
+    {
+      "id": "truk_02",
+      "lebar": 3,
+      "panjang": 6,
+      "tarif_kirim": 70,
+      "berat": 11,
+      "eta_hari": 4
+    },
+    {
+      "id": "truk_03",
+      "lebar": 4,
+      "panjang": 6,
+      "tarif_kirim": 82,
+      "berat": 13,
+      "eta_hari": 1
+    },
+    {
+      "id": "bus_01",
+      "lebar": 4,
+      "panjang": 7,
+      "tarif_kirim": 90,
+      "berat": 14,
+      "eta_hari": 3
+    },
+    {
+      "id": "bus_02",
+      "lebar": 4,
+      "panjang": 7,
+      "tarif_kirim": 92,
+      "berat": 14,
+      "eta_hari": 7
+    },
+    {
+      "id": "bus_03",
+      "lebar": 4,
+      "panjang": 8,
+      "tarif_kirim": 105,
+      "berat": 16,
+      "eta_hari": 6
+    }
+  ],
+  "state_awal": {
+    "motor_01": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 10,
+      "orientasi": "horizontal"
+    },
+    "motor_02": {
+      "kapal_id": "kapal_utama",
+      "x": 7,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "motor_03": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 9,
+      "orientasi": "horizontal"
+    },
+    "lcgc_01": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 14,
+      "orientasi": "horizontal"
+    },
+    "lcgc_02": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "lcgc_03": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "sedan_01": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 9,
+      "orientasi": "horizontal"
+    },
+    "sedan_02": null,
+    "sedan_03": null,
+    "suv_01": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 5,
+      "orientasi": "vertikal"
+    },
+    "suv_02": null,
+    "suv_03": null,
+    "pickup_01": null,
+    "pickup_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "pickup_03": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "mobil_boks_01": null,
+    "mobil_boks_02": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 11,
+      "orientasi": "horizontal"
+    },
+    "mobil_boks_03": null,
+    "mpv_01": {
+      "kapal_id": "kapal_utama",
+      "x": 7,
+      "y": 11,
+      "orientasi": "vertikal"
+    },
+    "mpv_02": null,
+    "mpv_03": null,
+    "minibus_01": null,
+    "minibus_02": null,
+    "minibus_03": null,
+    "truk_01": {
+      "kapal_id": "kapal_utama",
+      "x": 5,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "truk_02": null,
+    "truk_03": null,
+    "bus_01": null,
+    "bus_02": null,
+    "bus_03": null
+  },
+  "state_akhir": {
+    "motor_01": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 10,
+      "orientasi": "horizontal"
+    },
+    "motor_02": {
+      "kapal_id": "kapal_utama",
+      "x": 7,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "motor_03": {
+      "kapal_id": "kapal_utama",
+      "x": 6,
+      "y": 9,
+      "orientasi": "horizontal"
+    },
+    "lcgc_01": {
+      "kapal_id": "kapal_utama",
+      "x": 1,
+      "y": 14,
+      "orientasi": "horizontal"
+    },
+    "lcgc_02": {
+      "kapal_id": "kapal_utama",
+      "x": 3,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "lcgc_03": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "sedan_01": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 9,
+      "orientasi": "horizontal"
+    },
+    "sedan_02": null,
+    "sedan_03": null,
+    "suv_01": {
+      "kapal_id": "kapal_utama",
+      "x": 8,
+      "y": 5,
+      "orientasi": "vertikal"
+    },
+    "suv_02": null,
+    "suv_03": null,
+    "pickup_01": null,
+    "pickup_02": {
+      "kapal_id": "kapal_utama",
+      "x": 0,
+      "y": 0,
+      "orientasi": "vertikal"
+    },
+    "pickup_03": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 3,
+      "orientasi": "vertikal"
+    },
+    "mobil_boks_01": null,
+    "mobil_boks_02": {
+      "kapal_id": "kapal_utama",
+      "x": 2,
+      "y": 11,
+      "orientasi": "horizontal"
+    },
+    "mobil_boks_03": null,
+    "mpv_01": {
+      "kapal_id": "kapal_utama",
+      "x": 7,
+      "y": 11,
+      "orientasi": "vertikal"
+    },
+    "mpv_02": null,
+    "mpv_03": null,
+    "minibus_01": null,
+    "minibus_02": null,
+    "minibus_03": null,
+    "truk_01": {
+      "kapal_id": "kapal_utama",
+      "x": 5,
+      "y": 2,
+      "orientasi": "vertikal"
+    },
+    "truk_02": null,
+    "truk_03": null,
+    "bus_01": null,
+    "bus_02": null,
+    "bus_03": null
+  },
+  "objektif_awal": 418,
+  "objektif_akhir": 418,
+  "durasi_detik": 1.0226514579999275,
+  "jumlah_iterasi": 30,
+  "riwayat": [
+    {
+      "iterasi": 0,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 404.3
+    },
+    {
+      "iterasi": 1,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 370.8
+    },
+    {
+      "iterasi": 2,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 292
+    },
+    {
+      "iterasi": 3,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 270.3
+    },
+    {
+      "iterasi": 4,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 270.4
+    },
+    {
+      "iterasi": 5,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 316.1
+    },
+    {
+      "iterasi": 6,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 345.4
+    },
+    {
+      "iterasi": 7,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 356.9
+    },
+    {
+      "iterasi": 8,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 347.9
+    },
+    {
+      "iterasi": 9,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 319.1
+    },
+    {
+      "iterasi": 10,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 287.4
+    },
+    {
+      "iterasi": 11,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 321.9
+    },
+    {
+      "iterasi": 12,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 298.9
+    },
+    {
+      "iterasi": 13,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 362.3
+    },
+    {
+      "iterasi": 14,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 403.1
+    },
+    {
+      "iterasi": 15,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 404.3
+    },
+    {
+      "iterasi": 16,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 404.3
+    },
+    {
+      "iterasi": 17,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 414.7
+    },
+    {
+      "iterasi": 18,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 415.8
+    },
+    {
+      "iterasi": 19,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 414.7
+    },
+    {
+      "iterasi": 20,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 413.6
+    },
+    {
+      "iterasi": 21,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 415.8
+    },
+    {
+      "iterasi": 22,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 414.7
+    },
+    {
+      "iterasi": 23,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 414.7
+    },
+    {
+      "iterasi": 24,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 418
+    },
+    {
+      "iterasi": 25,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 418
+    },
+    {
+      "iterasi": 26,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 408.8
+    },
+    {
+      "iterasi": 27,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 408.8
+    },
+    {
+      "iterasi": 28,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 408.8
+    },
+    {
+      "iterasi": 29,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 408.8
+    },
+    {
+      "iterasi": 30,
+      "maksimum_populasi": 418,
+      "rata_rata_populasi": 418
+    }
+  ],
+  "metrik": {
+    "populasi_awal": [
+      {
+        "motor_01": null,
+        "motor_02": null,
+        "motor_03": null,
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 3,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": null,
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 12,
+          "orientasi": "horizontal"
+        },
+        "sedan_01": null,
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": null,
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "pickup_03": null,
+        "mobil_boks_01": null,
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": null,
+        "mpv_02": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "horizontal"
+        },
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": null,
+        "motor_02": null,
+        "motor_03": null,
+        "lcgc_01": null,
+        "lcgc_02": null,
+        "lcgc_03": null,
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 7,
+          "orientasi": "vertikal"
+        },
+        "sedan_02": null,
+        "sedan_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_01": null,
+        "suv_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 0,
+          "orientasi": "horizontal"
+        },
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": null,
+        "mobil_boks_01": null,
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 6,
+          "orientasi": "horizontal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": {
+          "kapal_id": "kapal_utama",
+          "x": 4,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "minibus_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 2,
+          "orientasi": "horizontal"
+        },
+        "minibus_03": null,
+        "truk_01": null,
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 12,
+          "orientasi": "horizontal"
+        },
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": null,
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 0,
+          "orientasi": "horizontal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 9,
+          "y": 10,
+          "orientasi": "vertikal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 1,
+          "orientasi": "vertikal"
+        },
+        "lcgc_02": null,
+        "lcgc_03": null,
+        "sedan_01": null,
+        "sedan_02": null,
+        "sedan_03": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "suv_01": null,
+        "suv_02": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 4,
+          "orientasi": "vertikal"
+        },
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": null,
+        "pickup_03": null,
+        "mobil_boks_01": null,
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": null,
+        "mpv_02": null,
+        "mpv_03": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 6,
+          "orientasi": "vertikal"
+        },
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 11,
+          "orientasi": "horizontal"
+        }
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 13,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 14,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 4,
+          "orientasi": "vertikal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 13,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": null,
+        "sedan_02": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 7,
+          "orientasi": "horizontal"
+        },
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "suv_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 1,
+          "orientasi": "vertikal"
+        },
+        "suv_03": null,
+        "pickup_01": {
+          "kapal_id": "kapal_utama",
+          "x": 4,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "pickup_02": null,
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 1,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": null,
+        "truk_02": null,
+        "truk_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 6,
+          "orientasi": "vertikal"
+        },
+        "motor_02": null,
+        "motor_03": null,
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 13,
+          "orientasi": "vertikal"
+        },
+        "lcgc_02": null,
+        "lcgc_03": null,
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 4,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "sedan_02": null,
+        "sedan_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "vertikal"
+        },
+        "suv_01": null,
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "pickup_02": null,
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 13,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": null,
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": null,
+        "truk_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 7,
+          "orientasi": "vertikal"
+        },
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 1,
+          "orientasi": "horizontal"
+        }
+      },
+      {
+        "motor_01": null,
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 15,
+          "orientasi": "horizontal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 13,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": null,
+        "lcgc_02": null,
+        "lcgc_03": null,
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 1,
+          "orientasi": "horizontal"
+        },
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 5,
+          "orientasi": "horizontal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 8,
+          "orientasi": "vertikal"
+        },
+        "pickup_02": null,
+        "pickup_03": null,
+        "mobil_boks_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 5,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 1,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_03": {
+          "kapal_id": "kapal_utama",
+          "x": 4,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "mpv_01": null,
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": null,
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 8,
+          "orientasi": "vertikal"
+        }
+      },
+      {
+        "motor_01": null,
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "horizontal"
+        },
+        "motor_03": null,
+        "lcgc_01": null,
+        "lcgc_02": null,
+        "lcgc_03": null,
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 8,
+          "orientasi": "vertikal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 0,
+          "orientasi": "horizontal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": null,
+        "mobil_boks_01": {
+          "kapal_id": "kapal_utama",
+          "x": 4,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_02": null,
+        "mobil_boks_03": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 13,
+          "orientasi": "horizontal"
+        },
+        "mpv_01": null,
+        "mpv_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 12,
+          "orientasi": "horizontal"
+        },
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": null,
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 1,
+          "orientasi": "vertikal"
+        },
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 6,
+          "orientasi": "vertikal"
+        },
+        "motor_02": null,
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "lcgc_01": null,
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "sedan_01": null,
+        "sedan_02": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 3,
+          "orientasi": "horizontal"
+        },
+        "sedan_03": null,
+        "suv_01": null,
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 8,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": null,
+        "mpv_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 8,
+          "orientasi": "vertikal"
+        },
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 6,
+          "orientasi": "vertikal"
+        }
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 6,
+          "orientasi": "vertikal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 4,
+          "y": 15,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": null,
+        "lcgc_02": null,
+        "lcgc_03": null,
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 7,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 12,
+          "orientasi": "horizontal"
+        },
+        "sedan_03": null,
+        "suv_01": null,
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": null,
+        "pickup_03": null,
+        "mobil_boks_01": null,
+        "mobil_boks_02": null,
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 0,
+          "orientasi": "horizontal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 12,
+          "orientasi": "horizontal"
+        },
+        "truk_01": null,
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "bus_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 3,
+          "orientasi": "vertikal"
+        }
+      }
+    ],
+    "populasi_akhir": [
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 9,
+          "orientasi": "vertikal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 1,
+          "orientasi": "horizontal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 1,
+          "orientasi": "horizontal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      },
+      {
+        "motor_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 10,
+          "orientasi": "horizontal"
+        },
+        "motor_02": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "motor_03": {
+          "kapal_id": "kapal_utama",
+          "x": 6,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "lcgc_01": {
+          "kapal_id": "kapal_utama",
+          "x": 1,
+          "y": 14,
+          "orientasi": "horizontal"
+        },
+        "lcgc_02": {
+          "kapal_id": "kapal_utama",
+          "x": 3,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "lcgc_03": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "sedan_01": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 9,
+          "orientasi": "horizontal"
+        },
+        "sedan_02": null,
+        "sedan_03": null,
+        "suv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 8,
+          "y": 5,
+          "orientasi": "vertikal"
+        },
+        "suv_02": null,
+        "suv_03": null,
+        "pickup_01": null,
+        "pickup_02": {
+          "kapal_id": "kapal_utama",
+          "x": 0,
+          "y": 0,
+          "orientasi": "vertikal"
+        },
+        "pickup_03": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 3,
+          "orientasi": "vertikal"
+        },
+        "mobil_boks_01": null,
+        "mobil_boks_02": {
+          "kapal_id": "kapal_utama",
+          "x": 2,
+          "y": 11,
+          "orientasi": "horizontal"
+        },
+        "mobil_boks_03": null,
+        "mpv_01": {
+          "kapal_id": "kapal_utama",
+          "x": 7,
+          "y": 11,
+          "orientasi": "vertikal"
+        },
+        "mpv_02": null,
+        "mpv_03": null,
+        "minibus_01": null,
+        "minibus_02": null,
+        "minibus_03": null,
+        "truk_01": {
+          "kapal_id": "kapal_utama",
+          "x": 5,
+          "y": 2,
+          "orientasi": "vertikal"
+        },
+        "truk_02": null,
+        "truk_03": null,
+        "bus_01": null,
+        "bus_02": null,
+        "bus_03": null
+      }
+    ],
+    "parameter_efektif": {
+      "jumlah_populasi": 10,
+      "batas_iterasi": 30,
+      "peluang_mutasi": 0.2
+    },
+    "lingkungan": {
+      "python": "3.13.4",
+      "sistem": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+      "sha256_src": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "5766808a80c4be682db679374b12315d323d5ca5b6a3fe67350724f5f26f1e51",
+        "eksperimen.py": "4d265bdfaa2ae97b380252423a1c8acfd11557aa64592b0c5caf143e89b725a6",
+        "genetic.py": "37927e7a07e110b4a920b95c0529c63a465cc66c5834c87f57716878af5cb04b",
+        "hill_climbing.py": "ca87a716273956505c14d57f3ee652d230d1b70cae2ffa343951f09eaf71e125",
+        "pencatatan.py": "4f2881cdf8522e7f1e046a53455ed6bac188c420ca548aba663ad7d4d792a71a",
+        "simulated_annealing.py": "1544234b1e921e3d2c718df45fc4c0cd769f277e6776ab0bbeb74d35da5b66fd",
+        "tetangga.py": "94a1ca8ed3177089dcc26e8cd7ca4695ac306b30356828c48faca7eaadae8ebe",
+        "visualisasi.py": "f158237a8bfd0dc06419d7babd7f292ec668b7a7fdf41abf2514b6ec677f7d07"
+      }
+    }
+  }
+}

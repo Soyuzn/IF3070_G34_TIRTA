@@ -4,12 +4,6 @@ import math
 import random
 from pathlib import Path
 
-OBJEKTIF = {
-    "tarif_kirim": ("jumlah tarif_kirim", "juta rupiah"),
-    "tarif_eta": ("tarif_kirim / (1 + eta_hari)", "juta rupiah berbobot ETA"),
-}
-
-
 def _tanpa_kunci_ganda(pasangan):
     hasil = dict(pasangan)
     if len(hasil) != len(pasangan):
@@ -50,6 +44,8 @@ def _periksa_daftar(daftar, kolom, boleh_kosong=True):
 
 def periksa_data(kapal, kendaraan):
     _periksa_daftar(kapal, {"id", "lebar", "panjang", "kapasitas"}, boleh_kosong=False)
+    if len(kapal) != 1:
+        raise ValueError("Program hanya mendukung satu kapal")
     _periksa_daftar(kendaraan, {"id", "lebar", "panjang", "tarif_kirim", "berat", "eta_hari"})
 
 
@@ -71,13 +67,13 @@ def _sel(x, y, lebar, panjang):
 
 
 def periksa_state(kapal, kendaraan, state):
-    """State harus lengkap, di dalam dek, tidak bertabrakan, dan tidak kelebihan berat."""
+    # Cek batas dek, tabrakan, dan kapasitas muatan.
     periksa_data(kapal, kendaraan)
     if not isinstance(state, dict) or set(state) != {k["id"] for k in kendaraan}:
         raise ValueError("state harus memuat tepat setiap id kendaraan")
-    daftar_kapal = {k["id"]: k for k in kapal}
-    terisi = {k["id"]: set() for k in kapal}
-    berat = {k["id"]: 0 for k in kapal}
+    dek = kapal[0]
+    terisi = set()
+    berat = 0
 
     for data_kendaraan in kendaraan:
         penempatan = state[data_kendaraan["id"]]
@@ -87,39 +83,27 @@ def periksa_state(kapal, kendaraan, state):
         if not isinstance(penempatan, dict) or set(penempatan) != kolom:
             raise ValueError(f"Penempatan {data_kendaraan['id']} tidak sesuai kontrak")
         kapal_id = penempatan["kapal_id"]
-        if not isinstance(kapal_id, str) or kapal_id not in daftar_kapal:
+        if kapal_id != dek["id"]:
             raise ValueError(f"kapal_id tidak dikenal untuk {data_kendaraan['id']}")
         if any(type(penempatan[k]) is not int for k in ("x", "y")):
             raise ValueError(f"Koordinat {data_kendaraan['id']} harus integer")
         lebar, panjang = ukuran(data_kendaraan, penempatan["orientasi"])
         x, y = penempatan["x"], penempatan["y"]
-        dek = daftar_kapal[kapal_id]
         if x < 0 or y < 0 or x + lebar > dek["lebar"] or y + panjang > dek["panjang"]:
             raise ValueError(f"{data_kendaraan['id']} melewati batas {kapal_id}")
         sel_kendaraan = _sel(x, y, lebar, panjang)
-        if not sel_kendaraan.isdisjoint(terisi[kapal_id]):
+        if not sel_kendaraan.isdisjoint(terisi):
             raise ValueError(f"{data_kendaraan['id']} bertumpang tindih pada {kapal_id}")
-        terisi[kapal_id].update(sel_kendaraan)
-        berat[kapal_id] += data_kendaraan["berat"]
-    for dek in kapal:
-        if berat[dek["id"]] > dek["kapasitas"]:
-            raise ValueError(f"Kapasitas {dek['id']} terlampaui")
+        terisi.update(sel_kendaraan)
+        berat += data_kendaraan["berat"]
+    if berat > dek["kapasitas"]:
+        raise ValueError(f"Kapasitas {dek['id']} terlampaui")
 
 
-def nilai_objektif(kapal, kendaraan, state, objektif="tarif_kirim"):
-    """Tarif kendaraan yang dimuat; tarif_eta memakai bobot 1 / (1 + ETA)."""
-    if objektif not in OBJEKTIF:
-        raise ValueError("objektif harus tarif_kirim atau tarif_eta")
+def nilai_objektif(kapal, kendaraan, state):
+    """Jumlah tarif kirim kendaraan yang dimuat."""
     periksa_state(kapal, kendaraan, state)
-    total = 0
-    for data_kendaraan in kendaraan:
-        if state[data_kendaraan["id"]] is None:
-            continue
-        tarif = data_kendaraan["tarif_kirim"]
-        if objektif == "tarif_eta":
-            tarif /= 1 + data_kendaraan["eta_hari"]
-        total += tarif
-    return total
+    return sum(k["tarif_kirim"] for k in kendaraan if state[k["id"]] is not None)
 
 
 def inisialisasi_acak(kapal, kendaraan, seed):
@@ -131,28 +115,25 @@ def inisialisasi_acak(kapal, kendaraan, seed):
     urutan = list(kendaraan)
     acak.shuffle(urutan)
     state = {k["id"]: None for k in kendaraan}
-    terisi = {k["id"]: set() for k in kapal}
-    berat = {k["id"]: 0 for k in kapal}
+    dek = kapal[0]
+    terisi = set()
+    berat = 0
 
     for data_kendaraan in urutan:
         pilihan = [None]
-        for dek in kapal:
-            kapal_id = dek["id"]
-            if berat[kapal_id] + data_kendaraan["berat"] > dek["kapasitas"]:
-                continue
+        if berat + data_kendaraan["berat"] <= dek["kapasitas"]:
             for orientasi in ("vertikal", "horizontal"):
                 lebar, panjang = ukuran(data_kendaraan, orientasi)
                 for x in range(dek["lebar"] - lebar + 1):
                     for y in range(dek["panjang"] - panjang + 1):
-                        if _sel(x, y, lebar, panjang).isdisjoint(terisi[kapal_id]):
-                            pilihan.append({"kapal_id": kapal_id, "x": x, "y": y,
+                        if _sel(x, y, lebar, panjang).isdisjoint(terisi):
+                            pilihan.append({"kapal_id": dek["id"], "x": x, "y": y,
                                             "orientasi": orientasi})
         penempatan = acak.choice(pilihan)
         state[data_kendaraan["id"]] = penempatan
         if penempatan is not None:
-            kapal_id = penempatan["kapal_id"]
             lebar, panjang = ukuran(data_kendaraan, penempatan["orientasi"])
-            terisi[kapal_id].update(_sel(penempatan["x"], penempatan["y"], lebar, panjang))
-            berat[kapal_id] += data_kendaraan["berat"]
+            terisi.update(_sel(penempatan["x"], penempatan["y"], lebar, panjang))
+            berat += data_kendaraan["berat"]
     periksa_state(kapal, kendaraan, state)
     return state
